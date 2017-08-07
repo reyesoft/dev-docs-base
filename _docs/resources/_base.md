@@ -1,10 +1,8 @@
 ---
 resource: products
 permalink: /docs/resources/products/
-partOf: company
+partOf: company|user|''
 attributes:
-  - name: name
-  - name: description
   - name: sku
     crud: 'create,read,update'
     valuetype: string
