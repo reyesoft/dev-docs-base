@@ -9,6 +9,19 @@
 {% endfor %}
 </ul>
 
+<h3>URL</h3>
+{% assign url = 'http://api.multinexo.com/v1/' %}
+{% if page.partOf == 'company' %}
+  {% assign url = url | append: 'company/COMPANYID/' %}
+{% elsif page.partOf == 'user' %}
+  {% assign url = url | append: 'users/USERID/' %}
+{% elsif page.partOf == '' %}
+  {% assign url = url %}
+{% else %}
+  {% assign url = url | append: '???????' %}
+{% endif %}
+<pre>{{ url }}{{ page.resource }}/</pre>
+
 {% if page.relationships %}
 <h2>Relationships</h2>
 <ul>
