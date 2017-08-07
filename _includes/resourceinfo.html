@@ -15,10 +15,8 @@
   {% assign url = url | append: 'company/COMPANYID/' %}
 {% elsif page.partOf == 'user' %}
   {% assign url = url | append: 'users/USERID/' %}
-{% elsif page.partOf == '' %}
+{% elsif page.partOf %}
   {% assign url = url %}
-{% else %}
-  {% assign url = url | append: '???????' %}
 {% endif %}
 <pre>{{ url }}{{ page.resource }}/</pre>
 
