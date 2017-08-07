@@ -1,0 +1,23 @@
+- title: Autenticación
+  docs:
+  - autentication
+
+- title: Recursos
+  docs:
+  - resources/products
+  - resources/entities
+
+- title: Otros recursos
+  docs:
+  - resource3
+
+- title: Otros recursos mas
+  docs: site.data.products
+
+- title: Colaborar
+  docs:
+  - home
+  - customization
+  - cheatsheet
+  - font-awesome
+  - bootstrap
