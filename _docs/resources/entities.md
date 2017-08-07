@@ -1,7 +1,6 @@
 ---
-title: Resource 1
+resource: entities
 permalink: /docs/resources/entities/
-type: entities
 artist: entities
 director: Peter Phillips
 attributes:

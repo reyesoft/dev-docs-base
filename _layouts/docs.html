@@ -9,9 +9,11 @@ layout: default
         </div>
 
         <div class="col-md-8">
-            <h1>{{ page.title }}</h1>
-            {% if page.type.size > 0 %}
+            {% if page.resource.size > 0 %}
+              <h1>{{ page.resource }} resource</h1>
               {% include resourceinfo.html %}
+            {% else %}
+              <h1>{{ page.title }}</h1>
             {% endif %}
             <div id="markdown-content-container">{{ content }}</div>
             <!-- <p class="text-center">
