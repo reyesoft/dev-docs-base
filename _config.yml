@@ -28,6 +28,7 @@ exclude:
   - Gemfile.lock
   - .idea/
   - .gitignore
+  - bitbucket-pipelines.yml
   - README.md
 timezone: america/argentina/mendoza
 defaults:
