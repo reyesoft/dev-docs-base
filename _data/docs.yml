@@ -4,8 +4,32 @@
 
 - title: Recursos
   docs:
-  - resources/products
+  - resources/me
+  - resources/users
+  - resources/additional-accounts
   - resources/entities
+  - resources/fiscalpos
+  - resources/fiscalbooks
+  - resources/products
+  - resources/product-product
+  - resources/categories
+  - resources/pricelist
+  - resources/pricelist-products
+  - resources/pricelist-categories
+  - resources/gondolaprices
+  - resources/inventories
+  - resources/futureprices
+  - resources/quotations
+  - resources/orders
+  - resources/invoices
+  - resources/closure
+  - resources/details
+  - resources/multiple-documents
+  - resources/transactions
+  - resources/permissions
+  - resources/taxes
+  - resources/identifications
+  - resources/currencies
 
 - title: Otros recursos
   docs:

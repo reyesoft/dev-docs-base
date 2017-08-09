@@ -1,3 +1,13 @@
+{% assign url = 'http://api.multinexo.com/v1/' %}
+{% if page.partOf == 'company' %}
+{% assign url = url | append: 'company/COMPANYID/' %}
+{% elsif page.partOf == 'user' %}
+{% assign url = url | append: 'users/USERID/' %}
+{% elsif page.partOf %}
+{% assign url = url %}
+{% endif %}
+<pre>{{ url }}{{ page.resource }}/</pre>
+
 <h2>Attributes</h2>
 <ul>
 {% for attribute in page.attributes %}
@@ -8,17 +18,6 @@
     </li>
 {% endfor %}
 </ul>
-
-<h3>URL</h3>
-{% assign url = 'http://api.multinexo.com/v1/' %}
-{% if page.partOf == 'company' %}
-  {% assign url = url | append: 'company/COMPANYID/' %}
-{% elsif page.partOf == 'user' %}
-  {% assign url = url | append: 'users/USERID/' %}
-{% elsif page.partOf %}
-  {% assign url = url %}
-{% endif %}
-<pre>{{ url }}{{ page.resource }}/</pre>
 
 {% if page.relationships %}
 <h2>Relationships</h2>
