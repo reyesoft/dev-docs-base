@@ -87,3 +87,23 @@ filters:
     alias: A | B | C
     multivalue: false
 ---
+
+**Para impresora fiscal/factura electrónica**<br>
+En caso de fallar la impresión, setear
+
+- fiscal_blocked = 1
+- fiscal_observation = (razón del bloqueo)
+
+**El daemon obtiene los documentos que:**
+
+- draft=0
+- fiscal_blocked=0
+- fiscalpos=(número del fiscalpos en el daemon)
+
+**Al momento de confirmar invoice**
+
+- Crear remito si es necesario
+- blocked=0
+
+**Véase también**<br>
+<https://docs.google.com/spreadsheets/d/1Cpzh107Nug9zn-CT1ShXWdyt6VnZ9Cw1JJkZ_J8b7pY/edit>

@@ -23,3 +23,11 @@ relationships:
     hasMany: true
 filters: null
 ---
+
+**Entry Points**
+
+```
+companies/{company_id}/products/{product_id}/inventories/{inventory_id}
+companies/{company_id}/products/{product_id}/inventories
+companies/{company_id}/inventories
+```

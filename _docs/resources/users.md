@@ -31,3 +31,9 @@ filters:
     multivalue: false
     values: null|onlyTrashed|withTrashed
 ---
+
+**API point of access**
+
+mailAssignSave (post): [...]/v1/users/invitation_request<br>
+mailAssign (post): [...]/v1/companies/{company_id}/invitations // se envíe un mail al supuesto nuevo usuario<br>
+mailAssignRedirect (get): [...]/v1/users/invitations/{code} //comprueba el hash enviado al mail este correcto y lo redirecciona a un apartado de frontend

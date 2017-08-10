@@ -20,3 +20,10 @@ attributes:
 relationships: null
 filters: null
 ---
+
+**Condiciones**<br>
+Si fiscaltoken es seteado a '', se genera un nuevo fiscaltoken.<br>
+Sólo hay token cuando type=fiscal_printer
+
+**Observacion**<br>
+Se elimina la relación con company ya que esta información se envía en el token.

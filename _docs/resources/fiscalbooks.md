@@ -33,3 +33,23 @@ relationships:
     hasMany: false
 filters: null
 ---
+
+**Formato salida PDF de url_pdf**
+
+```
+    *** IVA [COMPRAS|VENTAS] ***
+RAZÓN SOCIAL: XXXXXXXXX        CUIT: XX-XXXXXXXXX-X        IVA: CONDICION IVA        PERIODO XX/XX/XXXX AL XX/XX/XXXX    FOLIO: XXX
+
+FECHA | COMPROBANTE/NUMERO | [PROVEEDOR|CLIENTE] | C.U.I.T. | CondFiscal | NETO | RET | ImpInt | IVA% | IVA | Perc.IVA | Perc.IIBB | TOTAL
+```
+
+**Ejemplos**
+
+```
+http://www.estudiomonti.com.ar/galeria/0005000327996VENTAS.jpg  
+http://www.estudiomonti.com.ar/galeria/0005000227995COMPRAS.jpg  
+http://drrsystemas.no-ip.info/helpalma/images/image598.jpg
+```
+
+**Observaciones**<br>
+Se elimina la relación con company ya que esta información se envía en el token.

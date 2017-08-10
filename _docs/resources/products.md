@@ -95,3 +95,10 @@ filters:
     multivalue: false
     values: null|onlyTrashed|withTrashed
 ---
+
+**Entry Points**
+
+```
+companies/{company_id}/products/{products_id}<br>
+companies/{company_id}/pricelists/{pricelist_id}/products
+```
