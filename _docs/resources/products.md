@@ -17,7 +17,8 @@ attributes:
   - name: stock_type
     valuetype: disabled|negative|positive
   - name: replacement_cost
-  - name: cost_with_tax 'Only saves cost calculated based on cost with tax'
+  - name: cost_with_tax
+    observation: Only saves cost calculated based on cost with tax
   - name: stock
   - name: stock_alert
   - name: stock_desired
@@ -94,11 +95,13 @@ filters:
   - attribute: trashed
     multivalue: false
     values: null|onlyTrashed|withTrashed
+entry_points:
+  name: pricelists
 ---
 
-**Entry Points**
+<!-- **Entry Points**
 
 ```
 companies/{company_id}/products/{products_id}<br>
 companies/{company_id}/pricelists/{pricelist_id}/products
-```
+``` -->

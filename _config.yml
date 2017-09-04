@@ -30,7 +30,7 @@ exclude:
   - .gitignore
   - bitbucket-pipelines.yml
   - README.md
-timezone: america/argentina/mendoza
+# timezone: america/argentina/mendoza
 defaults:
 #- scope:
 #    path: _posts
@@ -56,3 +56,5 @@ collections:
 #posts:
 #  permalink: /blog/:year/:month/:day/:title/
 #  output: true
+sass:
+  sass_dir: _sass

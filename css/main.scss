@@ -2,11 +2,11 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
+// @import "icon-fonts";
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 
 $font-size-base:          17px;
-
 
 @import
   {% if site.bootwatch %}
@@ -85,3 +85,154 @@ body {
 .navbar-form .has-feedback .form-control-feedback{
   top:10px
 }
+
+//-------------BASE------------//
+
+$strong: #212121;
+$subhead: #9e9e9e;
+$mdl_divider: #e0e0e0;
+$highlight: #e0e0e0;
+$highlight_hover: #fff;
+$highlight_post: #66bb6a;
+$text_post: #1b5e20;
+$highlight_get: #42a5f5;
+$text_get: #0d47a1;
+$highlight_put: #ffca28;
+$text_put: #ff6f00;
+$background_section: #eeeeee;
+
+
+// .mdl-layout__drawer {
+//   top: 64px;
+//   height: calc(100% - 64px);
+//   z-index: 2;
+// }
+
+// .mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
+//   margin: 0;
+//   width: 100%
+// }
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  color: $strong;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 28px 0 8px 0;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 24px 0 8px 0;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 32px 0 16px 0;
+}
+
+h4, p {
+  font-size: 14px;
+  margin: 16px 0 0 0;
+}
+
+p {
+  text-align: justify;
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+thead {
+  color: $subhead;
+  border-bottom: 1px solid $mdl_divider;
+}
+
+@mixin transition($transition_options) {
+  -webkit-transition: $transition_options;
+  -moz-transition: $transition_options;
+  -ms-transition: $transition_options;
+  -o-transition: $transition_options;
+  transition: $transition_options;
+}
+
+table tr th {
+  text-align: left;
+}
+
+table tr {
+  @include transition(background-color ease-in-out .2s);
+  height: 42px;
+}
+
+table tbody tr:hover {
+  background-color: $mdl_divider;
+}
+
+table tbody tr:hover td code {
+  background: $highlight_hover;  
+}
+
+table tr td, table tr th {
+  padding: 0 16px;
+}
+
+code {
+  padding: 4px 8px;
+  background: $highlight;
+  border-radius: 3px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  white-space: nowrap;  
+}
+
+code.post {
+  background: $highlight_post;
+  color: $text_post;
+}
+
+code.get {
+  background: $highlight_get;
+  color: $text_get;
+}
+
+code.put {
+  background: $highlight_put;
+  color: $text_put;
+}
+
+dl dt, dl dd {
+  padding: 8px 0;
+}
+
+dl dt {
+  float: left;
+  text-align: right;
+  width: 180px;
+  clear: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+dl dd {
+  margin-left: 200px;
+}
+
+section {
+  background-color: $background_section;
+  padding: 20px;
+  border-radius: 3px;
+  word-wrap: break-word;
+ }
+ 
+//-----------FIN--------------//
