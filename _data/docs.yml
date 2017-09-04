@@ -4,20 +4,67 @@
 
 - title: Recursos
   docs:
-  - resources/products
+  - resources/me
+  - resources/users
+  - resources/additional-accounts
   - resources/entities
+  - resources/fiscalpos
+  - resources/fiscalbooks
+  - resources/products
+  - resources/product-product
+  - resources/categories
+  - resources/pricelist
+  - resources/pricelist-products
+  - resources/pricelist-categories
+  - resources/gondolaprices
+  - resources/inventories
+  - resources/futureprices
+  - resources/quotations
+  - resources/orders
+  - resources/invoices
+  - resources/closure
+  - resources/details
+  - resources/multiple-documents
+  - resources/transactions
+  - resources/permissions
+  - resources/taxes
+  - resources/identifications
+  - resources/currencies
+  - resources/preferences
+  - resources/companies
+  - resources/responsibilities
+  - resources/photos
+  - resources/revenues
+  - resources/roles
+  - resources/availabilities
+  - resources/cash_registers
+  - resources/pricelistsreport
+  - resources/plans
+  - resources/companyPayments
+  - resources/imports
+  - resources/params
+  - resources/export
+
+- title: Recursos No JSONAPI
+  docs:
+  - resources-no-jsonapi/pagos
+  - resources-no-jsonapi/contacts
+  - resources-no-jsonapi/discounts
+
+- title: Hardware
+  docs:
+  - hardware/lector-de-códigos-de-barra
 
 - title: Otros recursos
   docs:
-  - resource3
+  - otros-recursos/templates-para-compañias
+  - otros-recursos/url-especiales-frontend
+  - otros-recursos/token
+  - otros-recursos/valuacion-mercaderia
+  - otros-recursos/json-api-error-response
+  - otros-recursos/mercadopago
 
-- title: Otros recursos mas
-  docs: site.data.products
-
-- title: Colaborar
+- title: Test E2E
   docs:
-  - home
-  - customization
-  - cheatsheet
-  - font-awesome
-  - bootstrap
+  - test-e2e/test-e2e
+  - test-e2e/calculo-precio-porcentaje

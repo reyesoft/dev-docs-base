@@ -1,12 +1,12 @@
 # Site settings
-title: Multinexo Docs
+title: Multinexo Developers
 email: info@multinexo.com
 description: >
   Documentación de la API de Multinexo. Sistema online de gestión para pequeñas y
   medianas empresas. Impresora fiscal, factura electrónica, stock,
   cuentas corrientes, multiusuario, ¡y más!
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: https://docs.multinexo.com # the base hostname & protocol for your site
+url: https://dev.multinexo.com # the base hostname & protocol for your site
 git_address: https://github.com/multinexo
 git_edit_address: https://github.com/multinexo/docs/blob/gh-pages
 
@@ -28,6 +28,7 @@ exclude:
   - Gemfile.lock
   - .idea/
   - .gitignore
+  - bitbucket-pipelines.yml
   - README.md
 timezone: america/argentina/mendoza
 defaults:
