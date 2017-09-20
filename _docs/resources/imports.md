@@ -1,6 +1,7 @@
 ---
 resource: imports
 permalink: /docs/resources/imports/
+partOf: company
 attributes:
   - name: resource
     valuetype: string
@@ -19,10 +20,10 @@ filters: null
 ---
 
 **Point of access**<br>
-index: GET [...]/v1/imports<br>
-show: GET [...]/v1/imports/1<br>
-store: POST [...]/v1/imports<br>
-update: PUT/PATCH [...]/v1/imports/1
+index: GET [...]/v1/company/{company_id}/imports<br>
+show: GET [...]/v1/company/{company_id}/imports/1<br>
+store: POST [...]/v1/company/{company_id}/imports<br>
+update: PUT/PATCH [...]/v1/company/{company_id}/imports/1
 
 **A tener en cuenta**<br>
 POR [POST] solo se guarda:<br>
