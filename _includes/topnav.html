@@ -1,32 +1,30 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container navbar-container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-            <a class="navbar-brand" href="{{ site.baseurl }}/">
-                <span><img src="{{site.baseurl}}/img/multinexo-isotipo.png"></span> {{ site.title }}
-            </a>
+<header class="mdl-layout__header layout-row layout-align-space-between-center mdl-color--white mdl-color-text--grey-700">
+    <div class="mdl-layout__header-row flex">
+        <div class="logo-header">
+            <a href="/"><img src="{{ site.url }}/img/multinexo_logotype_colored.svg" alt=""></a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li {% if page.sectionid=='docs' %} class="active" {% endif %}><a href="{{ "/docs/resources/products/" | prepend: site.baseurl }}">API</a></li>
-                <!--<li {% if page.sectionid=='blog' %} class="active" {% endif %}><a href="{{ site.posts.first.url | prepend: site.baseurl }}">Blog</a></li>-->
-            </ul>
-            <div class="navbar-right">
-                <form class="navbar-form navbar-left">
-                    <div class="form-group has-feedback">
-                        <input id="search-box" type="text" class="form-control" placeholder="Buscar...">
-                        <i class="fa fa-search form-control-feedback"></i>
-                    </div>
-                </form>
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ site.git_address }}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-        </div>
+        <nav class="mdl-navigation mdl-layout--large-screen-only links">
+          <a href="{{ "/docs/resources/products/" | prepend: site.baseurl }}">API</a>
+          <!--<a href="{{ site.posts.first.url | prepend: site.baseurl }}">Blog</a>-->
+        </nav>
+        <div class="mdl-layout-spacer"></div>
     </div>
-</nav>
+    <nav class="mdl-navigation mdl-layout--large-screen-only flex layout-row layout-align-end">
+      <form id="search-form">
+          <div class="mdl-textfield mdl-js-textfield">
+              <input id="search-box" type="text" class="mdl-textfield__input" placeholder="Buscar...">
+          </div>
+      </form>
+      <!-- <form id="search-form">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="search-box" placeholder="Buscar...">
+            <label class="mdl-textfield__label" for="search-box">Search</label>
+          </div>
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search-box">
+            <i class="material-icons search-icon">search</i>
+          </label>
+        </div>
+      </form> -->
+    </nav>
+</header>

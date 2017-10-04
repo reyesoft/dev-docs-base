@@ -2,54 +2,64 @@
 layout: default
 ---
 
-<div class="header-container jumbotron">
-    <div class="container">
-        <h1>Conéctate con Multinexo</h1>
-        <p>
+<div class="header-container mdl-grid">
+    <div class="mdl-layout-spacer">
+    </div>
+    <div class="container mdl-cell mdl-cell--9-col">
+        <h1 class="mdl-typography--display-3">Conéctate con Multinexo</h1>
+        <p class="mdl-typography--headline">
           Multinexo ha sido concebido desde su inicio para que sus funcionalidades
           sean extendidas según tus necesidades.
         </p>
         <p>
-          <a class="btn btn-info btn-lg" href="{{ "/docs/resources/products/" | prepend: site.baseurl }}" role="button">Leer más</a>
+          <a class="mdl-button mdl-js-button" href="{{ "/docs/resources/products/" | prepend: site.baseurl }}" role="button">Leer más</a>
         </p>
+    </div>
+    <div class="mdl-layout-spacer">
     </div>
 </div>
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h2 class="header-light regular-pad">Multinexo para Desarrolladores</h2>
-            <blockquote>
-              <p>
+    <div class="mdl-grid front-dev">
+        <div class="mdl-layout-spacer">
+        </div>
+        <div class="mdl-cell mdl-cell--5-col">
+            <h2 class="mdl-typography--display-2">Multinexo para Desarrolladores</h2>
+            <!-- <blockquote> -->
+              <p class="mdl-typography--headline">
                 Esta sección está destinada a los desarrolladores que deseen interactactuar
                 con la API de Multinexo.
               </p>
-              <p>
+              <p class="mdl-typography--headline">
                 Multinexo utiliza, principalmente, la
                 <a href="http://jsonapi.org/">especificación JSON API</a> con
                 algunas extensiones de la misma.
               </p>
-            </blockquote>
+            <!-- </blockquote> -->
         </div>
-        <div class="col-md-6 text-center">
+        <div class="text-center mdl-cell mdl-cell--4-col">
             <img src="img/multinexo-tip.png" alt="" class="img-responsive">
+        </div>
+        <div class="mdl-layout-spacer">
         </div>
     </div>
 
     <hr>
 
-    <div class="row">
-        <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-key" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Autenticación</h3>
+    <div class="mdl-grid feat">
+        <div class="mdl-layout-spacer">
+        </div>
+        <div class="mdl-cell mdl-cell--3-col">
+            <h1 class="text-center mdl-typography--display-3"><i class="fa fa-key" aria-hidden="true"></i></h1>
+            <h3 class="mdl-typography--display-1 text-center">Autenticación</h3>
             <p>
               La seguridad en los accesos a Multinexo está basada en JWT.
             </p>
         </div>
-        <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-cubes" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Recursos</h3>
+        <div class="mdl-cell mdl-cell--3-col">
+            <h1 class="text-center mdl-typography--display-3"><i class="fa fa-cubes" aria-hidden="true"></i></h1>
+            <h3 class="mdl-typography--display-1 text-center">Recursos</h3>
             <p>
               La API de Multinexo está pensada como una colección de recursos que pueden
               ser creados, editados o eliminados, cada uno accesible con un formato
@@ -57,13 +67,15 @@ layout: default
               <a href="http://jsonapi.org/">especificación de JSON API</a>.
             </p>
         </div>
-        <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-briefcase" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Código abierto</h3>
+        <div class="mdl-cell mdl-cell--3-col">
+            <h1 class="text-center mdl-typography--display-3"><i class="fa fa-briefcase" aria-hidden="true"></i></h1>
+            <h3 class="mdl-typography--display-1 text-center">Código abierto</h3>
             <p>
               Pensado teniendo en cuenta la comunidad de desarrolladores. La mayoría de las especificaciones
               y herramientas utilizadas son OpenSource.
             </p>
+        </div>
+        <div class="mdl-layout-spacer">
         </div>
     </div>
 

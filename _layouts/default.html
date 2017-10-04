@@ -3,18 +3,24 @@
 
 {% include head.html %}
 
-<body>
+<body class="mdl-demo" onload="init()">
+    <div class="mdl-layout mdl-js-layout {% if page.path contains "_docs" %} mdl-layout--fixed-drawer {% endif %} mdl-layout--fixed-header">
 
-    {% include topnav.html %}
+        {% include topnav.html %}
 
-    <div class="page-content">
-        <div class="wrapper">
-            {{ content }}
-        </div>
+        {% if page.path contains "_docs" %}
+          {% include docs_nav.html %}
+        {% endif %}
+
+        <main class="mdl-layout__content">
+        {{ content }}
+
+        {% include footer.html %}
+        </main>
     </div>
 
-    {% include footer.html %}
     {% include js_files.html %}
+
 </body>
 
 </html>
