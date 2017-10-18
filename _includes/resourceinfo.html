@@ -10,12 +10,12 @@
 
 <h4>Attributes</h4>
 <section>
-    <dl class="mdl-grid">
+    <dl>
       {% for attribute in page.attributes %}
-        <dt class="mdl-cell mdl-cell--6-col">
+        <dt>
             {{ attribute.name }}
         </dt>
-        <dd class="mdl-cell mdl-cell--6-col text-left">
+        <dd>
           <code>{{ attribute.crud | default: 'create,read,update' }}</code>
             {% if attribute.valuetype %} <code>{{ attribute.valuetype }}</code> {% endif %}
             {% if attribute.observation %} <code>{{ attribute.observation }}</code> {% endif %}
@@ -27,14 +27,14 @@
 {% if page.relationships %}
 <h4>Relationships</h4>
 <section>
-  <dl class="mdl-grid">
+  <dl>
     {% for relationship in page.relationships %}
-        <dt class="mdl-cell mdl-cell--6-col">
+        <dt>
             <a href="/docs/resources/{{ relationship.resource }}/">
               {{ relationship.resource }}
             </a>
         </dt>
-        <dd class="mdl-cell mdl-cell--6-col text-left">
+        <dd>
           {% if relationship.hasMany %}
             <code>has many</code>
           {% else %}
@@ -49,12 +49,12 @@
 {% if page.filters %}
 <h4>Filters</h4>
 <section>
-  <dl class="mdl-grid">
+  <dl>
     {% for filter in page.filters %}
-      <dt class="mdl-cell mdl-cell--6-col">
+      <dt>
         {{ filter.attribute }}
       </dt>
-      <dd class="mdl-cell mdl-cell--6-col text-left">
+      <dd>
         <code>{{ filter.type | default: 'equals' }}</code>
         {% if filter.multivalue %}
           <code>se acepta varios valores, separados por coma</code>
@@ -69,15 +69,15 @@
 
 <h4>Entry points</h4>
 <section>
-  <p class="text-center">
+  <p>
     <code class="get">GET</code>
     <code class="put">PUT</code>
     {{ url }}{{ page.resource }}/&#123{{ page.resource }}_id&#125
   </p>
   {% if page.entry_points.name %}
-    <p class="text-center"><code class="get">GET</code>{{ url }}{{ page.entry_points.name }}/&#123{{ page.entry_points.name }}_id&#125/{{ page.resource }}</p>
+    <p><code class="get">GET</code>{{ url }}{{ page.entry_points.name }}/&#123{{ page.entry_points.name }}_id&#125/{{ page.resource }}</p>
   {% endif %}
-  <p class="text-center">
+  <p>
     <code class="post">POST</code>
     {{ url }}{{ page.resource }}/
   </p>
