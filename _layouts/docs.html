@@ -9,6 +9,9 @@ layout: default
                   <h1>{{ page.resource }} resource</h1>
                   {% include resourceinfo.html %}
                 {% else %}
+                  {% if page.title == 'Guía de estilos' %}
+                  <img src="../img/styleguide/multinexo.jpg" class="img-responsive">
+                  {% endif %}
                   <h1>{{ page.title }}</h1>
                 {% endif %}
                 <div id="markdown-content-container">{{ content }}</div>
