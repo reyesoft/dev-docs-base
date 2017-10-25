@@ -164,10 +164,7 @@ a.clear {
 }
 
 body {
-  background: url('{{site.baseurl}}/img/background.svg');
-  background-repeat: repeat-x repeat-y;
-  background-position: left top;
-  background-size: cover;
+  // background: url('{{site.baseurl}}/img/body-bg.jpg') repeat;
 }
 
 
@@ -846,6 +843,8 @@ nav {
     color: grey;
     font-weight: bold;
     text-decoration: none;
+    padding: 0 1em;
+    margin: 0 1em;
   }
 }
 
