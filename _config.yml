@@ -30,9 +30,10 @@ exclude:
   - .gitignore
   - bitbucket-pipelines.yml
   - README.md
-timezone: america/argentina/mendoza
+# timezone: america/argentina/mendoza
+
 defaults:
-#- scope:
+# - scope:
 #    path: _posts
 #    type: posts
 #  values:
@@ -48,11 +49,26 @@ defaults:
     seo:
       type: "WebPage"
 
+- scope:
+    path: _styleguide
+    type: styleguide
+  values:
+    layout: docs
+    sectionid: styleguide
+    seo:
+      type: "WebPage"
+
 collections:
   docs:
     permalink: /:collection/:path/
     output: true
 
-#posts:
+  styleguide:
+    permalink: /styleguide/:title
+    output: true
+
+# posts:
 #  permalink: /blog/:year/:month/:day/:title/
 #  output: true
+sass:
+  sass_dir: _sass

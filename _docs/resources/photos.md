@@ -1,6 +1,7 @@
 ---
 resource: photos
 permalink: /docs/resources/photos/
+partOf: company
 attributes:
   - name: extension
   - name: url
@@ -13,3 +14,7 @@ attributes:
 relationships: null
 filters: null
 ---
+
+# Special entry points:
+
+`post`  http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}

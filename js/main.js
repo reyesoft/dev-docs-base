@@ -1,17 +1,14 @@
-$(function() {
+var pages = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
+    // datumTokenizer: Bloodhound.tokenizers.whitespace,
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
 
-    // $('.collapse').collapse('hide');
-    $('.list-group-item.active').parent().parent('.collapse').collapse('show');
+    prefetch: baseurl + '/search.json'
+});
 
-
-    var pages = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
-        // datumTokenizer: Bloodhound.tokenizers.whitespace,
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-
-        prefetch: baseurl + '/search.json'
-    });
-
+$('#search-label').click(function(){
+  // Modificar el if si se agrega otro autocomplete con typeahead al sitio
+  if (!$(".twitter-typeahead")[0]){
     $('#search-box').typeahead({
         minLength: 0,
         highlight: true
@@ -24,11 +21,5 @@ $(function() {
     $('#search-box').bind('typeahead:select', function(ev, suggestion) {
         window.location.href = suggestion.url;
     });
-
-
-    // Markdown plain out to bootstrap style
-    $('#markdown-content-container table').addClass('table');
-    $('#markdown-content-container img').addClass('img-responsive');
-
-
+  }
 });

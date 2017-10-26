@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-gem install bundler
-# bundle install
+sudo apt-get install ruby ruby-dev make gcc
+sudo gem install jekyll bundler
 bundle exec jekyll serve
 ```
