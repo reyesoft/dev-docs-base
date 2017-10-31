@@ -38,6 +38,8 @@
   - resources/roles
   - resources/availabilities
   - resources/cash_registers
+  - resources/cashier-entries
+  - resources/cashier-balances
   - resources/pricelistsreport
   - resources/plans
   - resources/companyPayments
