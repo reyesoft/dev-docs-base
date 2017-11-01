@@ -46,6 +46,8 @@
   - resources/imports
   - resources/params
   - resources/export
+  - resources/physicalpos
+  - resources/paymentmethods
 
 - title: Recursos No JSONAPI
   docs:
