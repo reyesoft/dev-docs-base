@@ -16,4 +16,7 @@ relationships:
   - resource: permissions
     hasMany: true
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---

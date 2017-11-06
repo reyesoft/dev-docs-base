@@ -1,6 +1,7 @@
 ---
 resource: additional_accounts
 permalink: /docs/resources/additional-accounts/
+partOf: user
 attributes:
   - name: email
   - name: activated
@@ -24,4 +25,7 @@ relationships:
   - resource: users
     hasMany: false
 filters: null
+entry_points:
+  methods:
+    put: false
 ---

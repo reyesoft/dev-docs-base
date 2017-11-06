@@ -41,4 +41,7 @@ relationships:
   - resource: products
     hasMany: false
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---

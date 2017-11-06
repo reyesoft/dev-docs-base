@@ -31,19 +31,21 @@ relationships:
   - resource: availabilities
     hasMany: true
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---
 
 **Included**
 
 - availabilities: 1../required
 
-**Entry Points**
-
+#### Entry Points
 ```
 companies/{company_id}/transactions/{transaction_id}
 companies/{company_id}/entities/{entity_id}/transactions
 ```
-
+#### Ejemplo
 ```javascript
 Example
 {

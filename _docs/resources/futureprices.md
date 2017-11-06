@@ -31,14 +31,13 @@ relationships:
 filters: null
 ---
 
-**Included**<br>
+**Included**  
 pricelist_product resource: 1..*
 
-**Observacion**<br>
+**Observacion**  
 Se elimina la relación con company ya que esta información se envía en el token.
 
-POST Request example test
-
+#### POST Request example test
 ```javascript
 {
     "data": {

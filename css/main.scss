@@ -9,6 +9,8 @@ $subhead: #9e9e9e;
 $mdl_divider: #e0e0e0;
 $highlight: #e0e0e0;
 $highlight_hover: #fff;
+$highlight_delete: #ef5350;
+$text_delete: #b71c1c;
 $highlight_post: #66bb6a;
 $text_post: #1b5e20;
 $highlight_get: #42a5f5;
@@ -108,28 +110,60 @@ table tr td, table tr th {
   padding: 0 16px;
 }
 
-code {
+.code {
   padding: 4px 8px;
   background: $highlight;
   border-radius: 3px;
   margin-right: 8px;
   margin-bottom: 8px;
-  white-space: nowrap;
 }
 
-code.post {
+div pre {
+  margin: 0
+}
+
+div.post pre code {
   background: $highlight_post;
   color: $text_post;
 }
 
-code.get {
+div.get pre code {
   background: $highlight_get;
   color: $text_get;
 }
 
-code.put {
+div.put pre code {
   background: $highlight_put;
   color: $text_put;
+}
+
+div.delete pre code {
+  background: $highlight_delete;
+  color: $text_delete;
+}
+
+.post {
+  @extend .code;
+  background: $highlight_post;
+  color: $text_post;
+}
+
+.get {
+  @extend .code;
+  background: $highlight_get;
+  color: $text_get;
+}
+
+.put {
+  @extend .code;
+  background: $highlight_put;
+  color: $text_put;
+}
+
+.delete {
+  @extend .code;
+  background: $highlight_delete;
+  color: $text_delete;
 }
 
 dl dt, dl dd {
@@ -150,7 +184,7 @@ dl dd {
   margin-left: 150px;
 }
 
-section {
+section, div pre {
   background-color: $background_section;
   padding: 20px;
   border-radius: 3px;

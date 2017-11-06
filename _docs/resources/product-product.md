@@ -12,4 +12,7 @@ relationships:
   - resource: products
     hasMany: true
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---

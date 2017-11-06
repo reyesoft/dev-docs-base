@@ -5,12 +5,12 @@ attributes:
   - name: author_id
   - name: section
     crud: 'create,read'
-    valuetype: sales|purchases
+    valuetype: sales | purchases
   - name: letter
     valuetype: X
   - name: receipt_type
     crud: 'create,read'
-    valuetype: order_sell|order_buy
+    valuetype: order_sell | order_buy
   - name: receipt_volume
     crud: read
   - name: receipt_number

@@ -1,11 +1,11 @@
 ---
 resource: fiscalpos
 permalink: /docs/resources/fiscalpos/
+partOf: company
 attributes:
   - name: number
   - name: type
-    valuetype: fiscal_printer|electronic|manual_a|manual_b|manual_c|manual_e
-  - name: alias
+    valuetype: fiscal_printer | electronic | manual_a | manual_b | manual_c | manual_e
   - name: status
   - name: fiscaltoken
   - name: created_at
@@ -21,9 +21,10 @@ relationships: null
 filters: null
 ---
 
-**Condiciones**<br>
-Si fiscaltoken es seteado a '', se genera un nuevo fiscaltoken.<br>
-Sólo hay token cuando type=fiscal_printer
+#### Special entry points
+Actualiza datos de la AFIP  
+`GET`{: .get} [...]/v1/companies/{company_id}/fiscalpos/update
 
-**Observacion**<br>
-Se elimina la relación con company ya que esta información se envía en el token.
+**Token fiscalpos**  
+Sólo hay token cuando `type=fiscal_printer`{: .code}  
+Si fiscaltoken es seteado a "", se genera un nuevo fiscaltoken.

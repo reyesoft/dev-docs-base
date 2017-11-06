@@ -3,7 +3,7 @@ resource: multiple_documents
 permalink: /docs/resources/multiple-documents/
 attributes:
   - name: action
-    valuetype: pdf|confirm
+    valuetype: pdf | confirm
   - name: download_url
     crud: read
 relationships:
@@ -14,4 +14,7 @@ relationships:
   - resource: invoices
     hasMany: true
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---

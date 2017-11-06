@@ -4,7 +4,7 @@ permalink: /docs/resources/quotations/
 attributes:
   - name: section
     crud: 'create,read'
-    valuetype: sales|purchases
+    valuetype: sales | purchases
   - name: receipt_type
     crud: 'create,read'
     valuetype: quotation
@@ -77,8 +77,7 @@ filters:
     multivalue: true
 ---
 
-**Entry Points**
-
+#### Entry Points
 ```
 companies/{company_id}/quotations/{quotation_id}
 ```

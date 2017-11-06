@@ -1,6 +1,7 @@
 ---
 resource: entities
 permalink: /docs/resources/entities/
+partOf: company
 attributes:
   - name: name
   - name: identification_number
@@ -15,7 +16,7 @@ attributes:
   - name: observation
   - name: has_account
   - name: entity_type
-    valuetype: client|supplier|employee|creditor|subdist|seller
+    valuetype: client | supplier | employee | creditor | subdist | seller
   - name: balance
     crud: read
   - name: pdf_url
@@ -39,14 +40,16 @@ attributes:
 relationships:
   - resource: transactions
     hasMany: true
+  - resource: users
+    hasMany: false
+  - resource: author
+    hasMany: false
   - resource: sellers
     hasMany: true
   - resource: responsibilities
     hasMany: false
   - resource: pricelists
     hasMany: false
-  - resource: documents
-    hasMany: true
 filters:
   - attribute: name
     type: like
@@ -59,5 +62,5 @@ filters:
     multivalue: true
   - attribute: trashed
     multivalue: false
-    values: null|onlyTrashed|withTrashed
+    values: null | onlyTrashed | withTrashed
 ---

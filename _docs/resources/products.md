@@ -50,6 +50,10 @@ attributes:
 relationships:
   - resource: pricelist_products
     hasMany: true
+  - resource: parent_products
+    hasMany: false
+  - resource: products
+    hasMany: false
   - resource: suppliers
     hasMany: true
   - resource: categories
@@ -94,14 +98,31 @@ filters:
     multivalue: false
   - attribute: trashed
     multivalue: false
-    values: null|onlyTrashed|withTrashed
+    values: null | onlyTrashed | withTrashed
 entry_points:
   name: pricelists
 ---
 
-<!-- **Entry Points**
+#### Special relationships
+Si es un producto en particular, entonces.  
+[pricelist_products](pricelist-products) `hasMany`{: .code}
 
-```
-companies/{company_id}/products/{products_id}<br>
-companies/{company_id}/pricelists/{pricelist_id}/products
-``` -->
+[futureprices](futureprices) `hasMany`{: .code}
+
+Si el atributo **conduct** es `variant_parent`{: .code}, entonces.
+
+[variant_children](variant-children) `hasMany`{: .code}
+
+Si el atributo **conduct** es `variant_common`{: .code}, entonces.
+
+[variants_parent](variants-parent) `hasMany`{: .code}
+
+[compound_parent](compound-parent) `hasMany`{: .code}
+
+Si el atributo **conduct** es `compound`{: .code}, entonces.
+
+[compound_children](compound-children) `hasMany`{: .code}
+
+Si el atributo **conduct** es `common`{: .code}, entonces.
+
+[compound_parent](compound-parent) `hasMany`{: .code}

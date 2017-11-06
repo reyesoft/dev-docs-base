@@ -4,12 +4,12 @@ permalink: /docs/resources/invoices/
 attributes:
   - name: section
     crud: 'create,read'
-    valuetype: sales|purchases
+    valuetype: sales | purchases
   - name: letter
     valuetype: A | B | C | E | X
   - name: receipt_type
     crud: 'create,read'
-    valuetype: invoice|debit|credit
+    valuetype: invoice | debit | credit
   - name: receipt_volume
   - name: receipt_number
   - name: net
@@ -86,9 +86,12 @@ filters:
     type: equals
     alias: A | B | C
     multivalue: false
+entry_points:
+  methods:
+    delete: false
 ---
 
-**Para impresora fiscal/factura electrónica**<br>
+**Para impresora fiscal/factura electrónica**  
 En caso de fallar la impresión, setear
 
 - fiscal_blocked = 1

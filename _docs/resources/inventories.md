@@ -22,10 +22,12 @@ relationships:
   - resource: products
     hasMany: true
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---
 
-**Entry Points**
-
+#### Entry Points
 ```
 companies/{company_id}/products/{product_id}/inventories/{inventory_id}
 companies/{company_id}/products/{product_id}/inventories

@@ -23,4 +23,7 @@ attributes:
     valuetype: datetimew3c
 relationships: null
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---
