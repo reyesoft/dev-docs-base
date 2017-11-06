@@ -8,7 +8,8 @@ var pages = new Bloodhound({
 
 $('#search-label').click(function(){
   // Modificar el if si se agrega otro autocomplete con typeahead al sitio
-  if (!$(".twitter-typeahead")[0]){
+
+  if (!$(".twitter-typeahead")[1]){
     $('#search-box').typeahead({
         minLength: 0,
         highlight: true
@@ -22,4 +23,17 @@ $('#search-label').click(function(){
         window.location.href = suggestion.url;
     });
   }
+});
+
+$('.search-box-mobile').typeahead({
+    minLength: 0,
+    highlight: true
+}, {
+    name: 'pages',
+    display: 'title',
+    source: pages
+});
+
+$('.search-box-mobile').bind('typeahead:select', function(ev, suggestion) {
+    window.location.href = suggestion.url;
 });

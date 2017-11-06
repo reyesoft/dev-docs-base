@@ -15,7 +15,7 @@ attributes:
   - name: product_type
   - name: duration
   - name: stock_type
-    valuetype: disabled|negative|positive
+    valuetype: disabled | negative | positive
   - name: replacement_cost
   - name: cost_with_tax
     observation: Only saves cost calculated based on cost with tax

@@ -116,6 +116,8 @@ table tr td, table tr th {
   border-radius: 3px;
   margin-right: 8px;
   margin-bottom: 8px;
+  white-space: normal;
+  display: inline-block;
 }
 
 div pre {
@@ -887,7 +889,7 @@ nav {
   i {
     color: rgb(65, 75, 95);
   }
-  #search-box {
+  #search-box, #search-box-mobile {
     color: rgb(65, 75, 95);
   }
   .tt-menu{
@@ -942,7 +944,7 @@ nav {
     display: block;
 }
 .front-dev {
-  padding-top: 48px;
+  // padding-top: 48px;
   padding-bottom: 48px;
   h2 {
     margin: 0 0 28px 0;
@@ -951,6 +953,9 @@ nav {
     font-size: 22px;
     text-align: left;
     padding: 0px 31px;
+  }
+  .mdl-cell--4-col, .mdl-cell--5-col {
+    margin-top: 48px;
   }
 }
 .feat {
@@ -973,10 +978,88 @@ footer {
   }
 }
 
-// Media queries maxi
+span {
+  display: inline-block;
+}
+
+code {
+  white-space: normal;
+  display: inline-block;
+  max-width: 100%;
+}
+
+// Media queries mobile
 
 @media (max-width: 839px) and (min-width: 480px) {
   .mdl-cell--6-col, .mdl-cell--6-col-tablet.mdl-cell--6-col-tablet {
     width: 47%;
+  }
+}
+@media (max-width: 1100px) {
+  .mdl-cell--3-col, .mdl-cell--3-col-tablet.mdl-cell--3-col-tablet {
+    width: calc(25%);
+  }
+  .front-dev {
+    position: relative;
+    .mdl-cell--4-col {
+      display: none;
+      // position: absolute;
+      // width: auto;
+      // padding: 0 27%;
+      // opacity: 0.4;
+      // z-index: -1;
+      // margin-top: 30px !important;
+    }
+  }
+  .mdl-cell--9-col, .mdl-cell--5-col {
+    width: 75%;
+  }
+}
+@media (max-width: 700px) {
+  .header-container {
+    h1 {
+      font-size: 15vw;
+    }
+  }
+  .mdl-cell--3-col, .mdl-cell--3-col-tablet.mdl-cell--3-col-tablet, .mdl-cell--5-col, .mdl-cell--9-col {
+    width: 100%;
+    padding: 0 10%;
+  }
+  .front-dev {
+    position: relative;
+    .mdl-cell--4-col {
+      padding: 0 10%;
+    }
+    p {
+      padding: 0;
+    }
+  }
+  .feat {
+    p {
+      text-align: center;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .front-dev {
+    h2 {
+      font-size: 10vw;
+    }
+  }
+  
+  section p {
+      text-align: left;
+  }
+}
+@media (max-width: 998px) {
+  #search-form {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    right: 10px;
+    .mdl-textfield__input, .mdl-textfield__input:focus {
+      color: grey;
+      width: 100%;
+    }
   }
 }
