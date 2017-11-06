@@ -48,6 +48,7 @@
   - resources/export
   - resources/physicalpos
   - resources/paymentmethods
+  - resources/behaviors
 
 - title: Recursos No JSONAPI
   docs:

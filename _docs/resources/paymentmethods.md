@@ -21,5 +21,7 @@ relationships:
     hasMany: false
   - resource: currencies
     hasMany: true
+  - resource: behaviors
+    hasmany: false
 filters: null
 ---
