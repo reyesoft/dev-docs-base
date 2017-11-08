@@ -6,7 +6,7 @@
 {% elsif page.partOf %}
 {% assign url = url %}
 {% endif %}
-<section><span class="get">GET</span>{{ url }}{{ page.resource }}</section>
+<section>{% method_tag get %}{{ url }}{{ page.resource }}</section>
 
 <h4>Attributes</h4>
 <section>
@@ -19,10 +19,10 @@
           <div>
             <span class="code">{{ attribute.crud | default: 'create, read, update' }}</span>
 
-            {% if attribute.valuetype %} 
+            {% if attribute.valuetype %}
               <span class="code">{{ attribute.valuetype }}</span>
             {% endif %}
-            
+
             {% if attribute.observation %}
               <span class="code" style="word-wrap: word-break">{{ attribute.observation }}</span>
             {% endif %}
@@ -83,18 +83,18 @@
 <section>
   <p>
     {% if (page.entry_points.methods.delete == null) or page.entry_points.methods.delete %}
-      <span class="delete">DELETE</span>
+      {% method_tag delete %}
     {% endif %}
     {% if (page.entry_points.methods.put == null) or page.entry_points.methods.put %}
-      <span class="put">PUT</span>
+      {% method_tag put %}
     {% endif %}
     {% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
-      <span class="get">GET</span>
+      {% method_tag get %}
       {{ url }}{{ page.resource }}/&#123{{ page.resource }}_id&#125
     {% endif %}
   </p>
   {% if page.entry_points.name %}
-    <p><span class="get">GET</span>{{ url }}{{ page.entry_points.name }}/&#123{{ page.entry_points.name }}_id&#125/{{ page.resource }}</p>
+    <p>{% method_tag get %}{{ url }}{{ page.entry_points.name }}/&#123{{ page.entry_points.name }}_id&#125/{{ page.resource }}</p>
   {% endif %}
   <p>
     {% if (page.entry_points.methods.post == null) or page.entry_points.methods.post %}
