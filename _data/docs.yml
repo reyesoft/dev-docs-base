@@ -60,15 +60,6 @@
   docs:
   - hardware/lector-de-códigos-de-barra
 
-- title: Otros recursos
-  docs:
-  - otros-recursos/templates-para-compañias
-  - otros-recursos/url-especiales-frontend
-  - otros-recursos/token
-  - otros-recursos/valuacion-mercaderia
-  - otros-recursos/json-api-error-response
-  - otros-recursos/mercadopago
-
 - title: Test E2E
   docs:
   - test-e2e/test-e2e
