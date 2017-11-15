@@ -1,6 +1,7 @@
 ---
 resource: pricelist_categories
 permalink: /docs/resources/pricelist-categories/
+partOf: company
 attributes:
   - name: price
   - name: price_type
@@ -41,7 +42,14 @@ relationships:
   - resource: products
     hasMany: false
 filters: null
-entry_points:
+entry_points: 
   methods:
     delete: false
+    post: false
+    put: false
+    get: false
 ---
+
+#### JSON-API Entry points
+
+`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/categories/{category_id}/pricelist_categories

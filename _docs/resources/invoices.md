@@ -1,6 +1,7 @@
 ---
 resource: invoices
 permalink: /docs/resources/invoices/
+partOf: company
 attributes:
   - name: section
     crud: 'create,read'
@@ -91,6 +92,10 @@ entry_points:
     delete: false
 ---
 
+#### Special entry points
+
+`GET`{: .get} [...]/v1/companies/{company_id}/invoices/{invoice_id}/getCae
+
 **Para impresora fiscal/factura electrónica**  
 En caso de fallar la impresión, setear
 
@@ -107,6 +112,3 @@ En caso de fallar la impresión, setear
 
 - Crear remito si es necesario
 - blocked=0
-
-**Véase también**<br>
-<https://docs.google.com/spreadsheets/d/1Cpzh107Nug9zn-CT1ShXWdyt6VnZ9Cw1JJkZ_J8b7pY/edit>

@@ -1,6 +1,7 @@
 ---
 resource: quotations
 permalink: /docs/resources/quotations/
+partOf: company
 attributes:
   - name: section
     crud: 'create,read'
@@ -76,11 +77,6 @@ filters:
     type: equals
     multivalue: true
 ---
-
-#### Entry Points
-```
-companies/{company_id}/quotations/{quotation_id}
-```
 
 **Logica StoreEditar esta sección**
 

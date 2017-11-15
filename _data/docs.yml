@@ -22,7 +22,7 @@
   - resources/quotations
   - resources/orders
   - resources/invoices
-  - resources/closure
+  - resources/closurereceipts
   - resources/details
   - resources/multiple-documents
   - resources/transactions

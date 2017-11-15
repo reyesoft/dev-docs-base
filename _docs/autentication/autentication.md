@@ -13,6 +13,8 @@ obsoleto y deberás iniciar nuevamente para recibir uno nuevo.
 Cuando inicias sesión en Multinexo, tus datos privados (nombre de usuario y contraseña) son enviados a la API por única vez. Una vez
 verificados, el servidor responde con un JWT que podrás utilizar para hacer las peticiones a la API hasta el cierre de la sesión.
 
+![JWT]({{ '/img/autentication/Diagrama-JWT-Multinexo.png' | prepend: site.baseurl }}){: .width-100}
+
 ## Punto de entrada para la generación del token
 
 Para solicitar un token de acceso debes hacer una petición POST al punto de entrada que se indica a continuación con el nombre de usuario

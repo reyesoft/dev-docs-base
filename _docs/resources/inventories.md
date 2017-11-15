@@ -1,6 +1,7 @@
 ---
 resource: inventories
 permalink: /docs/resources/inventories/
+partOf: company
 attributes:
   - name: qty
     crud: read
@@ -25,11 +26,13 @@ filters: null
 entry_points:
   methods:
     delete: false
+    put: false
+    post: false
 ---
 
-#### Entry Points
-```
-companies/{company_id}/products/{product_id}/inventories/{inventory_id}
-companies/{company_id}/products/{product_id}/inventories
-companies/{company_id}/inventories
-```
+#### Special entry points
+
+`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/inventories/{inventory_id}  
+`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/inventories  
+`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/inventories
+

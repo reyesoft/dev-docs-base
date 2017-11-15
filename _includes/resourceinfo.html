@@ -6,8 +6,11 @@
 {% elsif page.partOf %}
 {% assign url = url %}
 {% endif %}
-<section>{% method_tag get %}{{ url }}{{ page.resource }}</section>
 
+{% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
+  <section>{% method_tag get %}{{ url }}{{ page.resource }}</section>
+{% endif %}
+  
 <h4>Attributes</h4>
 <section>
     <dl>
@@ -79,6 +82,7 @@
 </section>
 {% endif %}
 
+{% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
 <h4>JSON-API Entry points</h4>
 <section>
   <p>
@@ -88,10 +92,9 @@
     {% if (page.entry_points.methods.put == null) or page.entry_points.methods.put %}
       {% method_tag put %}
     {% endif %}
-    {% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
-      {% method_tag get %}
-      {{ url }}{{ page.resource }}/&#123{{ page.resource }}_id&#125
-    {% endif %}
+
+    {% method_tag get %}
+    {{ url }}{{ page.resource }}/&#123{{ page.resource }}_id&#125
   </p>
   {% if page.entry_points.name %}
     <p>{% method_tag get %}{{ url }}{{ page.entry_points.name }}/&#123{{ page.entry_points.name }}_id&#125/{{ page.resource }}</p>
@@ -103,3 +106,4 @@
     {% endif %}
   </p>
 </section>
+  {% endif %}
