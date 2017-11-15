@@ -1,6 +1,6 @@
 ---
-resource: closure
-permalink: /docs/resources/closure/
+resource: closurereceipts
+permalink: /docs/resources/closurereceipts/
 attributes:
   - name: receipt_volume
   - name: receipt_number

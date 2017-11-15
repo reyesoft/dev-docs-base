@@ -28,11 +28,14 @@ attributes:
 relationships:
   - resource: products
     hasMany: true
+  - resource: pricelist_products
+    hasMany: true
 filters: null
 ---
 
-**Included**  
-pricelist_product resource: 1..*
+#### Special entry points
+
+`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/futureprices
 
 **Observacion**  
 Se elimina la relación con company ya que esta información se envía en el token.

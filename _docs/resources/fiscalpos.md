@@ -25,7 +25,7 @@ filters: null
 
 #### Special entry points
 
-Actualiza datos de la AFIP<br>
+Actualiza datos de la AFIP  
 `GET`{: .get} [...]/v1/companies/{company_id}/fiscalpos/update
 
 ##### Token fiscalpos

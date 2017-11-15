@@ -1,6 +1,7 @@
 ---
 resource: gondolaprices
 permalink: /docs/resources/gondolaprices/
+partOf: company
 attributes:
   - name: price
   - name: date
@@ -28,4 +29,7 @@ relationships:
   - resource: entities
     hasMany: true
 filters: null
+entry_points: 
+  methods:
+    put: false
 ---
