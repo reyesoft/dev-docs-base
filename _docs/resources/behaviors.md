@@ -2,6 +2,8 @@
 resource: behaviors
 permalink: /docs/resources/behaviors/
 attributes:
+  - name: id
+    crud: read
   - name: name
     crud: read
 relationships:
