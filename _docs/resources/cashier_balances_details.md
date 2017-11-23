@@ -3,6 +3,7 @@ resource: cashier_balances_details
 permalink: /docs/resources/cashier_balances_details/
 attributes:
   - name: amount
+    crud: read
     valuetype: number
   - name: created_at
     crud: read

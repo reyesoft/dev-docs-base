@@ -3,8 +3,10 @@ resource: cashier_entries
 permalink: /docs/resources/cashier_entries/
 attributes:
   - name: amount
+    crud: create, read
     valuetype: number
   - name: date
+    crud: read
     valuetype: datetimew3c
   - name: created_at
     crud: read
