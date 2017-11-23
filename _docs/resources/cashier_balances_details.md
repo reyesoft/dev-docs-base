@@ -1,6 +1,7 @@
 ---
 resource: cashier_balances_details
 permalink: /docs/resources/cashier_balances_details/
+partOf: company
 attributes:
   - name: amount
     crud: read

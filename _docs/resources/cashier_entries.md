@@ -1,6 +1,7 @@
 ---
 resource: cashier_entries
 permalink: /docs/resources/cashier_entries/
+partOf: company
 attributes:
   - name: amount
     crud: create, read
