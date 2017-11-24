@@ -8,7 +8,6 @@ attributes:
   - name: due_date
     valuetype: datetimew3c
   - name: observations
-    
   - name: amount
     valuetype: number
   - name: entity_id

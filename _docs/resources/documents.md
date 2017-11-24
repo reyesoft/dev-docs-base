@@ -31,19 +31,16 @@ attributes:
     valuetype: datetimew3c
   - name: cae
     crud: read
-    
   - name: cae_expiration_date
     crud: read
     valuetype: datetimew3c
   - name: observation
     crud: read
-    
   - name: show_amounts
     valuetype: true | false
   - name: canceled
     valuetype: true | false
   - name: fiscal_observation
-    
   - name: status
     valuetype: draft | failed | queued | confirmed
   - name: created_at

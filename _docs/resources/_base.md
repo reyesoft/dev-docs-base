@@ -5,7 +5,6 @@ partOf: company|user|''
 attributes:
   - name: sku
     crud: 'create,read,update'
-    
   - name: conduct
     crud: 'create,read,update'
     valuetype: common | compound | variant_common | variant_parent

@@ -4,7 +4,6 @@ permalink: /docs/resources/imports/
 partOf: company
 attributes:
   - name: resource
-    
   - name: has_header
     valuetype: boolean
   - name: headers
