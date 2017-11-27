@@ -13,7 +13,7 @@ git_edit_address: https://github.com/multinexo/docs/blob/gh-pages
 # Build settings
 markdown: kramdown
 highlighter: rouge
-gems:
+plugins:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-seo-tag
