@@ -19,6 +19,7 @@
   - resources/gondolaprices
   - resources/inventories
   - resources/futureprices
+  - resources/documents
   - resources/quotations
   - resources/orders
   - resources/invoices
@@ -38,8 +39,9 @@
   - resources/roles
   - resources/availabilities
   - resources/cash_registers
-  - resources/cashier-entries
-  - resources/cashier-balances
+  - resources/cashier_entries
+  - resources/cashier_balances
+  - resources/cashier_balances_details
   - resources/pricelistsreport
   - resources/plans
   - resources/companyPayments
@@ -47,7 +49,7 @@
   - resources/params
   - resources/export
   - resources/physicalpos
-  - resources/paymentmethods
+  - resources/payment_methods
   - resources/behaviors
 
 - title: Recursos No JSONAPI
