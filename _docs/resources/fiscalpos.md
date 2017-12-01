@@ -4,12 +4,16 @@ permalink: /docs/resources/fiscalpos/
 partOf: company
 attributes:
   - name: number
-  - name: type
+  - name: pos_type
     valuetype: fiscal_printer | electronic | manual_a | manual_b | manual_c | manual_e
   - name: status
   - name: fiscaltoken
   - name: max_amount_per_invoice
+    crud: read
   - name: max_items_per_invoice
+    crud: read
+  - name: default
+    crud: create
   - name: created_at
     crud: read
     valuetype: datetimew3c
@@ -25,7 +29,7 @@ filters: null
 
 #### Special entry points
 
-Actualiza datos de la AFIP  
+Actualiza datos de la AFIP
 `GET`{: .get} [...]/v1/companies/{company_id}/fiscalpos/update
 
 ##### Token fiscalpos

@@ -3,9 +3,8 @@ resource: fiscalbooks
 permalink: /docs/resources/fiscalbooks/
 partOf: company
 attributes:
-  - name: email
   - name: alias
-    crud: 'read, update'
+    crud: 'create, read'
   - name: fiscalbook_type
     crud: 'create, read'
     valuetype: buys | sells
@@ -18,9 +17,9 @@ attributes:
   - name: initial_folio
     crud: 'create, read'
   - name: net
-    crud: read
+    crud: 'create, read'
   - name: total
-    crud: read
+    crud: 'create, read'
   - name: url_pdf
     crud: read
   - name: url_csv
@@ -46,5 +45,5 @@ entry_points:
 
 `GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/citi
 
-Donde  
+Donde
 **type** `buys | sells`{: .code}

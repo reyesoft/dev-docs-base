@@ -17,6 +17,7 @@ attributes:
   - name: deleted_at
     crud: read
     valuetype: datetimew3c
+  - name: activated
 relationships:
   - resource: additional_accounts
     hasMany: true
@@ -39,8 +40,8 @@ entry_points:
 #### Special JSON-API entry points
 `mailAssignSave`{: .code} `POST`{: .post} [...]/v1/users/invitation_request
 
-Para enviar un email de invitacion a un nuevo usuario.  
+Para enviar un email de invitacion a un nuevo usuario.
 `mailAssign`{: .code} `POST`{: .post} [...]/v1/companies/{company_id}/invitations
 
-Comprueba el hash enviado al mail este correcto y lo redirecciona a un apartado de frontend  
+Comprueba el hash enviado al mail este correcto y lo redirecciona a un apartado de frontend
 `mailAssignRedirect`{: .code} `GET`{: .get} [...]/v1/users/invitations/{code}

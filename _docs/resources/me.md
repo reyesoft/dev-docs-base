@@ -13,10 +13,14 @@ attributes:
     crud: update
   - name: new_password
     crud: create
+  - name: create_at
+  - name: update_at
+  - name: activated
+  - name: acutal_status
 relationships:
   - resource: roles
   - resource: additional_accounts
-  - resource: entities  
+  - resource: entities
     hasMany: true
 filters:
   - attribute: first_name

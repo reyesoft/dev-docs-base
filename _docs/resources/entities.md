@@ -28,9 +28,6 @@ attributes:
   - name: balance_at
     crud: read
     valuetype: datetimew3c
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
   - name: updated_at
     crud: read
     valuetype: datetimew3c

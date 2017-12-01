@@ -2,9 +2,9 @@
 resource: product_product
 permalink: /docs/resources/product-product/
 attributes:
-  - name: number
   - name: product_id
   - name: product_name
+    crud: read
   - name: parent_product_id
   - name: qty
   - name: conduct

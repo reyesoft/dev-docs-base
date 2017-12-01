@@ -7,20 +7,14 @@ attributes:
   - name: activated
     crud: read
   - name: activated_at
-    crud: read
     valuetype: datetimew3c
   - name: last_login
     crud: read
     valuetype: datetimew3c
-  - name: created_at
+  - name: activation_code
     crud: read
-    valuetype: datetimew3c
-  - name: updated_at
+  - name: user_id
     crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships:
   - resource: users
     hasMany: false

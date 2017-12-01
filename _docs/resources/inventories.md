@@ -4,19 +4,20 @@ permalink: /docs/resources/inventories/
 partOf: company
 attributes:
   - name: qty
-    crud: read
+    crud: 'create, read'
   - name: current_stock_qty
-    crud: read
+    crud: 'create, read'
   - name: unit_price
-    crud: read
+    crud: 'create, read'
   - name: total_price
-    crud: read
+    crud: 'create, read'
   - name: total
-    crud: read
+    crud: 'create, read'
+  - name: document_id
+    crud: create
+  - name: product_id
+    crud: create
   - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
     crud: read
     valuetype: datetimew3c
 relationships:
@@ -32,7 +33,7 @@ entry_points:
 
 #### Special entry points
 
-`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/inventories/{inventory_id}  
-`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/inventories  
+`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/inventories/{inventory_id}
+`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/inventories
 `GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/inventories
 
