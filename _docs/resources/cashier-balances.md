@@ -1,6 +1,6 @@
 ---
 resource: cashier_balances
-permalink: /docs/resources/cashier_balances/
+permalink: /docs/resources/cashier-balances/
 partOf: company
 attributes:
   - name: balance_amount

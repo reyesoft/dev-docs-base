@@ -38,10 +38,9 @@
   - resources/revenues
   - resources/roles
   - resources/availabilities
-  - resources/cash_registers
-  - resources/cashier_entries
-  - resources/cashier_balances
-  - resources/cashier_balances_details
+  - resources/cashier-entries
+  - resources/cashier-balances
+  - resources/cashier-balances-details
   - resources/pricelistsreport
   - resources/plans
   - resources/companyPayments
@@ -49,7 +48,7 @@
   - resources/params
   - resources/export
   - resources/physicalpos
-  - resources/payment_methods
+  - resources/payment-methods
   - resources/behaviors
 
 - title: Recursos No JSONAPI

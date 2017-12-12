@@ -1,6 +1,6 @@
 ---
 resource: cashier_entries
-permalink: /docs/resources/cashier_entries/
+permalink: /docs/resources/cashier-entries/
 partOf: company
 attributes:
   - name: amount
