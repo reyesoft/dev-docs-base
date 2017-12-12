@@ -2,20 +2,19 @@
 resource: futureprices
 permalink: /docs/resources/futureprices/
 attributes:
-  - name: qty
-    crud: read
   - name: replacement_cost
   - name: date_from
     valuetype: datetimew3c
   - name: date_to
     valuetype: datetimew3c
   - name: activated
-    crud: read
+  - name: company_id
   - name: fortype
     valuetype: cost(default)|promotion
   - name: stock_end
   - name: sold_units
-    crud: read
+  - name: product_id
+    crud: create
   - name: created_at
     crud: read
     valuetype: datetimew3c
@@ -28,17 +27,19 @@ attributes:
 relationships:
   - resource: products
     hasMany: true
+  - resource: pricelist_products
+    hasMany: true
 filters: null
 ---
 
-**Included**<br>
-pricelist_product resource: 1..*
+#### Special entry points
 
-**Observacion**<br>
+`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/futureprices
+
+**Observacion**
 Se elimina la relación con company ya que esta información se envía en el token.
 
-POST Request example test
-
+#### POST Request example test
 ```javascript
 {
     "data": {

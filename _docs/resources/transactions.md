@@ -3,11 +3,13 @@ resource: transactions
 permalink: /docs/resources/transactions/
 attributes:
   - name: date
+    valuetype: datetimew3c
     crud: read
   - name: due_date
     valuetype: datetimew3c
   - name: observations
   - name: amount
+    valuetype: number
   - name: entity_id
   - name: order_id
   - name: created_at
@@ -30,20 +32,24 @@ relationships:
     hasMany: true
   - resource: availabilities
     hasMany: true
+  - resource: cashier_entries
+    hasMany: false
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---
 
 **Included**
 
 - availabilities: 1../required
 
-**Entry Points**
-
+#### Entry Points
 ```
 companies/{company_id}/transactions/{transaction_id}
 companies/{company_id}/entities/{entity_id}/transactions
 ```
-
+#### Ejemplo
 ```javascript
 Example
 {

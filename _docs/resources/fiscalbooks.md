@@ -1,10 +1,10 @@
 ---
 resource: fiscalbooks
 permalink: /docs/resources/fiscalbooks/
+partOf: company
 attributes:
-  - name: email
   - name: alias
-    crud: 'read, update'
+    crud: 'create, read'
   - name: fiscalbook_type
     crud: 'create, read'
     valuetype: buys | sells
@@ -17,9 +17,9 @@ attributes:
   - name: initial_folio
     crud: 'create, read'
   - name: net
-    crud: read
+    crud: 'create, read'
   - name: total
-    crud: read
+    crud: 'create, read'
   - name: url_pdf
     crud: read
   - name: url_csv
@@ -28,28 +28,22 @@ attributes:
     crud: read
   - name: url_citi
     crud: read
-relationships:
-  - resource: users
-    hasMany: false
+relationships: null
 filters: null
+entry_points:
+  methods:
+    put: false
+    delete: false
 ---
 
-**Formato salida PDF de url_pdf**
+#### Special JSON-API entry points
+`GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/pdf
 
-```
-    *** IVA [COMPRAS|VENTAS] ***
-RAZÓN SOCIAL: XXXXXXXXX        CUIT: XX-XXXXXXXXX-X        IVA: CONDICION IVA        PERIODO XX/XX/XXXX AL XX/XX/XXXX    FOLIO: XXX
+`GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/xls
 
-FECHA | COMPROBANTE/NUMERO | [PROVEEDOR|CLIENTE] | C.U.I.T. | CondFiscal | NETO | RET | ImpInt | IVA% | IVA | Perc.IVA | Perc.IIBB | TOTAL
-```
+`GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/csv
 
-**Ejemplos**
+`GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/citi
 
-```
-http://www.estudiomonti.com.ar/galeria/0005000327996VENTAS.jpg  
-http://www.estudiomonti.com.ar/galeria/0005000227995COMPRAS.jpg  
-http://drrsystemas.no-ip.info/helpalma/images/image598.jpg
-```
-
-**Observaciones**<br>
-Se elimina la relación con company ya que esta información se envía en el token.
+Donde
+**type** `buys | sells`{: .code}

@@ -1,6 +1,7 @@
 ---
-resource: closure
-permalink: /docs/resources/closure/
+resource: closurereceipts
+permalink: /docs/resources/closurereceipts/
+partOf: company
 attributes:
   - name: receipt_volume
   - name: receipt_number
@@ -25,11 +26,10 @@ attributes:
   - name: fiscal_observation
     crud: read
 relationships:
-  - resource: quotations
-    hasMany: true
-  - resource: orders
-    hasMany: true
-  - resource: invoices
+  - resource: documents
     hasMany: true
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---

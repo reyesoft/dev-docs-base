@@ -6,8 +6,11 @@
 {% elsif page.partOf %}
 {% assign url = url %}
 {% endif %}
-<section><code class="get">GET</code>{{ url }}{{ page.resource }}</section>
 
+{% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
+  <section>{% method_tag get %}{{ url }}{{ page.resource }}</section>
+{% endif %}
+  
 <h4>Attributes</h4>
 <section>
     <dl>
@@ -16,9 +19,17 @@
             {{ attribute.name }}
         </dt>
         <dd>
-          <code>{{ attribute.crud | default: 'create,read,update' }}</code>
-            {% if attribute.valuetype %} <code>{{ attribute.valuetype }}</code> {% endif %}
-            {% if attribute.observation %} <code>{{ attribute.observation }}</code> {% endif %}
+          <div>
+            <span class="code">{{ attribute.crud | default: 'create, read, update' }}</span>
+
+            {% if attribute.valuetype %}
+              <span class="code">{{ attribute.valuetype }}</span>
+            {% endif %}
+
+            {% if attribute.observation %}
+              <span class="code" style="word-wrap: word-break">{{ attribute.observation }}</span>
+            {% endif %}
+          </div>
         </dd>
       {% endfor %}
     </dl>
@@ -35,11 +46,13 @@
             </a>
         </dt>
         <dd>
-          {% if relationship.hasMany %}
-            <code>has many</code>
-          {% else %}
-            <code>has one</code>
-          {% endif %}
+          <div>
+            {% if relationship.hasMany %}
+              <span class="code">has many</span>
+            {% else %}
+              <span class="code">has one</span>
+            {% endif %}
+          </div>
         </dd>
     {% endfor %}
   </dl>
@@ -55,30 +68,42 @@
         {{ filter.attribute }}
       </dt>
       <dd>
-        <code>{{ filter.type | default: 'equals' }}</code>
-        {% if filter.multivalue %}
-          <code>se acepta varios valores, separados por coma</code>
-        {% else %}
-          <code>no acepta varios valores</code>
-        {% endif %}
+        <div>
+          <span class="code">{{ filter.type | default: 'equals' }}</span>
+          {% if filter.multivalue %}
+            <span class="code">se acepta varios valores, separados por coma</span>
+          {% else %}
+            <span class="code">no acepta varios valores</span>
+          {% endif %}
+        </div>
       </dd>
     {% endfor %}
   </dl>
 </section>
 {% endif %}
 
-<h4>Entry points</h4>
+{% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
+<h4>JSON-API Entry points</h4>
 <section>
   <p>
-    <code class="get">GET</code>
-    <code class="put">PUT</code>
+    {% if (page.entry_points.methods.delete == null) or page.entry_points.methods.delete %}
+      {% method_tag delete %}
+    {% endif %}
+    {% if (page.entry_points.methods.put == null) or page.entry_points.methods.put %}
+      {% method_tag put %}
+    {% endif %}
+
+    {% method_tag get %}
     {{ url }}{{ page.resource }}/&#123{{ page.resource }}_id&#125
   </p>
   {% if page.entry_points.name %}
-    <p><code class="get">GET</code>{{ url }}{{ page.entry_points.name }}/&#123{{ page.entry_points.name }}_id&#125/{{ page.resource }}</p>
+    <p>{% method_tag get %}{{ url }}{{ page.entry_points.name }}/&#123{{ page.entry_points.name }}_id&#125/{{ page.resource }}</p>
   {% endif %}
   <p>
-    <code class="post">POST</code>
-    {{ url }}{{ page.resource }}/
+    {% if (page.entry_points.methods.post == null) or page.entry_points.methods.post %}
+      <span class="post">POST</span>
+      {{ url }}{{ page.resource }}/
+    {% endif %}
   </p>
 </section>
+  {% endif %}

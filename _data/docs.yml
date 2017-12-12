@@ -19,10 +19,11 @@
   - resources/gondolaprices
   - resources/inventories
   - resources/futureprices
+  - resources/documents
   - resources/quotations
   - resources/orders
   - resources/invoices
-  - resources/closure
+  - resources/closurereceipts
   - resources/details
   - resources/multiple-documents
   - resources/transactions
@@ -37,13 +38,18 @@
   - resources/revenues
   - resources/roles
   - resources/availabilities
-  - resources/cash_registers
+  - resources/cashier-entries
+  - resources/cashier-balances
+  - resources/cashier-balances-details
   - resources/pricelistsreport
   - resources/plans
   - resources/companyPayments
   - resources/imports
   - resources/params
   - resources/export
+  - resources/physicalpos
+  - resources/payment-methods
+  - resources/behaviors
 
 - title: Recursos No JSONAPI
   docs:
@@ -54,15 +60,6 @@
 - title: Hardware
   docs:
   - hardware/lector-de-códigos-de-barra
-
-- title: Otros recursos
-  docs:
-  - otros-recursos/templates-para-compañias
-  - otros-recursos/url-especiales-frontend
-  - otros-recursos/token
-  - otros-recursos/valuacion-mercaderia
-  - otros-recursos/json-api-error-response
-  - otros-recursos/mercadopago
 
 - title: Test E2E
   docs:

@@ -4,11 +4,10 @@ permalink: /docs/resources/imports/
 partOf: company
 attributes:
   - name: resource
-    valuetype: string
   - name: has_header
     valuetype: boolean
   - name: headers
-    valuetype: string
+    valuetype: Array<string>
   - name: records
     valuetype: json
   - name: status
@@ -16,22 +15,23 @@ attributes:
   - name: observation
     crud: read
 relationships: null
+entry_points:
+  methods:
+    post: false
+    delete: false
 filters: null
 ---
 
-**Point of access**<br>
-index: GET [...]/v1/company/{company_id}/imports<br>
-show: GET [...]/v1/company/{company_id}/imports/1<br>
-store: POST [...]/v1/company/{company_id}/imports<br>
-update: PUT/PATCH [...]/v1/company/{company_id}/imports/1
+### A tener en cuenta  
+Actualmente los archivos soportados para importar son en formato **.XLS** y **.CSV**.  
+Este recurso solo soporta POST por fuera de JSON-API
 
-**A tener en cuenta**<br>
-POR [POST] solo se guarda:<br>
-(string)resource: example (products, entities)<br>
-(binario)file: example (#~½###@#~~½½~##@@) signos raros¿? ja
-
-POR [PUT/PATCH] (string) headers: example (name,description,,,,replacemente_cost,etc)<br>
-(string) has_header: example (1/0) (si el excel o csv tiene encabezado)
-
-**Observation**<br>
-Por saiyajin se puede hacer un test completo de la funcionalidad, recordar de activar el worker
+#### Entry points externos a JSON-API  
+```
+POST: http://api.multinexo.com/v1/companies/{companyId}/imports
+```
+#### Datos obligatorios para POST
+```
+resource: string;
+(binary) file;
+```

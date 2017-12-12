@@ -10,4 +10,7 @@ attributes:
     crud: read
 relationships: null
 filters: null
+entry_points:
+  methods:
+    delete: false
 ---
