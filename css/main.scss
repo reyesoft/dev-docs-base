@@ -70,6 +70,10 @@ p {
   margin: 20px 0;
 }
 
+img {
+  max-width: 100%
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -108,6 +112,10 @@ table tbody tr:hover td code {
 
 table tr td, table tr th {
   padding: 0 16px;
+}
+
+table tr td img {
+  margin: 16px;
 }
 
 .code {
@@ -402,6 +410,11 @@ div a.mdl-button {
 .layout-align-space-around, .layout-align-space-around-center, .layout-align-space-around-end, .layout-align-space-around-start, .layout-align-space-around-stretch {
   -webkit-justify-content: space-around;
   justify-content: space-around;
+}
+
+.layout-align-space-between, .layout-align-space-between-center, .layout-align-space-between-end, .layout-align-space-between-start, .layout-align-space-between-stretch {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
 .layout-align-center, .layout-align-center-start, .layout-align-center-center, .layout-align-center-end, .layout-align-center-stretch {
