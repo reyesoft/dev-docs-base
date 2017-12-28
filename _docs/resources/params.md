@@ -1,6 +1,7 @@
 ---
 resource: params
 permalink: /docs/resources/params/
+section: Recursos
 attributes:
   - name: primary_color
   - name: accent_color

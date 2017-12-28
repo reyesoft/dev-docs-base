@@ -1,6 +1,7 @@
 ---
 resource: product_product
 permalink: /docs/resources/product-product/
+section: Recursos
 attributes:
   - name: product_id
   - name: product_name

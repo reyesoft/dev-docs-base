@@ -1,6 +1,7 @@
 ---
 resource: entities
 permalink: /docs/resources/entities/
+section: Recursos
 partOf: company
 attributes:
   - name: name

@@ -1,6 +1,7 @@
 ---
 resource: me
 permalink: /docs/resources/me/
+section: Recursos
 partOf: user
 attributes:
   - name: name

@@ -1,6 +1,7 @@
 ---
 resource: multiple_documents
 permalink: /docs/resources/multiple-documents/
+section: Recursos
 attributes:
   - name: action
     valuetype: pdf | confirm

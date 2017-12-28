@@ -1,6 +1,7 @@
 ---
 resource: categories
 permalink: /docs/resources/categories/
+section: Recursos
 attributes:
   - name: name
   - name: deleted_at

@@ -1,6 +1,7 @@
 ---
 resource: fiscalbooks
 permalink: /docs/resources/fiscalbooks/
+section: Recursos
 partOf: company
 attributes:
   - name: alias

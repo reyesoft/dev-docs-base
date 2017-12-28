@@ -1,6 +1,7 @@
 ---
 resource: pricelistsreport
 permalink: /docs/resources/pricelistsreport/
+section: Recursos
 attributes:
   - name: name
   - name: created_at

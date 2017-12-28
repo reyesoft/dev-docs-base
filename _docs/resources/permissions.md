@@ -1,6 +1,7 @@
 ---
 resource: permissions
 permalink: /docs/resources/permissions/
+section: Recursos
 attributes:
   - name: name
   - name: description

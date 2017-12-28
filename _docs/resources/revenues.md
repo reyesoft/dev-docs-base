@@ -1,6 +1,7 @@
 ---
 resource: revenues
 permalink: /docs/resources/revenues/
+section: Recursos
 attributes:
   - name: cost
     crud: read

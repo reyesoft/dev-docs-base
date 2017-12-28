@@ -1,6 +1,7 @@
 ---
 resource: documents
 permalink: /docs/resources/documents/
+section: Recursos
 attributes:
   - name: section
     crud: create, read

@@ -1,6 +1,7 @@
 ---
 resource: responsibilities
 permalink: /docs/resources/responsibilities/
+section: Recursos
 attributes:
   - name: key
     crud: read

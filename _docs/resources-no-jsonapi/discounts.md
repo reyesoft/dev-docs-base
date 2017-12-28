@@ -1,6 +1,7 @@
 ---
 resource: discounts
 permalink: /docs/resources-no-jsonapi/discounts/
+section: Recursos-no-jsonapi
 attributes:
   - name: months
     crud: read

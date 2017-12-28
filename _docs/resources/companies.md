@@ -1,6 +1,7 @@
 ---
 resource: companies
 permalink: /docs/resources/companies/
+section: Recursos
 attributes:
   - name: name
   - name: legal_name

@@ -1,6 +1,7 @@
 ---
 resource: preferences
 permalink: /docs/resources/preferences/
+section: Recursos
 attributes:
   - name: key
     crud: read

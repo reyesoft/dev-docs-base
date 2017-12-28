@@ -1,6 +1,7 @@
 ---
 resource: taxes
 permalink: /docs/resources/taxes/
+section: Recursos
 attributes:
   - name: email
     crud: read

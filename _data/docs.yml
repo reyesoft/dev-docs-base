@@ -1,67 +1,7 @@
-- title: Autenticación
-  docs:
-  - autentication
-
-- title: Recursos
-  docs:
-  - resources/me
-  - resources/users
-  - resources/additional-accounts
-  - resources/entities
-  - resources/fiscalpos
-  - resources/fiscalbooks
-  - resources/products
-  - resources/product-product
-  - resources/categories
-  - resources/pricelist
-  - resources/pricelist-products
-  - resources/pricelist-categories
-  - resources/gondolaprices
-  - resources/inventories
-  - resources/futureprices
-  - resources/documents
-  - resources/quotations
-  - resources/orders
-  - resources/invoices
-  - resources/closurereceipts
-  - resources/details
-  - resources/multiple-documents
-  - resources/transactions
-  - resources/permissions
-  - resources/taxes
-  - resources/identifications
-  - resources/currencies
-  - resources/preferences
-  - resources/companies
-  - resources/responsibilities
-  - resources/photos
-  - resources/revenues
-  - resources/roles
-  - resources/availabilities
-  - resources/cashier-entries
-  - resources/cashier-balances
-  - resources/cashier-balances-details
-  - resources/pricelistsreport
-  - resources/plans
-  - resources/companyPayments
-  - resources/imports
-  - resources/params
-  - resources/export
-  - resources/physicalpos
-  - resources/payment-methods
-  - resources/behaviors
-
-- title: Recursos No JSONAPI
-  docs:
-  - resources-no-jsonapi/pagos
-  - resources-no-jsonapi/contacts
-  - resources-no-jsonapi/discounts
-
-- title: Hardware
-  docs:
-  - hardware/lector-de-códigos-de-barra
-
-- title: Test E2E
-  docs:
-  - test-e2e/test-e2e
-  - test-e2e/calculo-precio-porcentaje
+- title: docs
+  sections:
+  - Autenticación
+  - Hardware
+  - Recursos
+  - Recursos-no-jsonapi
+  - Test-E2E

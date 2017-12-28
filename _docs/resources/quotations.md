@@ -1,6 +1,7 @@
 ---
 resource: quotations
 permalink: /docs/resources/quotations/
+section: Recursos
 partOf: company
 attributes:
   - name: section

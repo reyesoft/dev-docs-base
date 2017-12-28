@@ -1,6 +1,7 @@
 ---
 resource: transactions
 permalink: /docs/resources/transactions/
+section: Recursos
 attributes:
   - name: date
     valuetype: datetimew3c

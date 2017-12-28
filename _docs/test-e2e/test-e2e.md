@@ -1,6 +1,7 @@
 ---
 title: Test e2e
 permalink: /docs/test-e2e/test-e2e/
+section: Test-E2E
 ---
 
 Creo user1<br>

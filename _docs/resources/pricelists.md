@@ -1,6 +1,7 @@
 ---
 resource: pricelist
 permalink: /docs/resources/pricelist/
+section: Recursos
 attributes:
   - name: name
   - name: company_id

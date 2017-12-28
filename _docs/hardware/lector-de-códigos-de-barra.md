@@ -1,6 +1,7 @@
 ---
 title: Lector de códigos de barra
 permalink: /docs/hardware/lector-de-códigos-de-barra/
+section: Hardware
 ---
 
 **Ds7708 (fijo)**<br>

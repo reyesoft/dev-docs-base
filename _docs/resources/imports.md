@@ -1,6 +1,7 @@
 ---
 resource: imports
 permalink: /docs/resources/imports/
+section: Recursos
 partOf: company
 attributes:
   - name: resource

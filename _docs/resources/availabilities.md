@@ -1,6 +1,7 @@
 ---
 resource: availabilities
 permalink: /docs/resources/availabilities/
+section: Recursos
 attributes:
   - name: amount
   - name: avalabilities_type

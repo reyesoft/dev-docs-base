@@ -1,6 +1,7 @@
 ---
 title: Autenticación
 permalink: /docs/autentication/
+section: Autenticación
 ---
 Multinexo utiliza JWT (Javascript Web Token) para identificar y autorizar a los usuarios cuando utilizan los servicios ofrecidos por la
 API. Cada vez que tu aplicación haga una petición a una ruta o servicio deberá presentarse con un Token.

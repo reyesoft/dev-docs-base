@@ -1,6 +1,7 @@
 ---
 resource: companyPayments
 permalink: /docs/resources/companyPayments/
+section: Recursos
 attributes:
   - name: amount
     crud: read

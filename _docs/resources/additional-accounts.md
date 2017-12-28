@@ -1,6 +1,7 @@
 ---
 resource: additional_accounts
 permalink: /docs/resources/additional-accounts/
+section: Recursos
 partOf: user
 attributes:
   - name: email
