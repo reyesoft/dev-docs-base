@@ -12,15 +12,6 @@ attributes:
     crud: read
   - name: quotation_usd
     crud: read
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships: null
 filters: null
 entry_points:

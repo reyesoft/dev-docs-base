@@ -9,16 +9,15 @@ attributes:
   - name: price
   - name: use_net_for_calculation
   - name: commission
+    crud: read
   - name: product_name
-  - name: created_at
     crud: read
-    valuetype: datetimew3c
-  - name: updated_at
+  - name: subdist_price
     crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
+  - name: document_id
     crud: read
-    valuetype: datetimew3c
+  - name: sort
+    crud: read
 relationships:
   - resource: products
     hasMany: false
@@ -36,11 +35,11 @@ entry_points:
 #### Special entry points from quotations
 
 `DELETE`{: .delete} `PUT`{: .put} `GET`{: .get} [...]/v1/companies/{company_id}/quotations/{document_id}/details/{detail_id}  
-`POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/quotations/{document_id}/details/  
+`POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/quotations/{document_id}/details/
 #### Special entry points from orders
 
 `DELETE`{: .delete} `PUT`{: .put} `GET`{: .get} [...]/v1/companies/{company_id}/orders/{document_id}/details/{detail_id}  
-`POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/orders/{document_id}/details/  
+`POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/orders/{document_id}/details/
 #### Special entry points from invoices
 
 `DELETE`{: .delete} `PUT`{: .put} `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{document_id}/details/{detail_id}  

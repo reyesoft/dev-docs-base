@@ -1,17 +1,28 @@
 ---
 resource: preferences
 permalink: /docs/resources/preferences/
+partOf: user
 attributes:
   - name: key
     crud: read
   - name: value
 relationships: null
 filters: null
+entry_points:
+  name: me
+  methods:
+    delete: false
+    post: false
+    put: false
+    get: false
 ---
 
-**API point of access get**<br>
-PreferenceUser: [...]/v1/users/me/preferences<br>
-getPreferenceCompanyShow: [...]/v1/users/me/preferences/{key}<br>
-putPreferenceUser: [...]/v1/users/me/preferences/{key}_**_
+#### Special entry points
+
+`GET`{: .get} [...]v1/users/me/preferences
+
+`GET`{: .get} [...]v1/users/me/preferences/{key}
+
+`PUT`{: .put} [...]v1/users/me/preferences/{key}
 
 --------------------------------------------------------------------------------

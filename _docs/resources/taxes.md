@@ -2,6 +2,8 @@
 resource: taxes
 permalink: /docs/resources/taxes/
 attributes:
+  - name: name
+    crud: read
   - name: email
     crud: read
   - name: code_afip
@@ -13,4 +15,6 @@ filters: null
 entry_points:
   methods:
     delete: false
+    post: false
+    put: false
 ---

@@ -1,22 +1,24 @@
 ---
 resource: permissions
 permalink: /docs/resources/permissions/
+partOf: company
 attributes:
   - name: name
+    crud: read
   - name: description
-  - name: created_at
     crud: read
-    valuetype: datetimew3c
-  - name: updated_at
+  - name: slug
     crud: read
-    valuetype: datetimew3c
 relationships:
   - resource: roles
-    hasMany: true
-  - resource: permissions
     hasMany: true
 filters: null
 entry_points:
   methods:
     delete: false
+    put: false
+    post: false
 ---
+
+#### Special entry points
+`GET`{: .get} companies/{company_id}/users/me/permissions
