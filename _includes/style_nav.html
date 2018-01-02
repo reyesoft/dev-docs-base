@@ -1,12 +1,8 @@
 <div class="mdl-layout__drawer">
-  {% for section in site.data.styleguide %}
-  <span class="mdl-layout-title">{{ section.title }}</span>
+  <span class="mdl-layout-title">Guía de estilo</span>
   <nav class="mdl-navigation">
-    {% for item in section.docs %}
-      {% assign item_url = item | prepend: "/styleguide/" %}
-      {% assign p = site.styleguide | where: "url", item_url | first %}
-      <a class="mdl-navigation__link" href="{{p.url}}.html">{{ p.title }}</a>
+    {% for section in site.styleguide %}
+      <a class="mdl-navigation__link" href="{{ section.url | prepend: site.baseurl }}">{{ section.title }}</a>
     {% endfor %}
   </nav>
-  {% endfor %}
 </div>

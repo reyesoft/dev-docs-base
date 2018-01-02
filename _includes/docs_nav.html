@@ -1,12 +1,15 @@
+<span>{{ site.data.docs.sections }}</span>
 <div class="mdl-layout__drawer">
-  {% for section in site.data.docs %}
-  <span class="mdl-layout-title">{{ section.title }}</span>
-  <nav class="mdl-navigation">
-    {% for item in section.docs %}
-        {% assign item_url = item | prepend:"/docs/" | append:"/" %}
-        {% assign p = site.docs | where:"url", item_url | first %}
-        <a class="mdl-navigation__link" href="{{ p.url  | prepend: site.baseurl }}">{{ p.title }}</a>
+  {% for area in site.data.docs %}
+    {% for section in area.sections %}
+      <span class="mdl-layout-title">{{ section }}</span>
+      <nav class="mdl-navigation">
+        {% for item in site.docs %}
+          {% if item.section == section %}
+            <a class="mdl-navigation__link" href="{{ item.permalink  | prepend: site.baseurl }}">{{ item.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
     {% endfor %}
-  </nav>
   {% endfor %}
 </div>

@@ -1,6 +1,7 @@
 ---
 title: Cálculo precios en base al procentaje
 permalink: /docs/test-e2e/calculo-precio-porcentaje/
+section: Test-E2E
 ---
 
 **Tax**

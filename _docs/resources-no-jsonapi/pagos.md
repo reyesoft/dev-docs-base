@@ -1,6 +1,7 @@
 ---
 title: Pagos
 permalink: /docs/resources-no-jsonapi/pagos/
+section: Recursos-no-jsonapi
 ---
 
 **Proceso**<br>

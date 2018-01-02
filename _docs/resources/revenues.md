@@ -1,6 +1,7 @@
 ---
 resource: revenues
 permalink: /docs/resources/revenues/
+section: Recursos
 partOf: company
 attributes:
   - name: cost

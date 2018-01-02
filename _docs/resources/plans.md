@@ -1,6 +1,7 @@
 ---
 resource: plans
 permalink: /docs/resources/plans/
+section: Recursos
 attributes:
   - name: name
     crud: read

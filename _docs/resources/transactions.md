@@ -1,6 +1,7 @@
 ---
 resource: transactions
 permalink: /docs/resources/transactions/
+section: Recursos
 partOf: company
 attributes:
   - name: date

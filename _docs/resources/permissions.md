@@ -1,6 +1,7 @@
 ---
 resource: permissions
 permalink: /docs/resources/permissions/
+section: Recursos
 partOf: company
 attributes:
   - name: name

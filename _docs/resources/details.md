@@ -1,6 +1,7 @@
 ---
 resource: details
 permalink: /docs/resources/details/
+section: Recursos
 partOf: company
 attributes:
   - name: qty

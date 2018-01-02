@@ -1,6 +1,7 @@
 ---
 resource: invoices
 permalink: /docs/resources/invoices/
+section: Recursos
 partOf: company
 attributes:
   - name: section

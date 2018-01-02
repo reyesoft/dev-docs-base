@@ -1,6 +1,7 @@
 ---
 resource: orders
 permalink: /docs/resources/orders/
+section: Recursos
 partOf: company
 attributes:
   - name: author_id

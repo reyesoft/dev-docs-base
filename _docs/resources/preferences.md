@@ -1,6 +1,7 @@
 ---
 resource: preferences
 permalink: /docs/resources/preferences/
+section: Recursos
 partOf: user
 attributes:
   - name: key

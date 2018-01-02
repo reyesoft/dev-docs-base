@@ -1,6 +1,7 @@
 ---
 resource: pricelist_categories
 permalink: /docs/resources/pricelist-categories/
+section: Recursos
 partOf: company
 attributes:
   - name: price

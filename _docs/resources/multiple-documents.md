@@ -1,6 +1,7 @@
 ---
 resource: multiple_documents
 permalink: /docs/resources/multiple-documents/
+section: Recursos
 partOf: company
 attributes:
   - name: action

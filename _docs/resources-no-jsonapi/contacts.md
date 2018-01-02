@@ -1,6 +1,7 @@
 ---
 title: Contacts
 permalink: /docs/resources-no-jsonapi/contacts/
+section: Recursos-no-jsonapi
 ---
 
 Envía un mail a soporte@multinexo.com

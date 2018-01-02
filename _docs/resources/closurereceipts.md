@@ -1,6 +1,7 @@
 ---
 resource: closurereceipts
 permalink: /docs/resources/closurereceipts/
+section: Recursos
 partOf: company
 attributes:
   - name: receipt_volume

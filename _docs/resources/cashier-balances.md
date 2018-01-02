@@ -1,6 +1,7 @@
 ---
 resource: cashier_balances
 permalink: /docs/resources/cashier-balances/
+section: Recursos
 partOf: company
 attributes:
   - name: balance_amount

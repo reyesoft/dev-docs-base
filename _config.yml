@@ -41,9 +41,8 @@ defaults:
     type: docs
   values:
     layout: docs
+    permalink: /:collection/:path/
     sectionid: docs
-    seo:
-      type: "WebPage"
 
 - scope:
     path: _styleguide
@@ -56,7 +55,7 @@ defaults:
 
 collections:
   docs:
-    permalink: /:collection/:path/
+  #   permalink: /:collection/:path/
     output: true
 
   styleguide:

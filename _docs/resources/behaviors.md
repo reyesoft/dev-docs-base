@@ -1,6 +1,7 @@
 ---
 resource: behaviors
 permalink: /docs/resources/behaviors/
+section: Recursos
 attributes:
   - name: id
     crud: read

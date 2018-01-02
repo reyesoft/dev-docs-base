@@ -1,6 +1,7 @@
 ---
 resource: params
 permalink: /docs/resources/params/
+section: Recursos
 partOf: company
 attributes:
   - name: company_id

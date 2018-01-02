@@ -1,6 +1,7 @@
 ---
 resource: fiscalpos
 permalink: /docs/resources/fiscalpos/
+section: Recursos
 partOf: company
 attributes:
   - name: number

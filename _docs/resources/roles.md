@@ -1,6 +1,7 @@
 ---
 resource: roles
 permalink: /docs/resources/roles/
+section: Recursos
 partOf: company
 attributes:
   - name: name

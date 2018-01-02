@@ -1,6 +1,7 @@
 ---
 resource: currencies
 permalink: /docs/resources/currencies/
+section: Recursos
 attributes:
   - name: name
     crud: read

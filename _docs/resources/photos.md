@@ -1,6 +1,7 @@
 ---
 resource: photos
 permalink: /docs/resources/photos/
+section: Recursos
 partOf: company
 attributes:
   - name: extension
