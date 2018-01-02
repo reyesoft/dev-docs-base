@@ -10,7 +10,8 @@
 {% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
   <section>{% method_tag get %}{{ url }}{{ page.resource }}</section>
 {% endif %}
-  
+
+{% if (page.attributes) %}
 <h4>Attributes</h4>
 <section>
     <dl>
@@ -34,6 +35,7 @@
       {% endfor %}
     </dl>
 </section>
+{% endif %}
 
 {% if page.relationships %}
 <h4>Relationships</h4>

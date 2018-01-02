@@ -2,7 +2,12 @@
 resource: params
 permalink: /docs/resources/params/
 section: Recursos
+partOf: company
 attributes:
+  - name: company_id
+    crud: red
+  - name: value
+    crud: read
   - name: primary_color
   - name: accent_color
   - name: subdist
@@ -25,4 +30,11 @@ attributes:
     aluetype: true | false
 relationships: null
 filters: null
+entry_points:
+  methods:
+    post: false
 ---
+
+Donde **params_id** es un atributo de los descritos anteriormente, exceptuando `company_id`{: .code} y `value`{: .code}.  
+Por ejemplo:  `PUT`{: .put} [...]v1/company/{company_id}/params/**primary_color**  
+En el ejemplo anterior podemos observar que usamos el atributo `primary_color`{: .code} como key.

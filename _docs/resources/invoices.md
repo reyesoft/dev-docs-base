@@ -14,30 +14,25 @@ attributes:
     valuetype: invoice | debit | credit
   - name: receipt_volume
   - name: receipt_number
+  - name: total_commission
   - name: net
-    crud: read
   - name: total
-    crud: read
   - name: draft
   - name: status
     valuetype: draft | queued | falied | confirmed
   - name: show_amounts
     valuetype: true/false
   - name: cae READ
-    crud: read
   - name: cae_expiration_date
-    crud: read
   - name: observation
-    crud: read
   - name: pdf_url
     crud: read
-  - name: 'canceled [true/false] READ'
-    crud: read
+  - name: canceled
+    valuetype: true | false
   - name: fiscal_blocked
   - name: fiscal_observation
   - name: generate_order WRITE
   - name: emission_date
-    crud: read
     valuetype: datetimew3c
   - name: created_at
     crud: read
@@ -55,6 +50,10 @@ relationships:
     hasMany: true
   - resource: orders
     hasMany: true
+  - resource: currencies
+    hasMany: false
+  - resource: receipts
+    hasMany: false
   - resource: fiscalpos
     hasMany: true
 filters:
@@ -97,19 +96,4 @@ entry_points:
 
 `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{invoice_id}/getCae
 
-**Para impresora fiscal/factura electrónica**  
-En caso de fallar la impresión, setear
-
-- fiscal_blocked = 1
-- fiscal_observation = (razón del bloqueo)
-
-**El daemon obtiene los documentos que:**
-
-- draft=0
-- fiscal_blocked=0
-- fiscalpos=(número del fiscalpos en el daemon)
-
-**Al momento de confirmar invoice**
-
-- Crear remito si es necesario
-- blocked=0
+`GET`{: .get} [...]/v1/companies/{company_id}/invoices/{invoices_id}/pdf

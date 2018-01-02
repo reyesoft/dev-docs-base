@@ -2,6 +2,7 @@
 resource: revenues
 permalink: /docs/resources/revenues/
 section: Recursos
+partOf: company
 attributes:
   - name: cost
     crud: read
@@ -25,7 +26,12 @@ filters:
     type: date
     values: 2015-09-15T08:19:32.808Z
     multivalue: false
+entry_points:
+  methods:
+    delete: false
+    post: false
+    put: false
+    get: false
 ---
 
-**Punto de acceso**<br>
-companies/{company_id}/revenues
+`GET`{: .get} http://api.multinexo.com/v1/company/{company_id}/revenues
