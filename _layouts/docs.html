@@ -10,7 +10,7 @@ layout: default
                   {% include resourceinfo.html %}
                 {% else %}
                   {% if page.title == 'Guía de estilos' %}
-                  <img src="../img/styleguide/multinexo.jpg" class="img-responsive">
+                  <img src="{{ '/img/styleguide/multinexo.jpg' | prepend: site.baseurl }}" class="img-responsive">
                   {% endif %}
                   <h1>{{ page.title }}</h1>
                 {% endif %}

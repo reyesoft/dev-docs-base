@@ -8,10 +8,7 @@ attributes:
     crud: read
     valuetype: number
   - name: report_type
-    valuetype: draft|final
-  - name: date
-    crud: read
-    valuetype: datetimew3c
+    valuetype: draft|confirmed
   - name: from
     crud: read
     valuetype: datetimew3c
@@ -21,12 +18,6 @@ attributes:
   - name: pdf_url
     crud: read
   - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
     crud: read
     valuetype: datetimew3c
 relationships:

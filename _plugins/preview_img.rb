@@ -15,8 +15,8 @@ module Jekyll
                 <i class=\"material-icons\">file_download</i>
             </div>
             <div style=\"padding: 16px; height: 210px\" class=\"layout-row layout-align-center-center\">
-                <a href=\"#{@url_img}\" download=\"#{@url_img}\">
-                    <img src=\"#{@url_img}\" />
+                <a href=\"{{ #{@url_img} | prepend: site.baseurl }}\" download=\"{{ #{@url_img} | prepend: site.baseurl }}\">
+                    <img src=\"{{ #{@url_img} | prepend: site.baseurl }}\" />
                 </a>
             </div>
         </div>"

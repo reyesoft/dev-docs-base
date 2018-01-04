@@ -59,7 +59,7 @@ collections:
     output: true
 
   styleguide:
-    permalink: /styleguide/:title
+    permalink: /styleguide/:title/
     output: true
 
 sass:
