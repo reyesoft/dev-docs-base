@@ -16,7 +16,7 @@ attributes:
   - name: observation
   - name: has_account
   - name: entity_type
-    valuetype: client | supplier | employee | creditor | subdist | seller
+    valuetype: client | supplier | employee | creditor | subdist | prevent
   - name: balance
     crud: read
   - name: pdf_url

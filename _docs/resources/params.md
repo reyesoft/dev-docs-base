@@ -6,7 +6,7 @@ attributes:
   - name: accent_color
   - name: subdist
     valuetype: true | false
-  - name: seller
+  - name: prevent
     valuetype: true | false
   - name: changeProductName
     valuetype: all | none | onlyservice
