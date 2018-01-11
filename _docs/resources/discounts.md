@@ -1,7 +1,7 @@
 ---
 resource: discounts
-permalink: /docs/resources-no-jsonapi/discounts/
-section: Recursos-no-jsonapi
+permalink: /docs/resources/discounts/
+section: Recursos
 attributes:
   - name: months
     crud: read
