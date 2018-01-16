@@ -1,21 +1,20 @@
 ---
 resource: pricelistsreport
 permalink: /docs/resources/pricelistsreport/
+section: Recursos
+partOf: company
 attributes:
   - name: name
-  - name: created_at
     crud: read
-    valuetype: datetimew3c
-  - name: updated_at
+  - name: pdf_url
     crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships:
   - resource: entities
     hasMany: true
   - resource: pricelist
     hasMany: true
 filters: null
+entry_points:
+  methods:
+    put: false
 ---

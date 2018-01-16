@@ -1,6 +1,8 @@
 ---
 resource: multiple_documents
 permalink: /docs/resources/multiple-documents/
+section: Recursos
+partOf: company
 attributes:
   - name: action
     valuetype: pdf | confirm
@@ -17,4 +19,11 @@ filters: null
 entry_points:
   methods:
     delete: false
+    get: false
+    post: false
+    put: false
 ---
+
+#### JSON-API Entry points
+
+`POST`{: .post} [...]v1/company/{company_id}/multiple_documents/

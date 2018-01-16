@@ -1,6 +1,7 @@
 ---
 resource: products
 permalink: /docs/resources/products/
+section: Recursos
 partOf: company
 attributes:
   - name: name
@@ -8,17 +9,28 @@ attributes:
   - name: sku
   - name: internal_code
   - name: supplier_code
-  - name: parent_id
   - name: conduct
-    crud: 'create,read,update'
     valuetype: common | compound | variant_common | variant_parent
   - name: product_type
   - name: duration
   - name: stock_type
     valuetype: disabled | negative | positive
   - name: replacement_cost
+  - name: author_id
+  - name: company_id
+  - name: category_id
+  - name: currency_id
+  - name: price
+    crud: read
+  - name: price_with_tax
+    crud: read
+  - name: price_subdist
+    crud: read
+  - name: price_prevent
+    crud: read
   - name: cost_with_tax
     observation: Only saves cost calculated based on cost with tax
+  - name: measure_id
   - name: stock
   - name: stock_alert
   - name: stock_desired
@@ -38,26 +50,17 @@ attributes:
     valuetype: int
   - name: allow_fractions
     valuetype: boolean
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships:
   - resource: pricelist_products
     hasMany: true
-  - resource: parent_products
+  - resource: parentproducts
     hasMany: false
   - resource: products
     hasMany: false
-  - resource: suppliers
+  - resource: entities
+    alias: suppliers
     hasMany: true
   - resource: categories
-    alias: categories
     hasMany: false
   - resource: taxes
     hasMany: false
@@ -104,7 +107,7 @@ entry_points:
 ---
 
 #### Special relationships
-Si es un producto en particular, entonces.  
+Si es un producto en particular, entonces.
 [pricelist_products](pricelist-products) `hasMany`{: .code}
 
 [futureprices](futureprices) `hasMany`{: .code}

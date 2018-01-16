@@ -1,6 +1,7 @@
 ---
 resource: users
 permalink: /docs/resources/users/
+section: Recursos
 partOf: company
 attributes:
   - name: email

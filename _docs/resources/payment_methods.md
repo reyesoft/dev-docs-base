@@ -1,6 +1,7 @@
 ---
 resource: payment_methods
 permalink: /docs/resources/paymentmethods/
+section: Recursos
 attributes:
   - name: name
   - name: created_at

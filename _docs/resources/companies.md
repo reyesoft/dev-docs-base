@@ -1,6 +1,8 @@
 ---
 resource: companies
 permalink: /docs/resources/companies/
+section: Recursos
+partOf: user
 attributes:
   - name: name
   - name: legal_name
@@ -13,13 +15,13 @@ attributes:
   - name: street_name
   - name: street_number
   - name: phone
+  - name: fiscal_ws
+    crud: 'create, update'
   - name: fiscal_ws_status
     crud: read
     valuetype: wait | ok
   - name: remaining_documents
-    crud: read
   - name: status
-    crud: read
     valuetype: activated | suspended | redeem
   - name: activities_start_date
   - name: seat_tim
@@ -27,34 +29,35 @@ attributes:
   - name: department
   - name: province
   - name: started_at
-    crud: read
     valuetype: datetimew3c
   - name: expire_at
-    crud: read
     valuetype: datetimew3c
   - name: check_at
-    crud: read
+    crud: create
     valuetype: datetimew3c
   - name: created_at
     crud: read
     valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships:
   - resource: responsibilities
-    hasMany: true
   - resource: users
-    hasMany: true
   - resource: fiscalpos
     hasMany: true
   - resource: plans
+  - resource: company_payments
     hasMany: true
 filters: null
 ---
+
+#### Special entry points
+
+`POST`{: .post} [...]v1/users/{user_id}/companies/{company_id}/logo  
+`POST`{: .post} [...]v1/users/{user_id}/companies/{company_id}/upload/crt  
+`DELETE`{: .delete} `POST`{: .post} [...]v1/users/{user_id}/companies/{company_id}/logo/{nameImage}  
+`GET`{: .get} [...]v1/users/{user_id}/companies/{company_id}/restore  
+`GET`{: .get} [...]v1/users/{user_id}/companies/{company_id}/download/csr  
+`GET`{: .get} [...]v1/users/{user_id}/companies/{company_id}/checkWsAfipStatus  
+`GET`{: .get} [...]v1/users/{user_id}/companies/{company_id}/establishDefaultAfipWs  
 
 ```javascript
 "data": {

@@ -1,6 +1,7 @@
 ---
 resource: identifications
 permalink: /docs/resources/identifications/
+section: Recursos
 attributes:
   - name: name
     crud: read
@@ -11,4 +12,6 @@ filters: null
 entry_points:
   methods:
     delete: false
+    post: false
+    put: false
 ---

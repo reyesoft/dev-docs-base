@@ -1,6 +1,7 @@
 ---
 resource: gondolaprices
 permalink: /docs/resources/gondolaprices/
+section: Recursos
 partOf: company
 attributes:
   - name: entity_id

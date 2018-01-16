@@ -1,6 +1,7 @@
 ---
 resource: products
 permalink: /docs/resources/products/
+section: Recursos
 partOf: company|user|''
 attributes:
   - name: sku

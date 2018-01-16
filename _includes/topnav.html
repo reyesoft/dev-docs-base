@@ -4,6 +4,7 @@
             <a href="/"><img src="{{ site.url }}/img/multinexo_logotype_colored.svg" alt=""></a>
         </div>
         <nav class="mdl-navigation mdl-layout--large-screen-only links">
+          <a href="/">Home</a>
           <a href="{{ "/docs/resources/products/" | prepend: site.baseurl }}">API</a>
           <a href="{{ "/styleguide/intro" | prepend: site.baseurl }}">Guía de estilo</a>
           <!--  descomentar cuando esté listo el blog -->
@@ -28,6 +29,7 @@
 </header>
 <div class="mdl-layout__drawer mobile_drawer">
   <nav class="mdl-navigation">
+    <a class="mdl-navigation__link" href="{{ site.baseurl }}">Home</a>
     <a class="mdl-navigation__link" href="{{ "/docs/resources/products/" | prepend: site.baseurl }}">API</a>
     <a class="mdl-navigation__link" href="{{ "/styleguide/intro" | prepend: site.baseurl }}">Guía de estilo</a>
     <form class="mdl-navigation__link" id="search-form">

@@ -1,6 +1,7 @@
 ---
 resource: futureprices
 permalink: /docs/resources/futureprices/
+section: Recursos
 attributes:
   - name: replacement_cost
   - name: date_from

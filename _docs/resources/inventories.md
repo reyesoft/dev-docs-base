@@ -1,6 +1,7 @@
 ---
 resource: inventories
 permalink: /docs/resources/inventories/
+section: Recursos
 partOf: company
 attributes:
   - name: qty
@@ -36,4 +37,3 @@ entry_points:
 `GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/inventories/{inventory_id}
 `GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/products/{product_id}/inventories
 `GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/inventories
-

@@ -1,6 +1,8 @@
 ---
-resource: companyPayments
-permalink: /docs/resources/companyPayments/
+resource: company_payments
+permalink: /docs/resources/company-payments/
+partOf: company
+section: Recursos
 attributes:
   - name: amount
     crud: read
@@ -25,10 +27,3 @@ relationships:
     hasMany: false
 filters: null
 ---
-
-**API point of access**<br>
-index: [...]/v1/companies/{company_id}/company_payments<br>
-show: [...]/v1/companies/{company_id}/company_payments/{company_payment_id}
-
-**Observations**<br>
-Si bien no se puede modificar mediante la API, se define en algunos casos 'required' haciendo referencia al ABM del Saiyajin.
