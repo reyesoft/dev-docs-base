@@ -19,7 +19,7 @@ attributes:
     crud: 'create, update'
   - name: fiscal_ws_status
     crud: read
-    valuetype: wait | ok
+    valuetype: (empty string) | waiting | ok
   - name: remaining_documents
   - name: status
     valuetype: activated | suspended | redeem
