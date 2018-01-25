@@ -5,7 +5,7 @@ section: Recursos
 partOf: company
 attributes:
   - name: company_id
-    crud: red
+    crud: read
   - name: value
     crud: read
   - name: primary_color
