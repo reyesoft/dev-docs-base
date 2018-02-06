@@ -4,30 +4,42 @@ permalink: /docs/resources/params/
 section: Recursos
 partOf: company
 attributes:
-  - name: company_id
-    crud: read
-  - name: value
-    crud: read
   - name: primary_color
+    valuetype: string
+    crud: 'read, update'
   - name: accent_color
+    valuetype: string
+    crud: 'read, update'
   - name: subdist
-    valuetype: true | false
-  - name: seller
-    valuetype: true | false
+    valuetype: boolean
+    crud: 'read, update'
+  - name: prevent
+    valuetype: boolean
+    crud: 'read, update'
   - name: changeProductName
     valuetype: all | none | onlyservice
-  - name: pricelist_supplier
+    crud: 'read, update'
   - name: pricelist_client
+    valuetype: string
+    crud: 'read, update'
   - name: fiscal_printer
-    aluetype: true | false
+    valuetype: boolean
+    crud: 'read, update'
   - name: products_various_enabled
-    aluetype: true | false
+    valuetype: boolean
+    crud: 'read, update'
   - name: products_various_id
+    valuetype: number
+    crud: 'read, update'
   - name: final_consumer_id
+    valuetype: number
+    crud: 'read, update'
   - name: orders_company_header
-    aluetype: true | false
+    valuetype: boolean
+    crud: 'read, update'
   - name: generate_order
-    aluetype: true | false
+    valuetype: boolean
+    crud: 'read, update'
 relationships: null
 filters: null
 entry_points:
