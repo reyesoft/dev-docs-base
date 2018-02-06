@@ -1,5 +1,5 @@
 ---
-resource: payment_methods
+resource: Payment Methods
 permalink: /docs/resources/paymentmethods/
 section: Recursos
 attributes:

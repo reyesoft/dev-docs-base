@@ -7,9 +7,6 @@ attributes:
   - name: amount
     crud: create, read
     valuetype: number
-  - name: date
-    crud: 'create, read'
-    valuetype: datetimew3c
 relationships:
   - resource: physicalpos
     hasMany: false
@@ -18,6 +15,8 @@ relationships:
   - resource: users
     hasMany: false
   - resource: documents
-    hasMnay: false
+    hasMany: false
+  - resource: transactions
+    hasMany: false
 filters: null
 ---
