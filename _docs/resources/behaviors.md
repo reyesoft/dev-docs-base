@@ -7,6 +7,8 @@ attributes:
     crud: read
   - name: name
     crud: read
+  - name: allow_negative
+    crud: read
 relationships:
   - resource: paymentmethods
     hasMany: true
