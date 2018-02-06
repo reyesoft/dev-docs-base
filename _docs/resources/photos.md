@@ -17,6 +17,6 @@ entry_points:
 
 `POST`{: .post} [...]v1/companies/{company_id}/products/{product_id}
 
-`PUT`{: .put} [...]v1/companies/{company_id}/products/{product_id}/photos/{photo_id}
+`PATCH`{: .patch} [...]v1/companies/{company_id}/products/{product_id}/photos/{photo_id}
 
 `GET`{: .get} [...]v1/products/photos/{photo_id}

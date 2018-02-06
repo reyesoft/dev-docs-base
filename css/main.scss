@@ -142,7 +142,7 @@ div.get pre code {
   color: $text_get;
 }
 
-div.put pre code {
+div.patch pre code {
   background: $highlight_put;
   color: $text_put;
 }
@@ -164,7 +164,7 @@ div.delete pre code {
   color: $text_get;
 }
 
-.put {
+.patch {
   @extend .code;
   background: $highlight_put;
   color: $text_put;

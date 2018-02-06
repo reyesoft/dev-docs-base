@@ -36,5 +36,5 @@ entry_points:
 ---
 
 Donde **params_id** es un atributo de los descritos anteriormente, exceptuando `company_id`{: .code} y `value`{: .code}.  
-Por ejemplo:  `PUT`{: .put} [...]v1/company/{company_id}/params/**primary_color**  
+Por ejemplo:  `PATCH`{: .patch} [...]v1/company/{company_id}/params/**primary_color**  
 En el ejemplo anterior podemos observar que usamos el atributo `primary_color`{: .code} como key.

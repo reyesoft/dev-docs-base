@@ -30,20 +30,20 @@ entry_points:
     delete: false
     get: false
     post: false
-    put: false
+    patch: false
 ---
 
 #### Special entry points from quotations
 
-`DELETE`{: .delete} `PUT`{: .put} `GET`{: .get} [...]/v1/companies/{company_id}/quotations/{document_id}/details/{detail_id}  
+`DELETE`{: .delete} `PATCH`{: .patch} `GET`{: .get} [...]/v1/companies/{company_id}/quotations/{document_id}/details/{detail_id}  
 `POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/quotations/{document_id}/details/
 #### Special entry points from orders
 
-`DELETE`{: .delete} `PUT`{: .put} `GET`{: .get} [...]/v1/companies/{company_id}/orders/{document_id}/details/{detail_id}  
+`DELETE`{: .delete} `PATCH`{: .patch} `GET`{: .get} [...]/v1/companies/{company_id}/orders/{document_id}/details/{detail_id}  
 `POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/orders/{document_id}/details/
 #### Special entry points from invoices
 
-`DELETE`{: .delete} `PUT`{: .put} `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{document_id}/details/{detail_id}  
+`DELETE`{: .delete} `PATCH`{: .patch} `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{document_id}/details/{detail_id}  
 `POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{document_id}/details/
 
 Deprecar los puntos de entrada anteriores luego de:

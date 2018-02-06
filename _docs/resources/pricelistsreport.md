@@ -16,5 +16,5 @@ relationships:
 filters: null
 entry_points:
   methods:
-    put: false
+    patch: false
 ---

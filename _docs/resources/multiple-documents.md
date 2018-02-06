@@ -21,7 +21,7 @@ entry_points:
     delete: false
     get: false
     post: false
-    put: false
+    patch: false
 ---
 
 #### JSON-API Entry points

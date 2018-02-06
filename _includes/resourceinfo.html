@@ -91,8 +91,8 @@
     {% if (page.entry_points.methods.delete == null) or page.entry_points.methods.delete %}
       {% method_tag delete %}
     {% endif %}
-    {% if (page.entry_points.methods.put == null) or page.entry_points.methods.put %}
-      {% method_tag put %}
+    {% if (page.entry_points.methods.patch == null) or page.entry_points.methods.put %}
+      {% method_tag patch %}
     {% endif %}
 
     {% method_tag get %}

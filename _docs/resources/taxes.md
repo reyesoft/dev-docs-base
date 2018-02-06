@@ -17,5 +17,5 @@ entry_points:
   methods:
     delete: false
     post: false
-    put: false
+    patch: false
 ---

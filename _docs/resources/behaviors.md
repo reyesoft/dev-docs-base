@@ -14,6 +14,6 @@ filters: null
 entry_points:
   methods:
     post: false
-    put: false
+    patch: false
     delete: false
 ---

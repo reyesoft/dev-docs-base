@@ -24,6 +24,6 @@ entry_points:
 
 `GET`{: .get} [...]v1/users/me/preferences/{key}
 
-`PUT`{: .put} [...]v1/users/me/preferences/{key}
+`PATCH`{: .patch} [...]v1/users/me/preferences/{key}
 
 --------------------------------------------------------------------------------
