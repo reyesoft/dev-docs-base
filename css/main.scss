@@ -992,6 +992,45 @@ code {
   max-width: 100%;
 }
 
+.white-bg-hover {
+  tr:hover {
+    td: {
+      background: transparent;
+      animation: none;
+    }
+  }
+  td {
+    background: white;
+    animation: none;
+  }
+  .tbody {
+    background: white;
+  }
+}
+
+.styleguide-intro {
+  th {
+    text-align: center;
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+  td {
+    width: 33%;
+    text-align: center;
+    a {
+      text-align: center;
+    }
+  }
+}
+
+.red-title-table {
+  th {
+    color: red;
+  }
+}
+
 // Media queries mobile
 
 @media (max-width: 1100px) {

@@ -84,6 +84,26 @@
 </section>
 {% endif %}
 
+<h4>JSON Resource Example</h4>
+
+<pre>
+  {
+    data: {
+      type: {{ page.resource }},
+      id: {% assign min = 100 %}{% assign max = 999 %}{% assign diff = max | minus: min %}{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}{{randomNumber}},
+      {% if (page.attributes) %}attributes: {
+        {% for attribute in page.attributes %}{{ attribute.name }}: {%if (attribute.valuetype == "string") %}string{% elsif (attribute.valuetype == "datetimew3c") %}{{ page.date | date_to_xmlschema }}{% elsif (attribute.valuetype == "boolean") %}{{ true | false }}{% elsif (attribute.valuetype == "number") %}{% assign min = 100 %}{% assign max = 999 %}{% assign diff = max | minus: min %}{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}{{randomNumber}}{% else %}someValue{% endif %}{% if forloop.last == false %},{% endif %}
+        {% endfor %}},{% endif %}
+      {% if (page.relationships) %}relationships: { {% for relationship in page.relationships %}
+        {{ relationship.resource }}:{
+          id: {% assign min = 100 %}{% assign max = 999 %}{% assign diff = max | minus: min %}{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}{{randomNumber}},
+          type: {{ relationship.resource }}
+        }{% if forloop.last == false %},{% endif %}
+      {% endfor %}}{% endif %}
+    }
+  }
+</pre>
+
 {% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
 <h4>JSON-API Entry points</h4>
 <section>
