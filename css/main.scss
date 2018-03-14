@@ -142,7 +142,7 @@ div.get pre code {
   color: $text_get;
 }
 
-div.put pre code {
+div.patch pre code {
   background: $highlight_put;
   color: $text_put;
 }
@@ -164,7 +164,7 @@ div.delete pre code {
   color: $text_get;
 }
 
-.put {
+.patch {
   @extend .code;
   background: $highlight_put;
   color: $text_put;
@@ -990,6 +990,45 @@ code {
   white-space: normal;
   display: inline-block;
   max-width: 100%;
+}
+
+.white-bg-hover {
+  tr:hover {
+    td: {
+      background: transparent;
+      animation: none;
+    }
+  }
+  td {
+    background: white;
+    animation: none;
+  }
+  .tbody {
+    background: white;
+  }
+}
+
+.styleguide-intro {
+  th {
+    text-align: center;
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+  td {
+    width: 33%;
+    text-align: center;
+    a {
+      text-align: center;
+    }
+  }
+}
+
+.red-title-table {
+  th {
+    color: red;
+  }
 }
 
 // Media queries mobile

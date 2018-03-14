@@ -2,4 +2,11 @@
   sections:
   - Autenticación
   - Hardware
-  - Recursos
+  - Companies
+  - Documents
+  - Entities
+  - Fiscal
+  - Founds
+  - Products
+  - Shared
+  - Users

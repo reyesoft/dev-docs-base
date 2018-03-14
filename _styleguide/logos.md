@@ -36,12 +36,14 @@ Para mantener la integridad del logotipo de Multinexo, y para promover la consis
 No hacer | No hacer | No hacer
 --|--|--
 No usar combinaciones de colores no aprobados | No usar el logo blanco sobre fondos claros | No utilice el logotipo como fondo sin definir su tamaño.
+{: .red-title-table}
 
 ![RGBMultinexo horizontal 1>]({{ '/img/styleguide/logos/RGBMultinexo-crimes-2.png' | prepend: site.baseurl }})
 
 No hacer | No hacer | No hacer
 --|--|--
 No usar sombra en el logotipo. | No usar el logotipo con borders | No utilice el logotipo sobre fondos complejos.
+{: .red-title-table}
 
 ### Descargas
 {% preview_img /img/styleguide/marketing/RGBMultinexo-transparent-horizontal-1-rgb.png %}
