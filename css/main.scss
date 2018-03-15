@@ -85,6 +85,10 @@ thead {
   border-bottom: 1px solid $mdl_divider;
 }
 
+td a img {
+  width: 50%;
+}
+
 @mixin transition($transition_options) {
   -webkit-transition: $transition_options;
   -moz-transition: $transition_options;
