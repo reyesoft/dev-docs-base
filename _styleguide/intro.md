@@ -5,9 +5,9 @@ title:  "Guía de estilos"
 Guía base de estilos unificados para Multinexo, basada en gran medida en Material Design.
 Esta especificación es un documento que se actualiza a medida que continuamos desarrollando los principios y las características específicas de Multinexo.
 
-| [Tipografía]({{'/styleguide/tipografia/' | prepend: baseurl}}) | [Colores]({{'/styleguide/colores/' | prepend: baseurl}}) | [Logos + Fondos]({{'/styleguide/logos-mas-fondos/' | prepend: baseurl}}) |
+| [Tipografía]({{'/styleguide/tipografia/' | prepend: baseurl}}) | [Colores]({{'/styleguide/colores/' | prepend: baseurl}}) | [Contenido avanzado u opcional]({{'/styleguide/avanzado/' | prepend: baseurl}}) |
 | --- | --- | --- |
-| [![typos]({{'/img/styleguide/intro/multinexo_typos.png' | prepend: baseurl}})]({{'/styleguide/tipografia/' | prepend: baseurl}}) | [![colors]({{'/img/styleguide/intro/multinexo_colors.png' | prepend: baseurl}})]({{'/styleguide/colores/' | prepend: baseurl}}) | [![logos]({{'/img/styleguide/intro/multinexo_logos.png' | prepend: baseurl}})]({{'/styleguide/logos/' | prepend: baseurl}}) |
+| [![typos]({{'/img/styleguide/intro/multinexo_typos.png' | prepend: baseurl}})]({{'/styleguide/tipografia/' | prepend: baseurl}}) | [![colors]({{'/img/styleguide/intro/multinexo_colors.png' | prepend: baseurl}})]({{'/styleguide/colores/' | prepend: baseurl}}) | [![logos]({{'/img/styleguide/intro/multinexo_advanced.png' | prepend: baseurl}})]({{'/styleguide/logos/' | prepend: baseurl}}) |
 | Cómo dar formato al texto utilizando las tipografías, tamaños y estilos de Multinexo | Guía de colores para destacar tu aplicación | Qué hacer y qué no al combinar logos y fondos |
 {: .white-bg-hover .styleguide-intro}
 
