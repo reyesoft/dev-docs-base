@@ -1,6 +1,6 @@
 ---
 title: Lector de códigos de barra
-permalink: /docs/hardware/lector-de-códigos-de-barra/
+permalink: /docs/hardware/lector-de-codigos-de-barra/
 section: Hardware
 ---
 

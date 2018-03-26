@@ -89,6 +89,11 @@ td a img {
   width: 50%;
 }
 
+h1 > i.icon {
+  font-size: 50pt;
+  color: #334762;
+}
+
 @mixin transition($transition_options) {
   -webkit-transition: $transition_options;
   -moz-transition: $transition_options;
