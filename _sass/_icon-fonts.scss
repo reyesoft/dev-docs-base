@@ -19,17 +19,20 @@
   text-transform: none;
   line-height: 1;
   font-size: 28px;
-  
+
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-export_txt:before {
-  content: "\e902";
+.icon-autenticacion:before {
+  content: "\e913";
 }
-.icon-document_preview:before {
-  content: "\e90a";
+.icon-codigo-abierto:before {
+  content: "\e914";
+}
+.icon-recursos:before {
+  content: "\e915";
 }
 .icon-compound_product:before {
   content: "\e900";
@@ -37,30 +40,54 @@
 .icon-confirm_save:before {
   content: "\e901";
 }
-.icon-document_confirm:before {
-  content: "\e908";
+.icon-document_a:before {
+  content: "\e902";
 }
-.icon-export_csv:before {
+.icon-document_b:before {
   content: "\e903";
 }
-.icon-export_pdf:before {
+.icon-document_c:before {
   content: "\e904";
 }
-.icon-export_xls:before {
+.icon-document_confirm:before {
   content: "\e905";
 }
-.icon-generate_document:before {
+.icon-document_p:before {
   content: "\e906";
 }
-.icon-percent_batch:before {
+.icon-document_preview:before {
   content: "\e907";
 }
-.icon-product_compound:before {
-  content: "\e90c";
+.icon-document_r:before {
+  content: "\e908";
 }
-.icon-product_variant:before {
+.icon-document_x:before {
   content: "\e909";
 }
-.icon-save_draft:before {
+.icon-export_csv:before {
+  content: "\e90a";
+}
+.icon-export_pdf:before {
   content: "\e90b";
+}
+.icon-export_txt:before {
+  content: "\e90c";
+}
+.icon-export_xls:before {
+  content: "\e90d";
+}
+.icon-generate_document:before {
+  content: "\e90e";
+}
+.icon-percent_batch:before {
+  content: "\e90f";
+}
+.icon-product_compound:before {
+  content: "\e910";
+}
+.icon-product_variant:before {
+  content: "\e911";
+}
+.icon-save_draft:before {
+  content: "\e912";
 }
