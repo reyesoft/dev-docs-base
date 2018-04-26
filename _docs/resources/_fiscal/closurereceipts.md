@@ -22,6 +22,9 @@ attributes:
   - name: canceled_qty
   - name: blocks_qty
   - name: letter
+  - name: emission_date
+    crud: read
+    valuetype: datetimew3c
   - name: fiscal_blocked
     crud: read
   - name: fiscal_observation

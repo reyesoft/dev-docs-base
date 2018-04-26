@@ -8,7 +8,7 @@ attributes:
   - name: has_header
     valuetype: boolean
   - name: headers
-    valuetype: Array<string>
+    valuetype: string
   - name: records
     valuetype: json
   - name: status

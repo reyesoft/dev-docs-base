@@ -40,6 +40,12 @@ attributes:
   - name: generate_order
     valuetype: boolean
     crud: 'read, update'
+  - name: ri_type
+    valuetype: a | a_cbu | m
+    crud: 'read, update'
+  - name: invoice_footer_legend
+    valuetype: string
+    crud: 'read, update'
 relationships: null
 filters: null
 entry_points:
