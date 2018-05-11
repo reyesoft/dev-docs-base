@@ -1,6 +1,6 @@
 ---
-resource: Payment Methods
-permalink: /docs/resources/paymentmethods/
+resource: payment_methods
+permalink: /docs/resources/payment_methods/
 section: Founds
 attributes:
   - name: name

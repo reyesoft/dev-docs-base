@@ -10,7 +10,7 @@ attributes:
 relationships:
   - resource: physicalpos
     hasMany: false
-  - resource: paymentmethods
+  - resource: payment_methods
     hasMany: false
   - resource: users
     hasMany: false

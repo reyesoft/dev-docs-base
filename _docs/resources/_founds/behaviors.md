@@ -10,7 +10,7 @@ attributes:
   - name: allow_negative
     crud: read
 relationships:
-  - resource: paymentmethods
+  - resource: payment_methods
     hasMany: true
 filters: null
 entry_points:
