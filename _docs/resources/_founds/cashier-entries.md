@@ -19,4 +19,8 @@ relationships:
   - resource: transactions
     hasMany: false
 filters: null
+entry_points:
+  methods:
+    patch: false
+    delete: false
 ---
