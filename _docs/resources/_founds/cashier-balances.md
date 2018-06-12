@@ -23,5 +23,9 @@ attributes:
 relationships:
   - resource: physicalpos
     hasMany: false
+  - resource: cashier_balance_detail
+    hasMany: false
 filters: null
 ---
+**Included**
+- [cashier_balances_details](https://dev.multinexo.com/docs/resources/cashier-balances-details/)

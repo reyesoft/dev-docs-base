@@ -16,8 +16,6 @@ relationships:
     hasMany: false
   - resource: documents
     hasMany: false
-  - resource: transactions
-    hasMany: false
 filters: null
 entry_points:
   methods:
