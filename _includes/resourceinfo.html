@@ -44,7 +44,11 @@
     {% for relationship in page.relationships %}
         <dt>
             <a href="/docs/resources/{{ relationship.resource }}/">
-              {{ relationship.resource }}
+              {% if relationship.alias %}
+                {{ relationship.alias }}
+              {% else %}
+                {{ relationship.resource }}
+              {% endif %}
             </a>
         </dt>
         <dd>
@@ -95,9 +99,9 @@
         {% for attribute in page.attributes %}{{ attribute.name }}: {%if (attribute.valuetype == "string") %}string{% elsif (attribute.valuetype == "datetimew3c") %}{{ page.date | date_to_xmlschema }}{% elsif (attribute.valuetype == "boolean") %}{{ true | false }}{% elsif (attribute.valuetype == "number") %}{% assign min = 100 %}{% assign max = 999 %}{% assign diff = max | minus: min %}{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}{{randomNumber}}{% else %}someValue{% endif %}{% if forloop.last == false %},{% endif %}
         {% endfor %}},{% endif %}
       {% if (page.relationships) %}relationships: { {% for relationship in page.relationships %}
-        {{ relationship.resource }}:{
+        {% if relationship.alias %} {{ relationship.alias }}{% else %}{{ relationship.resource }}{% endif %}:{
           id: {% assign min = 100 %}{% assign max = 999 %}{% assign diff = max | minus: min %}{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}{{randomNumber}},
-          type: {{ relationship.resource }}
+          type: {% if relationship.alias %} {{ relationship.alias }} {% else %} {{ relationship.resource }} {% endif %}
         }{% if forloop.last == false %},{% endif %}
       {% endfor %}}{% endif %}
     }
