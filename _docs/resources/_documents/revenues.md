@@ -12,9 +12,7 @@ attributes:
     crud: read
   - name: revenue
     crud: read
-  - name: from
-    crud: read
-  - name: to
+  - name: date
     crud: read
 relationships: null
 filters:
