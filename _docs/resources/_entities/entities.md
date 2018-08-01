@@ -38,15 +38,16 @@ attributes:
 relationships:
   - resource: transactions
     hasMany: true
-  - resource: users
+  - resource: user
     hasMany: false
   - resource: author
     hasMany: false
   - resource: sellers
     hasMany: true
   - resource: responsibilities
+    alias: responsibility
     hasMany: false
-  - resource: pricelists
+  - resource: pricelist
     hasMany: false
 filters:
   - attribute: name

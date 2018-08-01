@@ -101,7 +101,7 @@
       {% if (page.relationships) %}relationships: { {% for relationship in page.relationships %}
         {% if relationship.alias %} {{ relationship.alias }}{% else %}{{ relationship.resource }}{% endif %}:{
           id: {% assign min = 100 %}{% assign max = 999 %}{% assign diff = max | minus: min %}{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}{{randomNumber}},
-          type: {% if relationship.alias %} {{ relationship.alias }} {% else %} {{ relationship.resource }} {% endif %}
+          type: {{ relationship.resource }}
         }{% if forloop.last == false %},{% endif %}
       {% endfor %}}{% endif %}
     }
