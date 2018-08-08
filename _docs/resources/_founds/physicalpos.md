@@ -4,6 +4,8 @@ permalink: /docs/resources/physicalpos/
 section: Founds
 attributes:
   - name: number
+  - name: alias
+    valuetype: string
   - name: enabled
     valuetype: true|false
   - name: created_at
