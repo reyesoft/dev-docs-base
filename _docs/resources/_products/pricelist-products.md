@@ -1,6 +1,6 @@
 ---
 resource: pricelist_products
-permalink: /docs/resources/pricelist-products/
+permalink: /docs/resources/pricelist_products/
 section: Products
 attributes:
   - name: product_id

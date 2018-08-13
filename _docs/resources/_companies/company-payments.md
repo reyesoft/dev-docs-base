@@ -1,6 +1,6 @@
 ---
 resource: company_payments
-permalink: /docs/resources/company-payments/
+permalink: /docs/resources/company_payments/
 partOf: company
 section: Companies
 attributes:

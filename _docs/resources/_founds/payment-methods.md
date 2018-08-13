@@ -15,10 +15,12 @@ attributes:
     valuetype: datetimew3c
 relationships:
   - resource: companies
+    alias: company
     hasMany: false
   - resource: currencies
     hasMany: true
   - resource: behaviors
+    alias: behavior
     hasmany: false
 filters: null
 ---

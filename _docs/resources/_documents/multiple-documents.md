@@ -1,6 +1,6 @@
 ---
 resource: multiple_documents
-permalink: /docs/resources/multiple-documents/
+permalink: /docs/resources/multiple_documents/
 section: Documents
 partOf: company
 attributes:

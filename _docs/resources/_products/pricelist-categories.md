@@ -1,6 +1,6 @@
 ---
 resource: pricelist_categories
-permalink: /docs/resources/pricelist-categories/
+permalink: /docs/resources/pricelist_categories/
 section: Products
 partOf: company
 attributes:

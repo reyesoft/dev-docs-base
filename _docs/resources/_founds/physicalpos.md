@@ -19,6 +19,7 @@ attributes:
     valuetype: datetimew3c
 relationships:
   - resource: companies
+    alias: company
     hasMany: false
 filters: null
 ---

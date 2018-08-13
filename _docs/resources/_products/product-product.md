@@ -1,6 +1,6 @@
 ---
 resource: product_product
-permalink: /docs/resources/product-product/
+permalink: /docs/resources/product_product/
 section: Products
 attributes:
   - name: product_id

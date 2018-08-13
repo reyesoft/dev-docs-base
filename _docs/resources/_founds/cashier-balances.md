@@ -1,6 +1,6 @@
 ---
 resource: cashier_balances
-permalink: /docs/resources/cashier-balances/
+permalink: /docs/resources/cashier_balances/
 section: Founds
 partOf: company
 attributes:

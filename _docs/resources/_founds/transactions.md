@@ -20,13 +20,14 @@ attributes:
     crud: create
 relationships:
   - resource: entities
+    alias: entity
     hasMany: false
   - resource: orders
     hasMany: true
   - resource: availabilities
     hasMany: true
   - resource: cashier_entries
-    hasMany: false
+    hasMany: true
 filters: null
 entry_points:
   methods:

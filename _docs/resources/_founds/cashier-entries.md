@@ -1,6 +1,6 @@
 ---
 resource: cashier_entries
-permalink: /docs/resources/cashier-entries/
+permalink: /docs/resources/cashier_entries/
 section: Founds
 partOf: company
 attributes:
@@ -11,10 +11,13 @@ relationships:
   - resource: physicalpos
     hasMany: false
   - resource: payment_methods
+    alias: payment_method
     hasMany: false
   - resource: users
+    alias: user
     hasMany: false
   - resource: documents
+    alias: document
     hasMany: false
 filters: null
 entry_points:

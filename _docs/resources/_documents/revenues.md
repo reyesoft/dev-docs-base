@@ -6,14 +6,19 @@ partOf: company
 attributes:
   - name: cost
     crud: read
+    valuetype: decimal
   - name: commission
     crud: read
+    valuetype: decimal
   - name: total
     crud: read
+    valuetype: decimal
   - name: revenue
     crud: read
+    valuetype: decimal
   - name: date
     crud: read
+    valuetype: datetimew3c
 relationships: null
 filters:
   - attribute: since
