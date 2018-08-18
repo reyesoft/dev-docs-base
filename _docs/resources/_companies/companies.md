@@ -6,6 +6,7 @@ partOf: user
 attributes:
   - name: name
   - name: legal_name
+  - name: email
   - name: abbreviation
   - name: description
   - name: cuit
