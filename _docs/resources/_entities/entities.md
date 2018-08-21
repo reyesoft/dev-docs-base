@@ -42,8 +42,8 @@ relationships:
     hasMany: false
   - resource: author
     hasMany: false
-  - resource: sellers
-    hasMany: true
+  - resource: seller
+    hasMany: false
   - resource: responsibilities
     alias: responsibility
     hasMany: false
