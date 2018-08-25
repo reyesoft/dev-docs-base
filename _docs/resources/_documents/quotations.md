@@ -18,6 +18,8 @@ attributes:
   - name: total_commission
   - name: total
   - name: cae
+  - name: discount_percent
+  - name: discount_amount
   - name: cae_expiration_date
   - name: draft
   - name: fiscal_observation

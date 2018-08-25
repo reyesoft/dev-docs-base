@@ -27,6 +27,12 @@ attributes:
   - name: total_final_price
     crud: read
     valuetype: decimal
+  - name: discount_percent
+    crud: read
+    valuetype: decimal
+  - name: discount_amount
+    crud: read
+    valuetype: decimal
   - name: emission_date
     crud: read
     valuetype: datetimew3c

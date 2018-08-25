@@ -46,6 +46,9 @@ attributes:
   - name: invoice_footer_legend
     valuetype: string
     crud: 'read, update'
+  - name: document_max_discount
+    valuetype: decimal
+    crud: 'read, update'
 relationships: null
 filters: null
 entry_points:

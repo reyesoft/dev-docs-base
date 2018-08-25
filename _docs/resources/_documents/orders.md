@@ -20,7 +20,8 @@ attributes:
   - name: total_commission
   - name: net
   - name: total
-  - name: draft
+  - name: discount_percent
+  - name: discount_amount
   - name: status
     valuetype: draft | confirmed
   - name: show_amounts
