@@ -29,6 +29,9 @@ attributes:
   - name: balance_at
     crud: read
     valuetype: datetimew3c
+  - name: abc_class
+    valuetype: A | B | C | ''
+    crud: read
   - name: updated_at
     crud: read
     valuetype: datetimew3c
