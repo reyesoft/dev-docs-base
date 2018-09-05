@@ -65,4 +65,7 @@ filters:
   - attribute: trashed
     multivalue: false
     values: null | onlyTrashed | withTrashed
+  - attribute: abc_class
+    type: equals
+    multivalue: true
 ---
