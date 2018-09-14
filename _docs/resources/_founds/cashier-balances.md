@@ -23,8 +23,8 @@ attributes:
 relationships:
   - resource: physicalpos
     hasMany: false
-  - resource: cashier_balance_detail
-    hasMany: false
+  - resource: cashier_balance_details
+    hasMany: true
 filters: null
 ---
 **Included**

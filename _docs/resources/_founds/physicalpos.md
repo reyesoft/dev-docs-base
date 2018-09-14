@@ -7,7 +7,7 @@ attributes:
   - name: alias
     valuetype: string
   - name: enabled
-    valuetype: true|false
+    valuetype: boolean
   - name: created_at
     crud: read
     valuetype: datetimew3c

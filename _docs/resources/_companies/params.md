@@ -49,6 +49,9 @@ attributes:
   - name: document_max_discount
     valuetype: decimal
     crud: 'read, update'
+  - name: cashier_enabled
+    valuetype: boolean
+    crud: 'read, update'
 relationships: null
 filters: null
 entry_points:
