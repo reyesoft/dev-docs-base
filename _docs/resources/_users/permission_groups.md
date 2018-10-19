@@ -1,15 +1,17 @@
 ---
-resource: permissions
-permalink: /docs/resources/permissions/
+resource: permission_groups
+permalink: /docs/resources/permission_groups/
 section: Users
 partOf: company
 attributes:
   - name: name
     crud: read
-  - name: guard_name
+  - name: slug
+    crud: read
+  - name: description
     crud: read
 relationships:
-  - resource: roles
+  - resource: permissions
     hasMany: true
 filters: null
 entry_points:
@@ -18,6 +20,4 @@ entry_points:
     patch: false
     post: false
 ---
-
-#### Special entry points
-`GET`{: .get} companies/{company_id}/users/me/permissions
+## En develop 20 este recurso es permissions
