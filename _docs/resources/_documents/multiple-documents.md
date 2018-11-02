@@ -9,12 +9,10 @@ attributes:
   - name: download_url
     crud: read
 relationships:
-  - resource: quotations
+  - resource: documents
     hasMany: true
-  - resource: orders
-    hasMany: true
-  - resource: invoices
-    hasMany: true
+  - resource: physicalpos
+    hasMany: false
 filters: null
 entry_points:
   methods:
