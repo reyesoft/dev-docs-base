@@ -4,24 +4,24 @@ permalink: /docs/resources/pricelist_products/
 section: Products
 attributes:
   - name: product_id
-  - name: price
-  - name: price_type
+  - name: client_value
+  - name: client_value_type
     crud: read
-  - name: percent_subdist
-  - name: percent_subdist_type
+  - name: subdist_value
+  - name: subdist_value_type
     crud: read
-  - name: percent_prevent
-  - name: percent_prevent_type
+  - name: prevent_value
+  - name: prevent_value_type
     crud: read
   - name: percent_seller_type
     crud: read
-  - name: price_without_tax
+  - name: client_net_price
     crud: read
-  - name: price_with_tax
+  - name: client_price
     crud: read
-  - name: price_prevent
+  - name: prevent_price
     crud: read
-  - name: price_subdist
+  - name: subdist_price
     crud: read
   - name: activated
     crud: 'create, update'
@@ -52,10 +52,10 @@ attributes:
     crud: read
     valuetype: datetimew3c
 relationships:
-  - resource: pricelist
-    hasMany: false
   - resource: products
-    hasMany: false
+    alias: product
+  - resource: pricelists
+    alias: pricelist
 filters: null
 entry_points:
   methods:

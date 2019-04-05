@@ -26,6 +26,7 @@ relationships:
     hasMany: true
   - resource: entities
     hasMany: false
+    alias: entity
 filters:
   - attribute: first_name
     type: like

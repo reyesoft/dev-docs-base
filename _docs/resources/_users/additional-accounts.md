@@ -19,6 +19,7 @@ attributes:
 relationships:
   - resource: users
     hasMany: false
+    alias: user
 filters: null
 entry_points:
   methods:

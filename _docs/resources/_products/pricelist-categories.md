@@ -4,22 +4,22 @@ permalink: /docs/resources/pricelist_categories/
 section: Products
 partOf: company
 attributes:
-  - name: price
-  - name: price_type
+  - name: client_value
+  - name: client_value_type
     crud: read
-  - name: percent_subdist
-  - name: percent_subdist_type
+  - name: subdist_value
+  - name: subdist_value_type
     crud: read
-  - name: percent_prevent
-  - name: percent_prevent_type
+  - name: prevent_value
+  - name: prevent_value_type
     crud: read
   - name: category_id
   - name: pricelist_id
 relationships:
-  - resource: pricelist
-    hasMany: false
-  - resource: products
-    hasMany: false
+  - resource: pricelists
+    alias: pricelist
+  - resource: categories
+    alias: category
 filters: null
 entry_points:
   methods:

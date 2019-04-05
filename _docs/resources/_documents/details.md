@@ -22,8 +22,10 @@ attributes:
 relationships:
   - resource: products
     hasMany: false
+    alias: product
   - resource: orders
     hasMany: false
+    alias: document
 filters: null
 entry_points:
   methods:

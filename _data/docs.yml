@@ -2,11 +2,12 @@
   sections:
   - Autenticación
   - Hardware
+  - Cashier
   - Companies
   - Documents
   - Entities
   - Fiscal
-  - Founds
+  - Funds
   - Products
   - Shared
   - Users

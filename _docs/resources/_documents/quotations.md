@@ -36,12 +36,15 @@ attributes:
 relationships:
   - resource: entities
     hasMany: false
+    alias: entity
   - resource: currencies
     hasMany: false
+    alias: currency
   - resource: details
     hasMany: true
   - resource: receipts
     hasMany: false
+    alias: receipt
   - resource: orders
     hasMany: true
 filters:

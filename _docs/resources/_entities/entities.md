@@ -41,17 +41,21 @@ attributes:
 relationships:
   - resource: transactions
     hasMany: true
-  - resource: user
+  - resource: users
     hasMany: false
-  - resource: author
+    alias: user
+  - resource: authors
     hasMany: false
-  - resource: seller
+    alias: author
+  - resource: sellers
     hasMany: false
+    alias: seller
   - resource: responsibilities
+    hasMany: false
     alias: responsibility
+  - resource: pricelists
     hasMany: false
-  - resource: pricelist
-    hasMany: false
+    alias: pricelist
 filters:
   - attribute: name
     type: like

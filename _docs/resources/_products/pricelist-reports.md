@@ -1,6 +1,6 @@
 ---
-resource: pricelistsreport
-permalink: /docs/resources/pricelistsreport/
+resource: pricelist_reports
+permalink: /docs/resources/pricelist_reports/
 section: Products
 partOf: company
 attributes:
@@ -11,7 +11,7 @@ attributes:
 relationships:
   - resource: entities
     hasMany: true
-  - resource: pricelist
+  - resource: pricelists
     hasMany: true
 filters: null
 entry_points:

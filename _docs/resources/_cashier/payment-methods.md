@@ -1,7 +1,7 @@
 ---
 resource: payment_methods
 permalink: /docs/resources/payment_methods/
-section: Founds
+section: Cashier
 attributes:
   - name: name
   - name: behavior

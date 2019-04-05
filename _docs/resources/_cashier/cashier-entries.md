@@ -1,7 +1,7 @@
 ---
 resource: cashier_entries
 permalink: /docs/resources/cashier_entries/
-section: Founds
+section: Cashier
 partOf: company
 attributes:
   - name: amount

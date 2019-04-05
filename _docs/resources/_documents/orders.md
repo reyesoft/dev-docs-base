@@ -4,7 +4,6 @@ permalink: /docs/resources/orders/
 section: Documents
 partOf: company
 attributes:
-  - name: author_id
   - name: section
     crud: 'create, read'
     valuetype: sales | purchases
@@ -38,17 +37,26 @@ attributes:
     valuetype: datetimew3c
 relationships:
   - resource: entities
+    alias: entity
     hasMany: false
+    alias: entity
   - resource: currencies
+    alias: currency
+    hasMany: false
+  - resource: physicalpos
     hasMany: false
   - resource: details
     hasMany: true
   - resource: quotations
     hasMany: true
-  - resource: Invoices
+  - resource: invoices
     hasMany: true
-  - resource: receipts
-    hasMany: false
+  - resource: orders
+    hasMany: true
+  - resource: cashier_entries
+    hasMany: true
+  - resource: costs
+    hasMany: true
 filters:
   - attribute: date
     type: date_range

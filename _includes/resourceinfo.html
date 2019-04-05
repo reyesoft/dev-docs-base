@@ -43,13 +43,11 @@
   <dl>
     {% for relationship in page.relationships %}
         <dt>
-            <a href="/docs/resources/{{ relationship.resource }}/">
-              {% if relationship.alias %}
-                {{ relationship.alias }}
-              {% else %}
-                {{ relationship.resource }}
-              {% endif %}
-            </a>
+            {% if relationship.alias %}
+              {{ relationship.alias }}
+            {% else %}
+              {{ relationship.resource }}
+            {% endif %}
         </dt>
         <dd>
           <div>
@@ -57,7 +55,10 @@
               <span class="code">has many</span>
             {% else %}
               <span class="code">has one</span>
-            {% endif %}
+            {% endif %} of type:
+            <a href="/docs/resources/{{ relationship.resource }}/">
+              {{ relationship.resource }}
+            </a>
           </div>
         </dd>
     {% endfor %}
@@ -83,6 +84,26 @@
           {% endif %}
         </div>
       </dd>
+    {% endfor %}
+  </dl>
+</section>
+{% endif %}
+
+{% if page.sorts %}
+<h4>Sorts</h4>
+<section>
+  <dl>
+    {% for sort in page.sorts %}
+    <dt>
+      {{ sort.attribute }}
+    </dt>
+    <dd>
+      <div>
+        {% if sort.enabled %}
+        <span class="code">se puede ordenar por este atributo</span>
+        {% endif %}
+      </div>
+    </dd>
     {% endfor %}
   </dl>
 </section>

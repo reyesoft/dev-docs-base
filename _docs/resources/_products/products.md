@@ -33,6 +33,7 @@ attributes:
   - name: measure_id
   - name: stock
   - name: stock_alert
+  - name: stock_alert_percent
   - name: stock_desired
   - name: tax_id
   - name: high
@@ -51,34 +52,38 @@ attributes:
   - name: allow_fractions
     valuetype: boolean
 relationships:
-  - resource: pricelist_products
-    hasMany: true
-  - resource: parentproducts
-    hasMany: false
-  - resource: products
-    hasMany: false
-  - resource: entities
-    alias: suppliers
-    hasMany: true
+  - resource: users
+    alias: author
   - resource: categories
-    hasMany: false
-  - resource: taxes
-    hasMany: false
-  - resource: measures
-    hasMany: false
+    alias: category
   - resource: currencies
-    hasMany: false
-  - resource: photos
+    alias: currency
+  - resource: product_products
+    alias: compound_children
+    hasMany: true
+  - resource: product_products
+    alias: compound_parents
     hasMany: true
   - resource: futureprices
     hasMany: true
-  - resource: variant_parent
+  - resource: inventories
     hasMany: true
-  - resource: variant_children
+  - resource: measures
     hasMany: true
-  - resource: compound_parent
+  - resource: photos
     hasMany: true
-  - resource: compound_children
+  - resource: pricelist_products
+    hasMany: true
+  - resource: taxes
+    alias: tax
+  - resource: entities
+    alias: suppliers
+    hasMany: true
+  - resource: products
+    alias: variants_children
+    hasMany: true
+  - resource: products
+    alias: variants_parents
     hasMany: true
 filters:
   - attribute: name
@@ -102,6 +107,9 @@ filters:
   - attribute: trashed
     multivalue: false
     values: null | onlyTrashed | withTrashed
+sorts:
+  - attribute: stock_alert_percent
+    enabled: true
 entry_points:
   name: pricelists
 ---
@@ -114,13 +122,13 @@ Si es un producto en particular, entonces.
 
 Si el atributo **conduct** es `variant_parent`{: .code}, entonces.
 
-[variant_children](variant-children) `hasMany`{: .code}
+[variants_children](variants-children) `hasMany`{: .code}
 
 Si el atributo **conduct** es `variant_common`{: .code}, entonces.
 
-[variants_parent](variants-parent) `hasMany`{: .code}
+[variants_parents](variants-parents) `hasMany`{: .code}
 
-[compound_parent](compound-parent) `hasMany`{: .code}
+[compound_parents](compound-parents) `hasMany`{: .code}
 
 Si el atributo **conduct** es `compound`{: .code}, entonces.
 
@@ -128,4 +136,4 @@ Si el atributo **conduct** es `compound`{: .code}, entonces.
 
 Si el atributo **conduct** es `common`{: .code}, entonces.
 
-[compound_parent](compound-parent) `hasMany`{: .code}
+[compound_parents](compound-parents) `hasMany`{: .code}

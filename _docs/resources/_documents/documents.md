@@ -61,8 +61,8 @@ attributes:
     valuetype: datetimew3c
 relationships:
   - resource: users
-    alias: user
     hasMany: false
+    alias: user
   - resource: companies
     hasMany: false
     alias: company
@@ -73,10 +73,11 @@ relationships:
     alias: currency
     hasMany: false
   - resource: entities
-    alias: seller
     hasMany: false
-  - resource: receipt
+    alias: entity
+  - resource: receipts
     hasMany: false
+    alias: receipt
   - resource: physicalpos
     hasMany: false
   - resource: cashier_entries

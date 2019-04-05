@@ -23,7 +23,7 @@ attributes:
     valuetype: datetimew3c
 relationships:
   - resource: products
-    hasMany: true
+    alias: product
 filters: null
 entry_points:
   methods:

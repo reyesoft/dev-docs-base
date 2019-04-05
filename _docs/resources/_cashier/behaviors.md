@@ -1,7 +1,7 @@
 ---
 resource: behaviors
 permalink: /docs/resources/behaviors/
-section: Founds
+section: Cashier
 attributes:
   - name: id
     crud: read

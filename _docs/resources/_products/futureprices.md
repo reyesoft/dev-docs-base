@@ -4,14 +4,13 @@ permalink: /docs/resources/futureprices/
 section: Products
 attributes:
   - name: replacement_cost
+  - name: fortype
+    valuetype: cost(default)|promotion
   - name: date_from
     valuetype: datetimew3c
   - name: date_to
     valuetype: datetimew3c
-  - name: activated
   - name: company_id
-  - name: fortype
-    valuetype: cost(default)|promotion
   - name: stock_end
   - name: sold_units
   - name: product_id
@@ -25,9 +24,11 @@ attributes:
   - name: deleted_at
     crud: read
     valuetype: datetimew3c
+  - name: activated
+    crud: read
 relationships:
   - resource: products
-    hasMany: true
+    alias: product
   - resource: pricelist_products
     hasMany: true
 filters: null

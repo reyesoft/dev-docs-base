@@ -1,7 +1,7 @@
 ---
 resource: transactions
 permalink: /docs/resources/transactions/
-section: Founds
+section: Cashier
 partOf: company
 attributes:
   - name: date

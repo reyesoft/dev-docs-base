@@ -47,14 +47,17 @@ attributes:
 relationships:
   - resource: entities
     hasMany: false
+    alias:  entity
   - resource: details
     hasMany: true
   - resource: orders
     hasMany: true
   - resource: currencies
     hasMany: false
+    alias: currency
   - resource: receipts
     hasMany: false
+    alias: receipt
   - resource: fiscalpos
     hasMany: true
 filters:

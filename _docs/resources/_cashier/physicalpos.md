@@ -1,7 +1,7 @@
 ---
 resource: physicalpos
 permalink: /docs/resources/physicalpos/
-section: Founds
+section: Cashier
 attributes:
   - name: number
   - name: alias
@@ -21,5 +21,7 @@ relationships:
   - resource: companies
     alias: company
     hasMany: false
+  - resource: cashier_balance_details
+    hasMany: true
 filters: null
 ---

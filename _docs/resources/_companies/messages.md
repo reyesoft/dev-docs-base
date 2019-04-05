@@ -15,6 +15,7 @@ attributes:
 relationships:
   - resource: companies
     hasMany: false
+    alias: company
   - resource: documents
     hasMany: true
   - resource: fiscalbooks
