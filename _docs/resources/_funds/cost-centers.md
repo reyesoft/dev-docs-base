@@ -8,6 +8,8 @@ attributes:
   - name: description
   - name: deleted
     valuetype: boolean
+  - name: parent_id
+    crud: 'read'
 relationships:
   - resource: cost_assignation_strategies
     alias: cost_assignation_strategy
@@ -18,7 +20,7 @@ relationships:
   - resource: costs
     hasMany: true
   - resource: cost_centers
-    alias: cost_center_childrens
+    alias: cost_center_children
     hasMany: true
 filters:
   - attribute: name
@@ -27,4 +29,7 @@ filters:
   - attribute: deleted
     type: equals
     multivalue: true
+  - attribute: parent_id
+    type: equals
+    multivalue: false
 ---

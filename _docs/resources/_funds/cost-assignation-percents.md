@@ -10,6 +10,9 @@ relationships:
   - resource: cost_assignation_strategies
     alias: cost_assignation_strategy
     hasMany: false
+  - resource: cost_centers
+    alias: cost_center
+    hasMany: false
 filters:
     - attribute: name
       type: like
