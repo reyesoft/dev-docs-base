@@ -18,6 +18,8 @@ attributes:
     crud: read
   - name: currency_id
     crud: create
+  - name: pdf_url
+    crud: read
 relationships:
   - resource: entities
     alias: entity
@@ -39,6 +41,7 @@ entry_points:
 - availabilities: 1../required
 
 #### Entry Points
-```
-GET companies/{company_id}/entities/{entity_id}/transactions
-```
+
+`GET`{: .get} [...]/v1/companies/{company_id}/entities/{entity_id}/transactions
+
+`GET`{: .get} [...]/v1/companies/{company_id}/transactions/{transaction_id}/pdf
