@@ -1,32 +1,26 @@
 ---
 resource: transactions
+singular: transaction
 permalink: /docs/resources/transactions/
 section: Cashier
 partOf: company
 attributes:
-  - name: date
-    valuetype: datetimew3c
-    crud: read
   - name: due_date
     valuetype: datetimew3c
   - name: observations
   - name: amount
-    crud: 'create, read'
+    crud: create, read
     valuetype: number
-  - name: entity_id
-  - name: order_id
-    crud: read
-  - name: currency_id
-    crud: create
-  - name: pdf_url
+  - name: created_at
     crud: read
 relationships:
   - resource: entities
     alias: entity
     hasMany: false
-  - resource: orders
-    hasMany: true
-  - resource: availabilities
+  - resource: currencies
+    alias: currency
+    hasMany: false
+  - resource: documents
     hasMany: true
   - resource: cashier_entries
     hasMany: true
@@ -35,10 +29,6 @@ entry_points:
   methods:
     delete: false
 ---
-
-**Included**
-
-- availabilities: 1../required
 
 #### Entry Points
 

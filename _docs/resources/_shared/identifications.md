@@ -1,5 +1,6 @@
 ---
 resource: identifications
+singular: identification
 permalink: /docs/resources/identifications/
 section: Shared
 attributes:

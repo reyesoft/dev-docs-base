@@ -1,5 +1,6 @@
 ---
 resource: documents
+singular: document
 permalink: /docs/resources/documents/
 section: Documents
 attributes:
@@ -8,7 +9,7 @@ attributes:
     valuetype: sales | purchases
   - name: receipt_type
     crud: create, read
-    valuetype: (empty string) | invoice | credit | debit | order_sell | order_buy | quotation | zeta
+    valuetype: invoice | credit | debit | order_sell | order_buy | quotation | zeta
   - name: receipt_volume
     crud: read
     valuetype: number
@@ -60,27 +61,31 @@ attributes:
     crud: read
     valuetype: datetimew3c
 relationships:
-  - resource: users
-    hasMany: false
-    alias: user
-  - resource: companies
-    hasMany: false
-    alias: company
   - resource: entities
     hasMany: false
     alias: entity
   - resource: currencies
     alias: currency
     hasMany: false
-  - resource: entities
-    hasMany: false
-    alias: entity
   - resource: receipts
     hasMany: false
     alias: receipt
   - resource: physicalpos
     hasMany: false
+  - resource: fiscalpos
+    hasMany: false
+  - resource: closure_receipts
+    hasMany: false
+    alias: closureReceipt
   - resource: cashier_entries
     hasMany: true
-filters: null
+  - resource: documents
+    hasMany: true
+  - resource: details
+    hasMany: true
+entry_points:
+  methods:
+    delete: false
+    post: false
+    patch: false
 ---

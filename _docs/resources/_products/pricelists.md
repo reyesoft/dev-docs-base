@@ -1,13 +1,18 @@
 ---
-resource: pricelist
-permalink: /docs/resources/pricelist/
+resource: pricelists
+singular: pricelist
+permalink: /docs/resources/pricelists/
 section: Products
 attributes:
   - name: name
-  - name: company_id
+    valuetype: string
+    observation: required
   - name: client_price
+    valuetype: float
   - name: subdist_percent
+    valuetype: float
   - name: prevent_percent
+    valuetype: float
   - name: deleted_at
     crud: read
     valuetype: datetimew3c
@@ -18,6 +23,6 @@ relationships:
     hasMany: true
 filters:
   - attribute: deleted
-    multivalue: false
-    values: null|onlyTrashed|withTrashed
+    type: bool
+    multivalue: true
 ---

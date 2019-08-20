@@ -1,5 +1,6 @@
 ---
 resource: cashier_balance_details
+singular: cashier_balance_detail
 permalink: /docs/resources/cashier_balance_details/
 section: Cashier
 partOf: company
@@ -10,15 +11,6 @@ attributes:
   - name: payment_method_id
     crud: read
     valuetype: number
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships:
 filters: null
 entry_points:

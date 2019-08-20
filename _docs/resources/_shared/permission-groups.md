@@ -1,15 +1,18 @@
 ---
 resource: permission_groups
+singular: permission_group
 permalink: /docs/resources/permission_groups/
-section: Users
-partOf: company
+section: Shared
 attributes:
   - name: name
     crud: read
+    valuetype: string
   - name: slug
     crud: read
+    valuetype: string
   - name: description
     crud: read
+    valuetype: string
 relationships:
   - resource: permissions
     hasMany: true
@@ -20,4 +23,3 @@ entry_points:
     patch: false
     post: false
 ---
-## En develop 20 este recurso es permissions

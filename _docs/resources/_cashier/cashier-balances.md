@@ -1,5 +1,6 @@
 ---
 resource: cashier_balances
+singular: cashier_balance
 permalink: /docs/resources/cashier_balances/
 section: Cashier
 partOf: company
@@ -17,7 +18,9 @@ attributes:
     valuetype: datetimew3c
   - name: pdf_url
     crud: read
-  - name: created_at
+  - name: physicalpos_id
+    crud: read
+  - name: date
     crud: read
     valuetype: datetimew3c
 relationships:

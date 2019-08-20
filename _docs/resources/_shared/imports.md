@@ -1,5 +1,6 @@
 ---
 resource: imports
+singular: import
 permalink: /docs/resources/imports/
 section: Shared
 partOf: company

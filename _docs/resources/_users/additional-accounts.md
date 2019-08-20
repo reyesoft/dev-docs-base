@@ -1,25 +1,22 @@
 ---
 resource: additional_accounts
+singular: additional_account
 permalink: /docs/resources/additional-accounts/
 section: Users
 partOf: user
 attributes:
   - name: email
+    valuetype: string
+    observation: required
   - name: activated
     crud: read
-  - name: activated_at
-    valuetype: datetimew3c
+    valuetype: bool
   - name: last_login
     crud: read
     valuetype: datetimew3c
-  - name: activation_code
-    crud: read
   - name: user_id
     crud: read
-relationships:
-  - resource: users
-    hasMany: false
-    alias: user
+relationships: null
 filters: null
 entry_points:
   methods:

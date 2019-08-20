@@ -1,23 +1,22 @@
 ---
 resource: discounts
+singular: discount
 permalink: /docs/resources/discounts/
 section: Companies
 attributes:
   - name: months
     crud: read
+    valuetype: int
   - name: percent
     crud: read
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
+    valuetype: float
 relationships: null
 filters: null
+entry_points:
+  methods:
+    delete: false
+    post: false
+    patch: false
 ---
 
 **Point of access**<br>

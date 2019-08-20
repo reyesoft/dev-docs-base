@@ -1,10 +1,10 @@
 {% assign url = 'http://api.multinexo.com/v1/' %}
 {% if page.partOf == 'company' %}
-{% assign url = url | append: 'company/{company_id}/' %}
+  {% assign url = url | append: 'companies/{company_id}/' %}
 {% elsif page.partOf == 'user' %}
-{% assign url = url | append: 'users/{user_id}/' %}
+  {% assign url = url | append: 'users/{user_id}/' %}
 {% elsif page.partOf %}
-{% assign url = url %}
+  {% assign url = url %}
 {% endif %}
 
 {% if (page.entry_points.methods.get == null) or page.entry_points.methods.get %}
@@ -22,13 +22,11 @@
         <dd>
           <div>
             <span class="code">{{ attribute.crud | default: 'create, read, update' }}</span>
-
             {% if attribute.valuetype %}
               <span class="code">{{ attribute.valuetype }}</span>
             {% endif %}
-
             {% if attribute.observation %}
-              <span class="code" style="word-wrap: word-break">{{ attribute.observation }}</span>
+              <span class="code" style="color: #fa3a00; word-wrap: word-break">{{ attribute.observation }}</span>
             {% endif %}
           </div>
         </dd>
@@ -141,7 +139,7 @@
     {% endif %}
 
     {% method_tag get %}
-    {{ url }}{{ page.resource }}/&#123{{ page.resource }}_id&#125
+    {{ url }}{{ page.resource }}/&#123{{ page.singular }}_id&#125
   </p>
   {% if page.entry_points.name %}
     <p>{% method_tag get %}{{ url }}{{ page.entry_points.name }}/&#123{{ page.entry_points.name }}_id&#125/{{ page.resource }}</p>

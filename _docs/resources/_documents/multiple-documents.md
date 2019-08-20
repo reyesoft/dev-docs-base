@@ -1,17 +1,26 @@
 ---
 resource: multiple_documents
+singular: multiple_document
 permalink: /docs/resources/multiple_documents/
 section: Documents
 partOf: company
 attributes:
   - name: action
-    valuetype: pdf | confirm
+    valuetype: pdf | confirm | generate_order_sell | generate_order_buy | generate_invoice | generate_quotation
   - name: download_url
     crud: read
+  - name: confirm
+    crud: create
+    valuetype: boolean
 relationships:
   - resource: documents
     hasMany: true
   - resource: physicalpos
+    hasMany: false
+  - resource: fiscalpos
+    hasMany: false
+  - resource: entities
+    alias: entity
     hasMany: false
 filters: null
 entry_points:

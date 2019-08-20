@@ -1,16 +1,15 @@
 ---
 resource: permissions
+singular: permission
 permalink: /docs/resources/permissions/
-section: Users
-partOf: company
+section: Shared
 attributes:
   - name: name
     crud: read
-  - name: guard_name
-    crud: read
+    valuetype: string
 relationships:
-  - resource: roles
-    hasMany: true
+  - resource: permission_groups
+    alias: permission_group
 filters: null
 entry_points:
   methods:
@@ -20,4 +19,4 @@ entry_points:
 ---
 
 #### Special entry points
-`GET`{: .get} companies/{company_id}/users/me/permissions
+`GET`{: .get} companies/{company_id}/company_users/me/permissions

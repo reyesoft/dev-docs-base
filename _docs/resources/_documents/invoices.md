@@ -1,16 +1,17 @@
 ---
 resource: invoices
+singular: invoice
 permalink: /docs/resources/invoices/
 section: Documents
 partOf: company
 attributes:
   - name: section
-    crud: 'create,read'
+    crud: create,read
     valuetype: sales | purchases
   - name: letter
     valuetype: A | B | C | E | X
   - name: receipt_type
-    crud: 'create,read'
+    crud: create,read
     valuetype: invoice | debit | credit
   - name: receipt_volume
   - name: receipt_number
@@ -48,22 +49,27 @@ relationships:
   - resource: entities
     hasMany: false
     alias:  entity
-  - resource: details
-    hasMany: true
-  - resource: orders
-    hasMany: true
   - resource: currencies
     hasMany: false
     alias: currency
+  - resource: physicalpos
+    hasMany: false
   - resource: receipts
     hasMany: false
     alias: receipt
   - resource: fiscalpos
     hasMany: true
+  - resource: details
+    hasMany: true
+  - resource: orders
+    hasMany: true
+  - resource: invoices
+    hasMany: true
+  - resource: cashier_entries
+    hasMany: true
 filters:
-  - attribute: date
+  - attribute: emission_date
     type: date_range
-    alias: created_at | emission_date
     multivalue: false
   - attribute: receipt_volume
     type: equals
@@ -73,31 +79,23 @@ filters:
     multivalue: false
   - attribute: section
     type: equals
-    multivalue: false
+    multivalue: true
   - attribute: receipt_type
     type: equals
-    multivalue: false
+    multivalue: true
   - attribute: status
     type: equals
     alias: draft | confirmed | queued | failed
     multivalue: true
-  - attribute: entity_name
-    type: equals
-    multivalue: true
-  - attribute: entity_id
-    type: equals
-    multivalue: true
+  - attribute: entity.name
+    type: like
+    multivalue: false
   - attribute: letter
     type: equals
     alias: A | B | C
-    multivalue: false
-entry_points:
-  methods:
-    delete: false
+    multivalue: true
 ---
 
 #### Special entry points
-
-`GET`{: .get} [...]/v1/companies/{company_id}/invoices/{invoice_id}/getCae
 
 `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{invoices_id}/pdf

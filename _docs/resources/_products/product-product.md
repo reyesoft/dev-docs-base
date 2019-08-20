@@ -4,13 +4,14 @@ permalink: /docs/resources/product_product/
 section: Products
 attributes:
   - name: product_id
-    crud: 'create, read'
+    crud: create, read
   - name: product_name
     crud: read
+    valuetype: string
   - name: parent_product_id
-    crud: 'create, read'
+    crud: create, read
   - name: qty
-  - name: conduct
+    valuetype: int
 relationships:
   - resource: products
     alias: parent

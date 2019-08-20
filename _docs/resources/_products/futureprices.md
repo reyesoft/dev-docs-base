@@ -1,30 +1,26 @@
 ---
 resource: futureprices
+singular: futureprice
 permalink: /docs/resources/futureprices/
 section: Products
 attributes:
   - name: replacement_cost
+    valuetype: float
+    observation: required
   - name: fortype
-    valuetype: cost(default)|promotion
+    valuetype: cost(default) | promotion | automatic
+    observation: required
   - name: date_from
     valuetype: datetimew3c
+    observation: required
   - name: date_to
     valuetype: datetimew3c
-  - name: company_id
   - name: stock_end
+    valuetype: int
   - name: sold_units
-  - name: product_id
-    crud: create
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
+    valuetype: int
   - name: activated
+    valuetype: bool
     crud: read
 relationships:
   - resource: products

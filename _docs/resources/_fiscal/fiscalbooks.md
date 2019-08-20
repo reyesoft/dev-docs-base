@@ -1,5 +1,6 @@
 ---
 resource: fiscalbooks
+singular: fiscalbook
 permalink: /docs/resources/fiscalbooks/
 section: Fiscal
 partOf: company

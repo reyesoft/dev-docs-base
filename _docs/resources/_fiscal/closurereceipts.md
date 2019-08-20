@@ -1,5 +1,6 @@
 ---
 resource: closurereceipts
+singular: closurereceipt
 permalink: /docs/resources/closurereceipts/
 section: Fiscal
 partOf: company

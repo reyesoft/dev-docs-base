@@ -1,5 +1,6 @@
 ---
 resource: entities
+singular: entity
 permalink: /docs/resources/entities/
 section: Entities
 partOf: company

@@ -1,7 +1,8 @@
 ---
 resource: messages
+singular: message
 permalink: /docs/resources/messages/
-section: Companies
+section: Shared
 partOf: company
 attributes:
   - name: to
@@ -12,10 +13,10 @@ attributes:
     valuetype: string
   - name: status
     valuetype: draft | sent | queued | failed
+  - name: resources
+    crud: read
+    valuetype: documents | fiscalbooks | pricelist_reports
 relationships:
-  - resource: companies
-    hasMany: false
-    alias: company
   - resource: documents
     hasMany: true
   - resource: fiscalbooks
@@ -23,5 +24,8 @@ relationships:
   - alias: pricelistsreports
     resource: pricelistsreport
     hasMany: true          
-filters: null
+filters: 
+  - attribute: resources
+    type: equal
+    multivalue: true
 ---

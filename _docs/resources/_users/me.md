@@ -5,19 +5,27 @@ section: Users
 partOf: user
 attributes:
   - name: name
+    valuetype: string
   - name: first_name
+    valuetype: string
   - name: last_name
+    valuetype: string
   - name: avatar_url
+    valuetype: string
     crud: read
   - name: email
+    valuetype: string
   - name: old_password
     crud: update
+    valuetype: string
   - name: new_password
     crud: create
-  - name: create_at
-  - name: update_at
+    valuetype: string
   - name: activated
-  - name: acutal_status
+    valuetype: bool
+  - name: status
+    crud: read
+    valuetype: invitated | accepted
 relationships:
   - resource: roles
   - resource: additional_accounts
@@ -35,4 +43,5 @@ filters:
 entry_points:
   methods:
     delete: false
+    post: false
 ---

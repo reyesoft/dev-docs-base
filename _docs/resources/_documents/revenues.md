@@ -1,5 +1,6 @@
 ---
 resource: revenues
+singular: revenue
 permalink: /docs/resources/revenues/
 section: Documents
 partOf: company

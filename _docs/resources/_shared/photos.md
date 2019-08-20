@@ -1,5 +1,6 @@
 ---
 resource: photos
+singular: photo
 permalink: /docs/resources/photos/
 section: Shared
 partOf: company

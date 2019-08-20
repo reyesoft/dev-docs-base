@@ -1,39 +1,37 @@
 ---
 resource: orders
+singular: order
 permalink: /docs/resources/orders/
 section: Documents
 partOf: company
 attributes:
   - name: section
-    crud: 'create, read'
-    valuetype: sales | purchases
+    crud: create, read
+    valuetype: sales
   - name: letter
     valuetype: X
   - name: receipt_type
-    crud: 'create, read'
+    crud: create, read
     valuetype: order_sell | order_buy
   - name: receipt_volume
-    crud: 'create, read'
+    crud: create, read
   - name: receipt_number
-    crud: 'create, read'
-  - name: total_commission
+    crud: create, read
   - name: net
+    crud: read
   - name: total
+    crud: read
   - name: discount_percent
   - name: discount_amount
   - name: status
     valuetype: draft | confirmed
   - name: show_amounts
     valuetype: true/false
-  - name: canceled
-  - name: cae
-  - name: cae_expiration_date
-  - name: fiscal_observation
   - name: observation
   - name: pdf_url
     crud: read
   - name: emission_date
-    crud: 'create, read'
+    crud: create, read
     valuetype: datetimew3c
 relationships:
   - resource: entities
@@ -41,8 +39,8 @@ relationships:
     hasMany: false
     alias: entity
   - resource: currencies
-    alias: currency
     hasMany: false
+    alias: currency
   - resource: physicalpos
     hasMany: false
   - resource: details
@@ -55,12 +53,9 @@ relationships:
     hasMany: true
   - resource: cashier_entries
     hasMany: true
-  - resource: costs
-    hasMany: true
 filters:
-  - attribute: date
+  - attribute: emission_date
     type: date_range
-    alias: created_at | emission_date
     multivalue: false
   - attribute: receipt_volume
     type: equals
@@ -73,17 +68,14 @@ filters:
     multivalue: false
   - attribute: receipt_type
     type: equals
-    multivalue: false
+    multivalue: true
   - attribute: status
     type: equals
     alias: draft | confirmed | queued | failed
     multivalue: true
   - attribute: entity_name
-    type: equals
-    multivalue: true
-  - attribute: entity_id
-    type: equals
-    multivalue: true
+    type: like
+    multivalue: false
 ---
 
 #### Special entry points

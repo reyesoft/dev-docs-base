@@ -1,12 +1,15 @@
 ---
 resource: preferences
+singular: preference
 permalink: /docs/resources/preferences/
 section: Users
 partOf: user
 attributes:
   - name: key
     crud: read
+    valuetype: int
   - name: value
+    valuetype: string
 relationships: null
 filters: null
 entry_points:

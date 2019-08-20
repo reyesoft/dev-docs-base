@@ -1,5 +1,6 @@
 ---
 resource: cashier_entries
+singular: cashier_entry
 permalink: /docs/resources/cashier_entries/
 section: Cashier
 partOf: company
@@ -14,7 +15,7 @@ relationships:
     alias: payment_method
     hasMany: false
   - resource: users
-    alias: user
+    alias: author
     hasMany: false
   - resource: documents
     alias: document

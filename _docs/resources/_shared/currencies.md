@@ -1,5 +1,6 @@
 ---
 resource: currencies
+singular: currency
 permalink: /docs/resources/currencies/
 section: Shared
 attributes:

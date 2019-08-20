@@ -1,19 +1,20 @@
 ---
 resource: categories
+singular: category
 permalink: /docs/resources/categories/
 section: Products
 attributes:
   - name: name
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
+    valuetype: string
+    observation: required
   - name: deleted
+    crud: read
 relationships:
   - resource: categories
     alias: children
     hasMany: true
   - resource: categories
-    alias: parent
+    alias: parentcategory
   - resource: pricelist_categories
     hasMany: true
 filters:
@@ -21,8 +22,8 @@ filters:
     type: like
     multivalue: false
   - attribute: deleted
-    multivalue: false
-    values: null|onlyTrashed|withTrashed
+    type: bool
+    multivalue: true
 sorts:
   - attribute: name
     enabled: true

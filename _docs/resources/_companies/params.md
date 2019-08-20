@@ -1,64 +1,55 @@
 ---
 resource: params
+singular: param
 permalink: /docs/resources/params/
 section: Companies
 partOf: company
 attributes:
-  - name: primary_color
-    valuetype: string
-    crud: 'read, update'
-  - name: accent_color
-    valuetype: string
-    crud: 'read, update'
-  - name: subdist
-    valuetype: boolean
-    crud: 'read, update'
-  - name: prevent
-    valuetype: boolean
-    crud: 'read, update'
-  - name: changeProductName
-    valuetype: all | none | onlyservice
-    crud: 'read, update'
-  - name: pricelist_client
-    valuetype: string
-    crud: 'read, update'
-  - name: fiscal_printer
-    valuetype: boolean
-    crud: 'read, update'
-  - name: products_various_enabled
-    valuetype: boolean
-    crud: 'read, update'
-  - name: products_various_id
-    valuetype: number
-    crud: 'read, update'
-  - name: final_consumer_id
-    valuetype: number
-    crud: 'read, update'
-  - name: orders_company_header
-    valuetype: boolean
-    crud: 'read, update'
-  - name: generate_order
-    valuetype: boolean
-    crud: 'read, update'
-  - name: ri_type
-    valuetype: a | a_cbu | m
-    crud: 'read, update'
-  - name: invoice_footer_legend
-    valuetype: string
-    crud: 'read, update'
-  - name: document_max_discount
-    valuetype: decimal
-    crud: 'read, update'
-  - name: cashier_enabled
-    valuetype: boolean
-    crud: 'read, update'
+- name: value
+  crud: read, update
+  valuetype: string
 relationships: null
 filters: null
 entry_points:
   methods:
     post: false
+    delete: false
 ---
 
-Donde **params_id** es un atributo de los descritos anteriormente, exceptuando `company_id`{: .code} y `value`{: .code}.  
+Donde **param_id** puede ser uno de los siguientes:
+- name: primary_color
+  - valuetype: string
+- name: accent_color
+  - valuetype: string
+- name: subdist
+  - valuetype: boolean
+- name: prevent
+  - valuetype: boolean
+- name: changeProductName
+  - options: all, none, onlyservice
+- name: pricelist_client
+  - valuetype: string
+- name: fiscal_printer
+  - valuetype: boolean
+- name: products_various_enabled
+  - valuetype: boolean
+- name: products_various_id
+  - valuetype: number
+- name: final_consumer_id
+  - valuetype: number
+- name: orders_company_header
+  - valuetype: boolean
+- name: generate_order
+  - valuetype: boolean
+- name: ri_type
+  - options: a, a_cbu, m
+- name: invoice_footer_legend
+  - valuetype: string
+- name: document_max_discount
+  - valuetype: decimal
+- name: cashier_enabled
+  - valuetype: boolean
+
+
 Por ejemplo:  `PATCH`{: .patch} [...]v1/company/{company_id}/params/**primary_color**  
 En el ejemplo anterior podemos observar que usamos el atributo `primary_color`{: .code} como key.

@@ -1,5 +1,6 @@
 ---
 resource: physicalpos
+singular: physicalpos
 permalink: /docs/resources/physicalpos/
 section: Cashier
 attributes:
@@ -8,20 +9,19 @@ attributes:
     valuetype: string
   - name: enabled
     valuetype: boolean
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships:
-  - resource: companies
-    alias: company
-    hasMany: false
   - resource: cashier_balance_details
     hasMany: true
-filters: null
+  - resource: cashier_balance_details
+    hasMany: true
+filters: 
+  - attribute: number
+    type: equal
+    multivalue: false
+  - attribute: enabled
+    type: equal
+    multivalue: false
+  - attribute: alias
+    type: like
+    multivalue: false
 ---

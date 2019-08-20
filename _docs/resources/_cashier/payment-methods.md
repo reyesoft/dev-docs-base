@@ -1,28 +1,26 @@
 ---
 resource: payment_methods
+singular: payment_method
 permalink: /docs/resources/payment_methods/
 section: Cashier
 attributes:
   - name: name
   - name: behavior
-    crud: read
+    valuetype: cash | cash_adjustment | current_account | check | card | other | difference
   - name: enabled
     valuetype: boolean
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships:
-  - resource: companies
-    alias: company
-    hasMany: false
   - resource: currencies
     alias: currency
     hasMany: false
-filters: null
+filters: 
+  - attribute: name
+    type: like
+    multivalue: false
+  - attribute: behavior
+    type: equal
+    multivalue: true
+  - attribute: enabled
+    type: equal
+    multivalue: false
 ---

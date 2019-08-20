@@ -1,5 +1,6 @@
 ---
 resource: details
+singular: detail
 permalink: /docs/resources/details/
 section: Documents
 partOf: company
@@ -8,16 +9,9 @@ attributes:
   - name: cost
   - name: net
   - name: price
-  - name: use_net_for_calculation
   - name: commission
     crud: read
   - name: product_name
-    crud: read
-  - name: subdist_price
-    crud: read
-  - name: document_id
-    crud: read
-  - name: sort
     crud: read
 relationships:
   - resource: products
@@ -47,6 +41,3 @@ entry_points:
 
 `DELETE`{: .delete} `PATCH`{: .patch} `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{document_id}/details/{detail_id}  
 `POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{document_id}/details/
-
-Deprecar los puntos de entrada anteriores luego de:
-[API-652](https://reyesoft.atlassian.net/browse/API-652)

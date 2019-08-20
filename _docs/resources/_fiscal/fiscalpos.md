@@ -1,5 +1,6 @@
 ---
 resource: fiscalpos
+singular: fiscalpos
 permalink: /docs/resources/fiscalpos/
 section: Fiscal
 partOf: company
@@ -8,22 +9,10 @@ attributes:
   - name: pos_type
     valuetype: fiscal_printer | electronic | manual_a | manual_b | manual_c | manual_e
   - name: status
+    valuetype: boolean
   - name: fiscaltoken
   - name: max_amount_per_invoice
-    crud: read
   - name: max_items_per_invoice
-    crud: read
-  - name: default
-    crud: create
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
 relationships: null
 filters: null
 ---

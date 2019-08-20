@@ -1,5 +1,6 @@
 ---
 resource: responsibilities
+singular: responsibility
 permalink: /docs/resources/responsibilities/
 section: Shared
 attributes:

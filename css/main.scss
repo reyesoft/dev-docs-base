@@ -1,7 +1,7 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-
+@import "_syntax-highlighting.scss";
 @import "multinexo-parent.scss";
 
 img {
@@ -80,10 +80,17 @@ div.delete pre code {
 }
 
 section, div pre {
-  background-color: $background_section;
-  padding: 20px;
-  border-radius: 3px;
+  background-color: $background_section !important;
+  padding: 20px !important;
+  border-radius: 6px;
+}
+
+pre code {
   word-wrap: break-word;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
 }
 
 body {
@@ -392,4 +399,13 @@ code {
       width: 100%;
     }
   }
+}
+
+h3 {
+  position: sticky;
+  top: 0;
+  z-index: 333;
+  background: #fafafa;
+  padding-top: 8px;
+  box-sizing: border-box;
 }

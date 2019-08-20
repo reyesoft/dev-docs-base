@@ -1,6 +1,7 @@
 ---
-resource: export
-permalink: /docs/resources/export/
+resource: exports
+singular: export
+permalink: /docs/resources/exports/
 section: Shared
 attributes: null
 relationships: null

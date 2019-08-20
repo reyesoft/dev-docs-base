@@ -1,41 +1,61 @@
 ---
 resource: products
+singular: product
 permalink: /docs/resources/products/
 section: Products
 partOf: company
 attributes:
   - name: name
+    valuetype: string
+    observation: required
   - name: description
+    valuetype: text
   - name: sku
+    valuetype: string
   - name: internal_code
+    valuetype: string
   - name: supplier_code
+    valuetype: string
   - name: conduct
     valuetype: common | compound | variant_common | variant_parent
+    observation: required
   - name: product_type
+    valuetype: service | product
   - name: duration
+    valuetype: int
   - name: stock_type
     valuetype: disabled | negative | positive
   - name: replacement_cost
-  - name: author_id
-  - name: company_id
-  - name: category_id
-  - name: currency_id
+    valuetype: float
+    observation: required
   - name: price
     crud: read
+    valuetype: float
   - name: price_with_tax
     crud: read
+    valuetype: float
   - name: price_subdist
     crud: read
+    valuetype: float
   - name: price_prevent
     crud: read
+    valuetype: flaot
   - name: cost_with_tax
+    valuetype: float
     observation: Only saves cost calculated based on cost with tax
-  - name: measure_id
+  - name: stock_type
+    valuetype: disabled | negative | positive
+    observation: required
   - name: stock
+    valuetype: float
+    crud: read
   - name: stock_alert
+    valuetype: float
   - name: stock_alert_percent
+    valuetype: float
+    crud: read
   - name: stock_desired
-  - name: tax_id
+    valuetype: float
   - name: high
     valuetype: float
   - name: width
@@ -45,6 +65,7 @@ attributes:
   - name: weight
     valuetype: float
   - name: weight_element
+    valuetype: float
   - name: units_per_package
     valuetype: int
   - name: units_per_box
@@ -104,9 +125,9 @@ filters:
   - attribute: category_id
     type: equals
     multivalue: false
-  - attribute: trashed
+  - attribute: deleted
+    type: bool
     multivalue: false
-    values: null | onlyTrashed | withTrashed
 sorts:
   - attribute: stock_alert_percent
     enabled: true
@@ -116,6 +137,8 @@ entry_points:
 
 #### Special relationships
 Si es un producto en particular, entonces.
+
+
 [pricelist_products](pricelist-products) `hasMany`{: .code}
 
 [futureprices](futureprices) `hasMany`{: .code}
