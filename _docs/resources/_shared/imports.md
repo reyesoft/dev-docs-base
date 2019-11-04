@@ -1,26 +1,34 @@
 ---
 resource: imports
-singular: import
 permalink: /docs/resources/imports/
+singular: resource
 section: Shared
 partOf: company
 attributes:
-  - name: resource
-  - name: has_header
-    valuetype: boolean
-  - name: headers
-    valuetype: string
-  - name: records
-    valuetype: json
-  - name: status
-    valuetype: queued|ok|error
-  - name: observation
+  -
+    name: resource
+    crud: 'create, read, update'
+    filter: EnumFilter
+    value_type: 'in [entities, products]'
+  -
+    name: has_header
+    crud: 'create, read, update'
+    value_type: boolean
+  -
+    name: headers
+    crud: 'create, read, update'
+    value_type: string
+  -
+    name: records
     crud: read
-relationships: null
-entry_points:
-  methods:
-    post: false
-filters: null
+  -
+    name: status
+    crud: read
+  -
+    name: observation
+    crud: 'create, read, update'
+relationships: {  }
+
 ---
 
 ### A tener en cuenta

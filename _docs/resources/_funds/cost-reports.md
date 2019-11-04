@@ -1,16 +1,53 @@
 ---
 resource: cost_reports
 permalink: /docs/resources/cost_reports/
+singular: resource
 section: Funds
 partOf: company
 attributes:
-  - name: from
-    valuetype: datetimew3c
-  - name: to
-    valuetype: datetimew3c
-  - name: pdf_url
+  -
+    name: percent
+    crud: 'create, read, update'
+    sortable: 'true'
+    required: true
+  -
+    name: name
+    crud: 'create, read, update'
+    filter: LikeFilter
+    sortable: 'true'
+    required: true
+  -
+    name: description
+    crud: 'create, read, update'
+  -
+    name: deleted
+    crud: 'create, read, update'
+    filter: DeletedFilter
+  -
+    name: parent_id
     crud: read
-entry_points:
-  methods:
-    patch: false
+    filter: StringFilter
+  -
+    name: from
+    crud: 'create, read, update'
+    filter: DateFilter
+    rules:
+      - iso_date
+    required: true
+  -
+    name: to
+    crud: 'create, read, update'
+    filter: DateFilter
+    rules:
+      - iso_date
+    required: true
+  -
+    name: total
+    crud: read
+    value_type: numeric
+  -
+    name: pdf_url
+    crud: read
+relationships: {  }
+
 ---

@@ -1,8 +1,8 @@
 ---
-resource: photos
-permalink: /docs/resources/photos/
+resource: publications
+permalink: /docs/resources/publications/
 singular: resource
-section: Shared
+section: Products
 partOf: company
 attributes:
   -
@@ -53,6 +53,42 @@ attributes:
     crud: 'create, read, update'
     value_type: numeric
     required: true
-relationships: {  }
+  -
+    name: product_id
+    crud: 'create, read, update'
+  -
+    name: supplier_id
+    crud: 'create, read, update'
+  -
+    name: enabled
+    crud: 'create, read, update'
+  -
+    name: item_price
+    crud: 'create, read, update'
+  -
+    name: item_url
+    crud: 'create, read, update'
+  -
+    name: item_last_update
+    crud: 'create, read, update'
+  -
+    name: item_status
+    crud: 'create, read, update'
+  -
+    name: observations
+    crud: 'create, read, update'
+relationships:
+  -
+    resource: product
+    alias: product
+    crud: 'create, read, update'
+  -
+    resource: publisher
+    alias: publisher
+    crud: 'create, read, update'
+  -
+    resource: mercadolibre_attributes
+    alias: mercadolibre_attributes
+    crud: 'create, read, update'
 
 ---

@@ -1,27 +1,31 @@
 ---
 resource: gondolaprices
-singular: gondolaprice
 permalink: /docs/resources/gondolaprices/
+singular: resource
 section: Products
 partOf: company
 attributes:
-  - name: only_modified
-    crud: create, read
-    valuetype: bool
-  - name: date
+  -
+    name: only_modified
+    crud: 'create, read'
+  -
+    name: date
     crud: read
-    valuetype: date
-  - name: pdf_url
+  -
+    name: pdf_url
     crud: read
 relationships:
-  - resource: pricelists
+  -
+    resource: pricelist
     alias: pricelist
-  - resource: categories
+    crud: 'create, read, update'
+  -
+    resource: category
     alias: category
-  - resource: entities
+    crud: 'create, read, update'
+  -
+    resource: supplier
     alias: supplier
-filters: null
-entry_points:
-  methods:
-    patch: false
+    crud: 'create, read, update'
+
 ---

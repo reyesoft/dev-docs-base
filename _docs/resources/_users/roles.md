@@ -1,22 +1,35 @@
 ---
 resource: roles
-singular: role
 permalink: /docs/resources/roles/
+singular: resource
 section: Users
 partOf: company
 attributes:
-  - name: name
-    valuetype: string
-    observation: required
-  - name: description
-    valuetype: string
-  - name: is_admin
-    valuetype: bool
+  -
+    name: name
+    crud: 'create, read, update'
+    filter: StringFilter
+    required: true
+    value_type: string
+  -
+    name: is_admin
+    crud: 'create, read, update'
+  -
+    name: description
+    crud: 'create, read, update'
+    value_type: string
+  -
+    name: deleted
     crud: read
+    filter: DeletedFilter
 relationships:
-  - resource: users
-    hasMany: true
-  - resource: permissions
-    hasMany: true
-filters: null
+  -
+    resource: users
+    alias: users
+    crud: 'create, read, update'
+  -
+    resource: permissions
+    alias: permissions
+    crud: 'create, read, update'
+
 ---

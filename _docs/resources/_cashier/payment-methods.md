@@ -1,26 +1,30 @@
 ---
 resource: payment_methods
-singular: payment_method
 permalink: /docs/resources/payment_methods/
+singular: resource
 section: Cashier
+partOf: company
 attributes:
-  - name: name
-  - name: behavior
-    valuetype: cash | cash_adjustment | current_account | check | card | other | difference
-  - name: enabled
-    valuetype: boolean
+  -
+    name: name
+    crud: 'create, read, update'
+    filter: StringFilter
+    required: true
+  -
+    name: behavior
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [cash, cash_adjustment, stock_adjustment, current_account, check, card, other, difference, mercado_pago]'
+  -
+    name: enabled
+    crud: 'create, read, update'
+    filter: StringFilter
+    value_type: boolean
 relationships:
-  - resource: currencies
+  -
+    resource: currency
     alias: currency
-    hasMany: false
-filters: 
-  - attribute: name
-    type: like
-    multivalue: false
-  - attribute: behavior
-    type: equal
-    multivalue: true
-  - attribute: enabled
-    type: equal
-    multivalue: false
+    crud: 'create, read, update'
+
 ---

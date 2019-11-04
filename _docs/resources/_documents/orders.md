@@ -1,83 +1,122 @@
 ---
 resource: orders
-singular: order
 permalink: /docs/resources/orders/
+singular: resource
 section: Documents
 partOf: company
 attributes:
-  - name: section
-    crud: create, read
-    valuetype: sales
-  - name: letter
-    valuetype: X
-  - name: receipt_type
-    crud: create, read
-    valuetype: order_sell | order_buy
-  - name: receipt_volume
-    crud: create, read
-  - name: receipt_number
-    crud: create, read
-  - name: net
+  -
+    name: net
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: total
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: observation
+    crud: 'create, read, update'
+  -
+    name: show_amounts
+    crud: 'create, read, update'
+    required: true
+    value_type: boolean
+  -
+    name: discount_percent
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: discount_amount
     crud: read
-  - name: total
+    value_type: numeric
+  -
+    name: pdf_url
     crud: read
-  - name: discount_percent
-  - name: discount_amount
-  - name: status
-    valuetype: draft | confirmed
-  - name: show_amounts
-    valuetype: true/false
-  - name: observation
-  - name: pdf_url
+  -
+    name: letter
     crud: read
-  - name: emission_date
-    crud: create, read
-    valuetype: datetimew3c
+  -
+    name: status
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [confirmed, draft]'
+  -
+    name: section
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [sales, purchases]'
+  -
+    name: receipt_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [order_sell, order_buy]'
+  -
+    name: receipt_volume
+    crud: 'create, read, update'
+    filter: NumberFilter
+    rules:
+      - nullable
+      - 'digits_between:0,4'
+    value_type: integer
+  -
+    name: receipt_number
+    crud: 'create, read, update'
+    filter: NumberFilter
+    rules:
+      - nullable
+      - 'digits_between:0,8'
+    value_type: integer
+  -
+    name: emission_date
+    crud: 'create, read, update'
+    filter: EmissionDateFilter
+  -
+    name: has_costs
+    crud: read
+    filter: HasCostsFilter
 relationships:
-  - resource: entities
-    alias: entity
-    hasMany: false
-    alias: entity
-  - resource: currencies
-    hasMany: false
+  -
+    resource: currency
     alias: currency
-  - resource: physicalpos
-    hasMany: false
-  - resource: details
-    hasMany: true
-  - resource: quotations
-    hasMany: true
-  - resource: invoices
-    hasMany: true
-  - resource: orders
-    hasMany: true
-  - resource: cashier_entries
-    hasMany: true
-filters:
-  - attribute: emission_date
-    type: date_range
-    multivalue: false
-  - attribute: receipt_volume
-    type: equals
-    multivalue: false
-  - attribute: receipt_number
-    type: equals
-    multivalue: false
-  - attribute: section
-    type: equals
-    multivalue: false
-  - attribute: receipt_type
-    type: equals
-    multivalue: true
-  - attribute: status
-    type: equals
-    alias: draft | confirmed | queued | failed
-    multivalue: true
-  - attribute: entity_name
-    type: like
-    multivalue: false
+    crud: read
+  -
+    resource: entity
+    alias: entity
+    crud: read
+  -
+    resource: physicalpos
+    alias: physicalpos
+    crud: read
+  -
+    resource: details
+    alias: details
+    crud: read
+  -
+    resource: invoices
+    alias: invoices
+    crud: read
+  -
+    resource: quotations
+    alias: quotations
+    crud: read
+  -
+    resource: orders
+    alias: orders
+    crud: read
+  -
+    resource: cashier_entries
+    alias: cashier_entries
+    crud: read
+  -
+    resource: costs
+    alias: costs
+    crud: read
+  -
+    resource: seller
+    alias: seller
+    crud: read
+
 ---
-
-#### Special entry points
-
-`GET`{: .get} [...]/v1/companies/{company_id}/quotations/{quotation_id}/pdf

@@ -1,38 +1,38 @@
 ---
 resource: fiscalpos
-singular: fiscalpos
 permalink: /docs/resources/fiscalpos/
+singular: resource
 section: Fiscal
 partOf: company
 attributes:
-  - name: number
-  - name: pos_type
-    valuetype: fiscal_printer | electronic | manual_a | manual_b | manual_c | manual_e
-  - name: status
-    valuetype: boolean
-  - name: fiscaltoken
-  - name: max_amount_per_invoice
-  - name: max_items_per_invoice
-relationships: null
-filters: null
+  -
+    name: number
+    crud: 'create, read, update'
+    filter: StringFilter
+    required: true
+    rules:
+      - 'max:4'
+  -
+    name: pos_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [manual_a, manual_b, manual_c, manual_e, fiscal_printer, electronic]'
+  -
+    name: status
+    crud: 'create, read, update'
+    filter: EnumFilter
+  -
+    name: fiscaltoken
+    crud: 'create, read, update'
+  -
+    name: max_items_per_invoice
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: max_amount_per_invoice
+    crud: 'create, read, update'
+    value_type: numeric
+relationships: {  }
+
 ---
-
-#### Special entry points
-
-Actualiza datos de la AFIP
-`GET`{: .get} [...]/v1/companies/{company_id}/fiscalpos/update
-
-##### Token fiscalpos
-
-- Sólo hay token cuando `type=fiscal_printer`{: .code}
-- Si fiscaltoken es seteado a "", se genera un nuevo fiscaltoken.
-
-##### Condiciones
-
-- Si `max_amount_per_invoice` o `max_items_per_invoice` se setean en 0, implicará no tener límites.
-- Si `fiscaltoken` es seteado a '', se genera un nuevo `fiscaltoken`.
-- Sólo hay token cuando `type=fiscal_printer`
-
-##### Observaciones
-
-- Se elimina la relación con company ya que esta información se envía en el token.

@@ -1,87 +1,139 @@
 ---
 resource: companies
-singular: company
 permalink: /docs/resources/companies/
+singular: resource
 section: Companies
 partOf: user
 attributes:
-  - name: name
-    valuetype: string
-    observation: required
-  - name: legal_name
-    valuetype: string
-  - name: email
-    valuetype: string
-  - name: abbreviation
-    valuetype: string
-  - name: description
-    valuetype: text
-  - name: cuit
-    valuetype: string
-  - name: gross_income
-    valuetype: string
-  - name: logo_url
-    valuetype: string
+  -
+    name: name
+    crud: 'create, read, update'
+    required: true
+    value_type: string
+    rules:
+      - 'max:96'
+  -
+    name: legal_name
+    crud: 'create, read, update'
+  -
+    name: status
     crud: read
-  - name: street_name
-    valuetype: string
-  - name: street_number
-    valuetype: int
-  - name: phone
-    valuetype: string
-  - name: fiscal_ws
-    crud: create, update
-    valuetype: (empty string) | wsfe | wsmtxca
-  - name: fiscal_ws_status
+    required: true
+    value_type: 'in [activated, suspended, redeem]'
+  -
+    name: abbreviation
+    crud: 'create, read, update'
+    value_type: string
+    rules:
+      - 'max:5'
+  -
+    name: description
+    crud: 'create, read, update'
+    value_type: string
+    rules:
+      - 'max:96'
+  -
+    name: cuit
+    crud: 'create, read, update'
+    rules:
+      - 'cuit:no_strict'
+  -
+    name: activities_start_date
+    crud: 'create, read, update'
+    rules:
+      - iso_date
+  -
+    name: gross_income
+    crud: 'create, read, update'
+  -
+    name: email
+    crud: 'create, read, update'
+    rules:
+      - email
+  -
+    name: seat_tim
+    crud: 'create, read, update'
+  -
+    name: establishment_number
+    crud: 'create, read, update'
+  -
+    name: department
+    crud: 'create, read, update'
+  -
+    name: province
+    crud: 'create, read, update'
+  -
+    name: logo_url
+    crud: 'create, read, update'
+  -
+    name: street_name
+    crud: 'create, read, update'
+    value_type: string
+    rules:
+      - 'max:96'
+  -
+    name: street_number
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: phone
+    crud: 'create, read, update'
+    value_type: string
+  -
+    name: fiscal_ws_status
     crud: read
-    valuetype: (empty string) | waiting | ok
-  - name: remaining_documents
+    value_type: 'in [, waiting, ok]'
+  -
+    name: started_at
     crud: read
-    valuetype: int
-  - name: status
+  -
+    name: expire_at
     crud: read
-    valuetype: activated | suspended | redeem
-    observation: required
-  - name: activities_start_date
-    valuetype: string
-  - name: seat_tim
-    valuetype: string
-  - name: establishment_number
-    valuetype: string
-  - name: department
-    valuetype: string
-  - name: province
-    valuetype: string
-  - name: started_at
+  -
+    name: remaining_documents
     crud: read
-    valuetype: datetimew3c
-  - name: expire_at
+  -
+    name: csr_url
+    crud: 'create, read, update'
+  -
+    name: deleted_at
     crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
+  -
+    name: deleted
     crud: read
-    valuetype: datetimew3c
+    filter: DeletedFilter
 relationships:
-  - resource: responsibilities
-    alias: responsibility
-  - resource: users
+  -
+    resource: fiscalpos
+    alias: fiscalpos
+    crud: 'create, read, update'
+  -
+    resource: user
     alias: user
-  - resource: fiscalpos
-    hasMany: true
-  - resource: plans
+    crud: 'create, read, update'
+  -
+    resource: responsibility
+    alias: responsibility
+    crud: 'create, read, update'
+  -
+    resource: company_payments
+    alias: company_payments
+    crud: 'create, read, update'
+  -
+    resource: plan
     alias: plan
-  - resource: company_payments
-    hasMany: true
-filters: 
-  - attribute: deleted
-    multivalue: true
-    type: boolean
+    crud: 'create, read, update'
+  -
+    resource: notifications
+    alias: notifications
+    crud: 'create, read, update'
+
 ---
 
 #### Special entry points
 
-`POST`{: .post} [...]v1/users/{user_id}/companies/{company_id}/logo  
-`POST`{: .post} [...]v1/users/{user_id}/companies/{company_id}/upload/crt  
-`DELETE`{: .delete} [...]v1/users/{user_id}/companies/{company_id}/logo/{nameImage}  
-`PATCH`{: .get} [...]v1/users/{user_id}/companies/{company_id}/restore  
+`POST`{: .post} [...]v1/users/{user_id}/companies/{company_id}/logo
+`POST`{: .post} [...]v1/users/{user_id}/companies/{company_id}/upload/crt
+`DELETE`{: .delete} [...]v1/users/{user_id}/companies/{company_id}/logo/{nameImage}
+`PATCH`{: .get} [...]v1/users/{user_id}/companies/{company_id}/restore
 `GET`{: .get} [...]v1/users/{user_id}/companies/{company_id}/download/csr

@@ -1,40 +1,107 @@
 ---
 resource: closurereceipts
-singular: closurereceipt
 permalink: /docs/resources/closurereceipts/
+singular: resource
 section: Fiscal
 partOf: company
 attributes:
-  - name: receipt_volume
-  - name: receipt_number
-  - name: fiscalbook_type
-  - name: sales_total
-  - name: sales_tax
-  - name: sales_last_a
-  - name: sales_last_bc
-  - name: credit_total
-  - name: credit_tax
-  - name: credit_last_a
-  - name: credit_last_bc
-  - name: sales_documents
-  - name: credit_documents
-  - name: standard_no_fiscal_documents
-  - name: no_fiscal_documents
-  - name: canceled_qty
-  - name: blocks_qty
-  - name: letter
-  - name: emission_date
-    crud: read
-    valuetype: datetimew3c
-  - name: fiscal_blocked
-    crud: read
-  - name: fiscal_observation
-    crud: read
+  -
+    name: receipt_volume
+    crud: 'create, read, update'
+    required: true
+    rules:
+      - 'max:4'
+  -
+    name: receipt_number
+    crud: 'create, read, update'
+    required: true
+    rules:
+      - 'max:8'
+  -
+    name: sales_total
+    crud: 'create, read, update'
+    required: true
+    value_type: numeric
+  -
+    name: sales_tax
+    crud: 'create, read, update'
+    required: true
+    value_type: numeric
+  -
+    name: sales_last_a
+    crud: 'create, read, update'
+    required: true
+    rules:
+      - 'max:8'
+  -
+    name: sales_last_bc
+    crud: 'create, read, update'
+    required: true
+    rules:
+      - 'max:8'
+  -
+    name: credit_total
+    crud: 'create, read, update'
+    required: true
+    value_type: numeric
+  -
+    name: credit_tax
+    crud: 'create, read, update'
+    required: true
+    value_type: numeric
+  -
+    name: credit_last_a
+    crud: 'create, read, update'
+    required: true
+    rules:
+      - 'max:8'
+  -
+    name: credit_last_bc
+    crud: 'create, read, update'
+    required: true
+    rules:
+      - 'max:8'
+  -
+    name: sales_documents
+    crud: 'create, read, update'
+    required: true
+  -
+    name: credit_documents
+    crud: 'create, read, update'
+    required: true
+  -
+    name: standard_no_fiscal_documents
+    crud: 'create, read, update'
+    required: true
+  -
+    name: no_fiscal_documents
+    crud: 'create, read, update'
+    required: true
+  -
+    name: canceled_qty
+    crud: 'create, read, update'
+    required: true
+  -
+    name: blocks_qty
+    crud: 'create, read, update'
+    required: true
+  -
+    name: letter
+    crud: 'create, read, update'
+  -
+    name: fiscal_blocked
+    crud: 'create, read, update'
+  -
+    name: fiscal_observation
+    crud: 'create, read, update'
+  -
+    name: emission_date
+    crud: 'create, read, update'
+    filter: EmissionDateFilter
 relationships:
-  - resource: documents
-    hasMany: true
-filters: null
-entry_points:
-  methods:
-    delete: false
+  -
+    resource: document
+    alias: document
+    crud: 'create, read, update'
+
 ---

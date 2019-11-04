@@ -1,31 +1,47 @@
 ---
 resource: messages
-singular: message
 permalink: /docs/resources/messages/
+singular: resource
 section: Shared
 partOf: company
 attributes:
-  - name: to
-    valuetype: string
-  - name: subject
-    valuetype: string
-  - name: content
-    valuetype: string
-  - name: status
-    valuetype: draft | sent | queued | failed
-  - name: resources
+  -
+    name: to
+    crud: 'create, read, update'
+    filter: LikeFilter
+    required: true
+  -
+    name: subject
+    crud: 'create, read, update'
+  -
+    name: content
+    crud: 'create, read, update'
+    required: true
+  -
+    name: status
+    crud: 'create, read, update'
+    filter: EnumFilter
+    value_type: 'in [sent, queued, draft, failed]'
+  -
+    name: resources
     crud: read
-    valuetype: documents | fiscalbooks | pricelist_reports
+    filter: ResourceFilter
 relationships:
-  - resource: documents
-    hasMany: true
-  - resource: fiscalbooks
-    hasMany: true
-  - alias: pricelistsreports
-    resource: pricelistsreport
-    hasMany: true          
-filters: 
-  - attribute: resources
-    type: equal
-    multivalue: true
+  -
+    resource: documents
+    alias: documents
+    crud: 'create, read, update'
+  -
+    resource: fiscalbooks
+    alias: fiscalbooks
+    crud: 'create, read, update'
+  -
+    resource: pricelist_reports
+    alias: pricelist_reports
+    crud: 'create, read, update'
+  -
+    resource: cost_reports
+    alias: cost_reports
+    crud: 'create, read, update'
+
 ---

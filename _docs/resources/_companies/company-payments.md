@@ -1,41 +1,48 @@
 ---
 resource: company_payments
-singular: company_payment
 permalink: /docs/resources/company_payments/
-partOf: company
+singular: resource
 section: Companies
+partOf: company
 attributes:
-  - name: amount
-    crud: read
-    valuetype: float
-  - name: invoice
-    crud: read
-  - name: description
-    crud: read
-    valuetype: string
-  - name: observations
-    crud: read
-    valuetype: string
-  - name: status
-    crud: read
-    valuetype: uncredited (default) | only (uncredited | credited | in_observation)
-  - name: payment_code
-    crud: read
-    valuetype: string
-  - name: payment_type
-    crud: read
-    valuetype: emitted_documents | auto_renovation | manual_activation
-  - name: months
-    crud: read
-    valuetype: int
+  -
+    name: amount
+    crud: 'create, read, update'
+    required: true
+    value_type: numeric
+  -
+    name: plan_id
+    crud: 'create, read, update'
+  -
+    name: description
+    crud: 'create, read, update'
+  -
+    name: observations
+    crud: 'create, read, update'
+  -
+    name: status
+    crud: 'create, read, update'
+    required: true
+    value_type: 'in [uncredited, credited, in_observation]'
+  -
+    name: payment_code
+    crud: 'create, read, update'
+  -
+    name: payment_type
+    crud: 'create, read, update'
+    required: true
+    value_type: 'in [emitted_documents, auto_renovation, manual_activation]'
+  -
+    name: months
+    crud: 'create, read, update'
+    value_type: integer
+  -
+    name: updated_at
+    crud: 'create, read, update'
 relationships:
-  - resource: plans
+  -
+    resource: plan
     alias: plan
-    hasMany: false
-filters: null
-entry_points:
-  methods:
-    delete: false
-    post: false
-    patch: false
+    crud: 'create, read, update'
+
 ---

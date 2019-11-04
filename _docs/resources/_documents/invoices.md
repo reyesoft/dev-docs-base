@@ -1,101 +1,135 @@
 ---
 resource: invoices
-singular: invoice
 permalink: /docs/resources/invoices/
+singular: resource
 section: Documents
 partOf: company
 attributes:
-  - name: section
-    crud: create,read
-    valuetype: sales | purchases
-  - name: letter
-    valuetype: A | B | C | E | X
-  - name: receipt_type
-    crud: create,read
-    valuetype: invoice | debit | credit
-  - name: receipt_volume
-  - name: receipt_number
-  - name: total_commission
-  - name: net
-  - name: total
-  - name: discount_percent
-  - name: discount_amount
-  - name: status
-    valuetype: draft | queued | falied | confirmed
-  - name: show_amounts
-    valuetype: true/false
-  - name: cae READ
-  - name: cae_expiration_date
-  - name: observation
-  - name: pdf_url
+  -
+    name: net
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: total
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: observation
+    crud: 'create, read, update'
+  -
+    name: discount_percent
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: discount_amount
     crud: read
-  - name: canceled
-    valuetype: true | false
-  - name: fiscal_blocked
-  - name: fiscal_observation
-  - name: generate_order WRITE
-  - name: emission_date
-    valuetype: datetimew3c
-  - name: created_at
+    value_type: numeric
+  -
+    name: show_amounts
+    crud: 'create, read, update'
+    required: true
+    value_type: boolean
+  -
+    name: pdf_url
     crud: read
-    valuetype: datetimew3c
-  - name: updated_at
+  -
+    name: canceled
+    crud: 'create, read, update'
+  -
+    name: fiscal_observation
+    crud: 'create, read, update'
+  -
+    name: cae
     crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
+  -
+    name: cae_expiration_date
     crud: read
-    valuetype: datetimew3c
+  -
+    name: section
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [sales, purchases]'
+  -
+    name: receipt_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [invoice, credit, debit]'
+  -
+    name: letter
+    crud: 'create, read, update'
+    filter: LetterFilter
+  -
+    name: receipt_volume
+    crud: 'create, read, update'
+    filter: NumberFilter
+    rules:
+      - nullable
+      - 'digits_between:0,4'
+    value_type: integer
+  -
+    name: receipt_number
+    crud: 'create, read, update'
+    filter: NumberFilter
+    rules:
+      - nullable
+      - 'digits_between:0,8'
+    value_type: integer
+  -
+    name: status
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [draft, failed, queued, confirmed]'
+  -
+    name: emission_date
+    crud: 'create, read, update'
+    filter: EmissionDateFilter
 relationships:
-  - resource: entities
-    hasMany: false
-    alias:  entity
-  - resource: currencies
-    hasMany: false
+  -
+    resource: currency
     alias: currency
-  - resource: physicalpos
-    hasMany: false
-  - resource: receipts
-    hasMany: false
+    crud: read
+  -
+    resource: entity
+    alias: entity
+    crud: read
+  -
+    resource: fiscalpos
+    alias: fiscalpos
+    crud: read
+  -
+    resource: physicalpos
+    alias: physicalpos
+    crud: read
+  -
+    resource: seller
+    alias: seller
+    crud: read
+  -
+    resource: receipt
     alias: receipt
-  - resource: fiscalpos
-    hasMany: true
-  - resource: details
-    hasMany: true
-  - resource: orders
-    hasMany: true
-  - resource: invoices
-    hasMany: true
-  - resource: cashier_entries
-    hasMany: true
-filters:
-  - attribute: emission_date
-    type: date_range
-    multivalue: false
-  - attribute: receipt_volume
-    type: equals
-    multivalue: false
-  - attribute: receipt_number
-    type: equals
-    multivalue: false
-  - attribute: section
-    type: equals
-    multivalue: true
-  - attribute: receipt_type
-    type: equals
-    multivalue: true
-  - attribute: status
-    type: equals
-    alias: draft | confirmed | queued | failed
-    multivalue: true
-  - attribute: entity.name
-    type: like
-    multivalue: false
-  - attribute: letter
-    type: equals
-    alias: A | B | C
-    multivalue: true
+    crud: read
+  -
+    resource: cashier_entries
+    alias: cashier_entries
+    crud: read
+  -
+    resource: details
+    alias: details
+    crud: read
+  -
+    resource: orders
+    alias: orders
+    crud: read
+  -
+    resource: invoices
+    alias: invoices
+    crud: read
+  -
+    resource: quotations
+    alias: quotations
+    crud: read
+
 ---
-
-#### Special entry points
-
-`GET`{: .get} [...]/v1/companies/{company_id}/invoices/{invoices_id}/pdf

@@ -1,40 +1,45 @@
 ---
 resource: pricelist_categories
-singular: pricelist_category
 permalink: /docs/resources/pricelist_categories/
+singular: resource
 section: Products
 partOf: company
 attributes:
-  - name: client_value
-    valuetype: float
-  - name: client_value_type
+  -
+    name: client_value_number
+    crud: 'create, read, update'
+  -
+    name: client_value_type
+    crud: 'create, read, update'
+  -
+    name: subdist_value_number
+    crud: 'create, read, update'
+  -
+    name: subdist_value_type
+    crud: 'create, read, update'
+  -
+    name: prevent_value_number
+    crud: 'create, read, update'
+  -
+    name: prevent_value_type
+    crud: 'create, read, update'
+  -
+    name: pricelist_id
+    crud: 'create, read, update'
+  -
+    name: created_at
     crud: read
-    valuetype: auto | percent | amount
-  - name: subdist_value
-    valuetype: float
-  - name: subdist_value_type
+  -
+    name: updated_at
     crud: read
-    valuetype: auto | percent | amount
-  - name: prevent_value
-    valuetype: float
-  - name: prevent_value_type
-    crud: read
-    valuetype: auto | percent
-  - name: pricelist_id
 relationships:
-  - resource: pricelists
-    alias: pricelist
-  - resource: categories
+  -
+    resource: category
     alias: category
-filters: null
-entry_points:
-  methods:
-    delete: false
-    post: false
-    patch: false
-    get: false
+    crud: 'create, read, update'
+  -
+    resource: pricelist
+    alias: pricelist
+    crud: 'create, read, update'
+
 ---
-
-#### JSON-API Entry points
-
-`GET`{: .get} http://api.multinexo.com/v1/companies/{company_id}/categories/{category_id}/pricelist_categories

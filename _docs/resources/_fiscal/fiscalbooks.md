@@ -1,51 +1,67 @@
 ---
 resource: fiscalbooks
-singular: fiscalbook
 permalink: /docs/resources/fiscalbooks/
+singular: resource
 section: Fiscal
 partOf: company
 attributes:
-  - name: alias
-    crud: 'create, read'
-  - name: fiscalbook_type
-    crud: 'create, read'
-    valuetype: buys | sells
-  - name: from
-    crud: 'create, read'
-    valuetype: datetimew3c
-  - name: to
-    crud: 'create, read'
-    valuetype: datetimew3c
-  - name: initial_folio
-    crud: 'create, read'
-  - name: net
-    crud: 'create, read'
-  - name: total
-    crud: 'create, read'
-  - name: url_pdf
+  -
+    name: alias
+    crud: 'create, read, update'
+    value_type: string
+  -
+    name: fiscalbook_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+    value_type: 'in [sells, buys]'
+  -
+    name: from
+    crud: 'create, read, update'
+    rules:
+      - iso_date
+  -
+    name: to
+    crud: 'create, read, update'
+    sortable: 'true'
+    rules:
+      - iso_date
+  -
+    name: initial_folio
+    crud: 'create, read, update'
+  -
+    name: total
     crud: read
-  - name: url_csv
+  -
+    name: net
     crud: read
-  - name: url_xls
+  -
+    name: url_pdf
     crud: read
-  - name: url_citi
+  -
+    name: url_xls
     crud: read
-relationships: null
-filters: null
-entry_points:
-  methods:
-    patch: false
-    delete: false
+  -
+    name: url_csv
+    crud: read
+  -
+    name: url_citi
+    crud: read
+relationships: {  }
+
 ---
 
-#### Special JSON-API entry points
-`GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/pdf
+#### Special entry points
 
-`GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/xls
+Actualiza datos de la AFIP
+`GET`{: .get} [...]/v1/companies/{company_id}/fiscalpos/update
 
-`GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/csv
+#### Token fiscalpos
 
-`GET`{: .get} [...]/v1/companies/{company_id}/fiscalbooks/{fiscalbook_id}/{type}/citi
+- Sólo hay token cuando `type=fiscal_printer`{: .code}
+- Si fiscaltoken es seteado a "", se genera un nuevo fiscaltoken.
 
-Donde
-**type** `buys | sells`{: .code}
+#### Condiciones
+
+- Si `max_amount_per_invoice` o `max_items_per_invoice` se setean en 0, implicará no tener límites.
+- Si `fiscaltoken` es seteado a '', se genera un nuevo `fiscaltoken`.
+- Sólo hay token cuando `type=fiscal_printer`

@@ -1,28 +1,27 @@
 ---
 resource: cashier_entries
-singular: cashier_entry
 permalink: /docs/resources/cashier_entries/
+singular: resource
 section: Cashier
 partOf: company
 attributes:
-  - name: amount
-    crud: create, read
-    valuetype: number
+  -
+    name: amount
+    crud: 'create, read, update'
+    required: true
+    value_type: numeric
 relationships:
-  - resource: physicalpos
-    hasMany: false
-  - resource: payment_methods
-    alias: payment_method
-    hasMany: false
-  - resource: users
+  -
+    resource: author
     alias: author
-    hasMany: false
-  - resource: documents
-    alias: document
-    hasMany: false
-filters: null
-entry_points:
-  methods:
-    patch: false
-    delete: false
+    crud: 'create, read, update'
+  -
+    resource: physicalpos
+    alias: physicalpos
+    crud: 'create, read, update'
+  -
+    resource: payment_method
+    alias: payment_method
+    crud: 'create, read, update'
+
 ---

@@ -1,26 +1,19 @@
 ---
 resource: taxes
-singular: tax
 permalink: /docs/resources/taxes/
+singular: resource
 section: Products
+partOf: company
 attributes:
-  - name: name
+  -
+    name: name
     crud: read
-    valuetype: string
-  - name: email
+  -
+    name: code_afip
     crud: read
-    valuetype: string
-  - name: code_afip
+  -
+    name: percent_value
     crud: read
-    valuetype: string
-  - name: percent_value
-    crud: read
-    valuetype: float
-relationships: null
-filters: null
-entry_points:
-  methods:
-    delete: false
-    post: false
-    patch: false
+relationships: {  }
+
 ---

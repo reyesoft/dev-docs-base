@@ -1,22 +1,29 @@
 ---
 resource: currencies
-singular: currency
 permalink: /docs/resources/currencies/
+singular: resource
 section: Shared
+partOf: company
 attributes:
-  - name: name
-    crud: read
-  - name: code_afip
-    crud: read
-  - name: code_iso
-    crud: read
-  - name: symbol
-    crud: read
-  - name: quotation_usd
-    crud: read
-relationships: null
-filters: null
-entry_points:
-  methods:
-    delete: false
+  -
+    name: name
+    crud: 'create, read, update'
+    sortable: 'true'
+  -
+    name: code_iso
+    crud: 'create, read, update'
+    filter: StringFilter
+  -
+    name: code_afip
+    crud: 'create, read, update'
+    filter: StringFilter
+  -
+    name: symbol
+    crud: 'create, read, update'
+    sortable: 'true'
+  -
+    name: quotation_usd
+    crud: 'create, read, update'
+relationships: {  }
+
 ---

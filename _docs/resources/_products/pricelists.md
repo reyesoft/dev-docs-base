@@ -1,28 +1,48 @@
 ---
 resource: pricelists
-singular: pricelist
 permalink: /docs/resources/pricelists/
+singular: resource
 section: Products
+partOf: company
 attributes:
-  - name: name
-    valuetype: string
-    observation: required
-  - name: client_price
-    valuetype: float
-  - name: subdist_percent
-    valuetype: float
-  - name: prevent_percent
-    valuetype: float
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
+  -
+    name: name
+    crud: 'create, read, update'
+    required: true
+    rules:
+      - 'max:96'
+  -
+    name: company_id
+    crud: 'create, read, update'
+    required: true
+    value_type: integer
+  -
+    name: client_percent
+    crud: 'create, read, update'
+    rules:
+      - pricelist_percent
+  -
+    name: subdist_percent
+    crud: 'create, read, update'
+    rules:
+      - pricelist_percent
+  -
+    name: prevent_percent
+    crud: 'create, read, update'
+    rules:
+      - pricelist_percent
+  -
+    name: deleted
+    crud: 'create, read, update'
+    filter: DeletedFilter
 relationships:
-  - resource: entities
-    hasMany: true
-  - resource: prielist_products
-    hasMany: true
-filters:
-  - attribute: deleted
-    type: bool
-    multivalue: true
+  -
+    resource: entities
+    alias: entities
+    crud: 'create, read, update'
+  -
+    resource: pricelist_products
+    alias: pricelist_products
+    crud: 'create, read, update'
+
 ---

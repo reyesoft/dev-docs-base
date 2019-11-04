@@ -1,8 +1,8 @@
 ---
-resource: photos
-permalink: /docs/resources/photos/
+resource: product_supplier
+permalink: /docs/resources/product_supplier/
 singular: resource
-section: Shared
+section: Products
 partOf: company
 attributes:
   -
@@ -53,6 +53,12 @@ attributes:
     crud: 'create, read, update'
     value_type: numeric
     required: true
+  -
+    name: product_id
+    crud: 'create, read, update'
+  -
+    name: supplier_id
+    crud: 'create, read, update'
 relationships: {  }
 
 ---

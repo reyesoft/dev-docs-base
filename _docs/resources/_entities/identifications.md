@@ -1,15 +1,15 @@
 ---
-resource: behaviors
-permalink: /docs/resources/behaviors/
+resource: identifications
+permalink: /docs/resources/identifications/
 singular: resource
-section: Cashier
+section: Entities
 partOf: guest
 attributes:
   -
     name: name
     crud: 'create, read, update'
   -
-    name: allow_negative
+    name: code_afip
     crud: 'create, read, update'
 relationships: {  }
 

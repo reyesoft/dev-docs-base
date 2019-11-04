@@ -1,43 +1,53 @@
 ---
 resource: details
-singular: detail
 permalink: /docs/resources/details/
+singular: resource
 section: Documents
 partOf: company
 attributes:
-  - name: qty
-  - name: cost
-  - name: net
-  - name: price
-  - name: commission
-    crud: read
-  - name: product_name
-    crud: read
+  -
+    name: qty
+    crud: 'create, read, update'
+    required: true
+    value_type: numeric
+    rules:
+      - 'min:0.0001'
+  -
+    name: product_name
+    crud: 'create, read, update'
+  -
+    name: cost
+    crud: 'create, read, update'
+    required: true
+    value_type: numeric
+  -
+    name: net
+    crud: 'create, read, update'
+    rules:
+      - 'required_without_all:price'
+    value_type: numeric
+  -
+    name: price
+    crud: 'create, read, update'
+    rules:
+      - 'required_without_all:net'
+    value_type: numeric
+  -
+    name: commission
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: document_id
+    crud: 'create, read, update'
+    value_type: numeric
 relationships:
-  - resource: products
-    hasMany: false
+  -
+    resource: product
     alias: product
-  - resource: orders
-    hasMany: false
+    crud: 'create, read, update'
+  -
+    resource: document
     alias: document
-filters: null
-entry_points:
-  methods:
-    delete: false
-    get: false
-    post: false
-    patch: false
+    crud: 'create, read, update'
+
 ---
-
-#### Special entry points from quotations
-
-`DELETE`{: .delete} `PATCH`{: .patch} `GET`{: .get} [...]/v1/companies/{company_id}/quotations/{document_id}/details/{detail_id}  
-`POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/quotations/{document_id}/details/
-#### Special entry points from orders
-
-`DELETE`{: .delete} `PATCH`{: .patch} `GET`{: .get} [...]/v1/companies/{company_id}/orders/{document_id}/details/{detail_id}  
-`POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/orders/{document_id}/details/
-#### Special entry points from invoices
-
-`DELETE`{: .delete} `PATCH`{: .patch} `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{document_id}/details/{detail_id}  
-`POST`{: .post} `GET`{: .get} [...]/v1/companies/{company_id}/invoices/{document_id}/details/

@@ -1,138 +1,198 @@
 ---
 resource: products
-singular: product
 permalink: /docs/resources/products/
+singular: resource
 section: Products
 partOf: company
 attributes:
-  - name: name
-    valuetype: string
-    observation: required
-  - name: description
-    valuetype: text
-  - name: sku
-    valuetype: string
-  - name: internal_code
-    valuetype: string
-  - name: supplier_code
-    valuetype: string
-  - name: conduct
-    valuetype: common | compound | variant_common | variant_parent
-    observation: required
-  - name: product_type
-    valuetype: service | product
-  - name: duration
-    valuetype: int
-  - name: stock_type
-    valuetype: disabled | negative | positive
-  - name: replacement_cost
-    valuetype: float
-    observation: required
-  - name: price
+  -
+    name: name
+    crud: 'create, read, update'
+    filter: StringFilter
+    sortable: 'true'
+    required: true
+    rules:
+      - 'max:96'
+  -
+    name: saleable
+    crud: 'create, read, update'
+    filter: SaleableFilter
+    sortable: 'true'
+  -
+    name: description
+    crud: 'create, read, update'
+  -
+    name: sku
+    crud: 'create, read, update'
+    filter: StringFilter
+    rules:
+      - 'max:96'
+  -
+    name: internal_code
+    crud: 'create, read, update'
+    filter: StringFilter
+    rules:
+      - 'max:96'
+  -
+    name: supplier_code
+    crud: 'create, read, update'
+    filter: StringFilter
+    rules:
+      - 'max:96'
+  -
+    name: conduct
+    crud: 'create, read, update'
+    value_type: 'in [variant_parent, variant_common, compound, common]'
+    required: true
+  -
+    name: product_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+  -
+    name: duration
+    crud: 'create, read, update'
+    value_type: integer
+  -
+    name: stock_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+    value_type: 'in [disabled, negative, positive]'
+    required: true
+  -
+    name: replacement_cost
+    crud: 'create, read, update'
+    value_type: numeric
+    rules:
+      - 'max:999999'
+  -
+    name: stock
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: stock_alert
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: stock_alert_percent
+    crud: 'create, read, update'
+    filter: NumberFilter
+    sortable: 'true'
+  -
+    name: stock_desired
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: cost_with_tax
+    crud: 'create, read, update'
+  -
+    name: category_id
+    crud: ''
+    filter: EnumFilter
+  -
+    name: high
+    crud: 'create, read, update'
+  -
+    name: width
+    crud: 'create, read, update'
+  -
+    name: length
+    crud: 'create, read, update'
+  -
+    name: weight
+    crud: 'create, read, update'
+  -
+    name: weight_element
+    crud: 'create, read, update'
+  -
+    name: units_per_package
+    crud: 'create, read, update'
+  -
+    name: units_per_box
+    crud: 'create, read, update'
+  -
+    name: deleted
+    crud: 'create, read, update'
+    filter: DeletedFilter
+  -
+    name: updated_at
+    crud: 'create, read, update'
+  -
+    name: allow_fractions
+    crud: 'create, read, update'
+  -
+    name: price
     crud: read
-    valuetype: float
-  - name: price_with_tax
+  -
+    name: client_price_with_tax
     crud: read
-    valuetype: float
-  - name: price_subdist
+  -
+    name: subdist_price
     crud: read
-    valuetype: float
-  - name: price_prevent
+  -
+    name: prevent_price
     crud: read
-    valuetype: flaot
-  - name: cost_with_tax
-    valuetype: float
-    observation: Only saves cost calculated based on cost with tax
-  - name: stock_type
-    valuetype: disabled | negative | positive
-    observation: required
-  - name: stock
-    valuetype: float
-    crud: read
-  - name: stock_alert
-    valuetype: float
-  - name: stock_alert_percent
-    valuetype: float
-    crud: read
-  - name: stock_desired
-    valuetype: float
-  - name: high
-    valuetype: float
-  - name: width
-    valuetype: float
-  - name: length
-    valuetype: float
-  - name: weight
-    valuetype: float
-  - name: weight_element
-    valuetype: float
-  - name: units_per_package
-    valuetype: int
-  - name: units_per_box
-    valuetype: int
-  - name: allow_fractions
-    valuetype: boolean
 relationships:
-  - resource: users
+  -
+    resource: author
     alias: author
-  - resource: categories
+    crud: read
+  -
+    resource: category
     alias: category
-  - resource: currencies
+    crud: read
+  -
+    resource: currency
     alias: currency
-  - resource: product_products
+    crud: read
+  -
+    resource: compound_children
     alias: compound_children
-    hasMany: true
-  - resource: product_products
+    crud: read
+  -
+    resource: compound_parents
     alias: compound_parents
-    hasMany: true
-  - resource: futureprices
-    hasMany: true
-  - resource: inventories
-    hasMany: true
-  - resource: measures
-    hasMany: true
-  - resource: photos
-    hasMany: true
-  - resource: pricelist_products
-    hasMany: true
-  - resource: taxes
-    alias: tax
-  - resource: entities
+    crud: read
+  -
+    resource: futureprices
+    alias: futureprices
+    crud: read
+  -
+    resource: inventories
+    alias: inventories
+    crud: read
+  -
+    resource: measures
+    alias: measures
+    crud: read
+  -
+    resource: photos
+    alias: photos
+    crud: read
+  -
+    resource: pricelist_products
+    alias: pricelist_products
+    crud: read
+  -
+    resource: publications
+    alias: publications
+    crud: read
+  -
+    resource: suppliers
     alias: suppliers
-    hasMany: true
-  - resource: products
+    crud: read
+  -
+    resource: tax
+    alias: tax
+    crud: read
+  -
+    resource: variants_children
     alias: variants_children
-    hasMany: true
-  - resource: products
-    alias: variants_parents
-    hasMany: true
-filters:
-  - attribute: name
-    type: like
-    multivalue: false
-  - attribute: sku
-    type: equals
-    multivalue: false
-  - attribute: internal_code
-    type: equals
-    multivalue: false
-  - attribute: supplier_code
-    type: equals
-    multivalue: false
-  - attribute: product_type
-    type: equals
-    multivalue: false
-  - attribute: category_id
-    type: equals
-    multivalue: false
-  - attribute: deleted
-    type: bool
-    multivalue: false
-sorts:
-  - attribute: stock_alert_percent
-    enabled: true
-entry_points:
-  name: pricelists
+    crud: read
+  -
+    resource: variant_parent
+    alias: variant_parent
+    crud: read
+
 ---
 
 #### Special relationships

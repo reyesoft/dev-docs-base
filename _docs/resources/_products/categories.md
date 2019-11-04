@@ -1,30 +1,34 @@
 ---
 resource: categories
-singular: category
 permalink: /docs/resources/categories/
+singular: resource
 section: Products
+partOf: company
 attributes:
-  - name: name
-    valuetype: string
-    observation: required
-  - name: deleted
-    crud: read
+  -
+    name: name
+    crud: 'create, read, update'
+    filter: StringFilter
+    sortable: 'true'
+    required: true
+    rules:
+      - 'max:96'
+  -
+    name: deleted
+    crud: 'create, read, update'
+    filter: DeletedFilter
 relationships:
-  - resource: categories
-    alias: children
-    hasMany: true
-  - resource: categories
+  -
+    resource: categories
+    alias: categories
+    crud: 'create, read, update'
+  -
+    resource: pricelist_categories
+    alias: pricelist_categories
+    crud: 'create, read, update'
+  -
+    resource: parentcategory
     alias: parentcategory
-  - resource: pricelist_categories
-    hasMany: true
-filters:
-  - attribute: name
-    type: like
-    multivalue: false
-  - attribute: deleted
-    type: bool
-    multivalue: true
-sorts:
-  - attribute: name
-    enabled: true
+    crud: 'create, read, update'
+
 ---

@@ -1,37 +1,50 @@
 ---
 resource: transactions
-singular: transaction
 permalink: /docs/resources/transactions/
+singular: resource
 section: Cashier
 partOf: company
 attributes:
-  - name: due_date
-    valuetype: datetimew3c
-  - name: observations
-  - name: amount
-    crud: create, read
-    valuetype: number
-  - name: created_at
+  -
+    name: due_date
+    crud: 'create, read'
+    rules:
+      - nullable
+      - iso_date
+  -
+    name: amount
+    crud: 'create, read'
+    required: true
+    value_type: numeric
+  -
+    name: current_balance
+    crud: read
+    value_type: numeric
+  -
+    name: observations
+    crud: 'create, read, update'
+  -
+    name: created_at
+    crud: read
+  -
+    name: pdf_url
     crud: read
 relationships:
-  - resource: entities
+  -
+    resource: documents
+    alias: documents
+    crud: 'create, read'
+  -
+    resource: entity
     alias: entity
-    hasMany: false
-  - resource: currencies
+    crud: 'create, read'
+  -
+    resource: currency
     alias: currency
-    hasMany: false
-  - resource: documents
-    hasMany: true
-  - resource: cashier_entries
-    hasMany: true
-filters: null
-entry_points:
-  methods:
-    delete: false
+    crud: 'create, read'
+  -
+    resource: cashier_entries
+    alias: cashier_entries
+    crud: 'create, read'
+
 ---
-
-#### Entry Points
-
-`GET`{: .get} [...]/v1/companies/{company_id}/entities/{entity_id}/transactions
-
-`GET`{: .get} [...]/v1/companies/{company_id}/transactions/{transaction_id}/pdf

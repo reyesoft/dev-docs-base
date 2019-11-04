@@ -1,25 +1,21 @@
 ---
-resource: revenues
-permalink: /docs/resources/revenues/
+resource: receipts
+permalink: /docs/resources/receipts/
 singular: resource
 section: Documents
-partOf: company
+partOf: guest
 attributes:
   -
-    name: date
-    crud: 'create, read, update'
-    filter: DateFilter
-  -
-    name: cost
+    name: name
     crud: 'create, read, update'
   -
-    name: commission
+    name: code_afip
     crud: 'create, read, update'
   -
-    name: total
+    name: receipt_type
     crud: 'create, read, update'
   -
-    name: revenue
+    name: letter
     crud: 'create, read, update'
 relationships: {  }
 

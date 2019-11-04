@@ -1,20 +1,20 @@
 ---
-resource: discounts
-permalink: /docs/resources/discounts/
+resource: options
+permalink: /docs/resources/options/
 singular: resource
 section: Companies
 partOf: guest
 attributes:
   -
-    name: months
+    name: key
     crud: 'create, read, update'
     required: true
-    value_type: integer
   -
-    name: percent
+    name: default
     crud: 'create, read, update'
-    required: true
-    value_type: numeric
+  -
+    name: class
+    crud: 'create, read, update'
 relationships: {  }
 
 ---

@@ -1,25 +1,24 @@
 ---
-resource: revenues
-permalink: /docs/resources/revenues/
+resource: measures
+permalink: /docs/resources/measures/
 singular: resource
-section: Documents
-partOf: company
+section: Products
+partOf: guest
 attributes:
   -
-    name: date
-    crud: 'create, read, update'
-    filter: DateFilter
-  -
-    name: cost
+    name: name
     crud: 'create, read, update'
   -
-    name: commission
+    name: code_afip
     crud: 'create, read, update'
   -
-    name: total
+    name: short_name
     crud: 'create, read, update'
   -
-    name: revenue
+    name: measure_type
+    crud: 'create, read, update'
+  -
+    name: factor
     crud: 'create, read, update'
 relationships: {  }
 

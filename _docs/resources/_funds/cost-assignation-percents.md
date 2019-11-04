@@ -1,20 +1,23 @@
 ---
 resource: cost_assignation_percents
 permalink: /docs/resources/cost_assignation_percents/
+singular: resource
 section: Funds
 partOf: company
 attributes:
-  - name: percent
-    valuetype: integer
+  -
+    name: percent
+    crud: 'create, read, update'
+    sortable: 'true'
+    required: true
 relationships:
-  - resource: cost_assignation_strategies
-    alias: cost_assignation_strategy
-    hasMany: false
-  - resource: cost_centers
+  -
+    resource: cost_center
     alias: cost_center
-    hasMany: false
-filters:
-    - attribute: name
-      type: like
-      multivalue: false
+    crud: 'create, read, update'
+  -
+    resource: cost_assignation_strategy
+    alias: cost_assignation_strategy
+    crud: 'create, read, update'
+
 ---

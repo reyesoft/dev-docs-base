@@ -1,33 +1,47 @@
 ---
 resource: company_users
-singular: company_user
 permalink: /docs/resources/company_users/
+singular: resource
 section: Users
 partOf: company
 attributes:
-  - name: email
-    observation: required
-    valuetype: string
-    crud: create, read
-  - name: invitation_status
-    valuetype: pending | accepted | rejected
+  -
+    name: email
+    crud: 'create, read'
+    rules:
+      - email
+  -
+    name: invitation_status
     crud: read
-  - name: company_id
-    valuetype: int    
-  - name: deleted
-    valuetype: datetimew3c
+    required: true
+    value_type: 'in [pending, accepted, rejected]'
+  -
+    name: company_id
+    crud: 'create, read, update'
+  -
+    name: deleted
+    crud: 'create, read, update'
+    filter: DeletedFilter
 relationships:
-  - resource: roles
-    hasMany: true
-  - resource: permissions
-    hasMany: true
-  - resource: users
+  -
+    resource: permissions
+    alias: permissions
+    crud: ''
+  -
+    resource: roles
+    alias: roles
+    crud: ''
+  -
+    resource: user
     alias: user
-  - resource: entities
+    crud: ''
+  -
+    resource: entity
     alias: entity
-filters:
-  - attribute: deleted
-    type: bool
-    multivalue: true
+    crud: ''
+  -
+    resource: user_register_schema
+    alias: user_register_schema
+    crud: ''
 
 ---

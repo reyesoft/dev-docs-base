@@ -1,34 +1,55 @@
 ---
 resource: cashier_balances
-singular: cashier_balance
 permalink: /docs/resources/cashier_balances/
+singular: resource
 section: Cashier
 partOf: company
 attributes:
-  - name: balance_amount
+  -
+    name: balance_amount
     crud: read
-    valuetype: number
-  - name: report_type
-    valuetype: draft|confirmed
-  - name: from
+  -
+    name: pdf_url
     crud: read
-    valuetype: datetimew3c
-  - name: to
-    crud: create, read
-    valuetype: datetimew3c
-  - name: pdf_url
+  -
+    name: from
     crud: read
-  - name: physicalpos_id
+    filter: DateFilter
+  -
+    name: to
+    crud: 'create, read, update'
+    filter: DateFilter
+    required: true
+    rules:
+      - iso_date
+  -
+    name: report_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [confirmed, draft]'
+  -
+    name: physicalpos_id
     crud: read
-  - name: date
+    filter: StringFilter
+    required: true
+    value_type: integer
+  -
+    name: date
     crud: read
-    valuetype: datetimew3c
+    filter: CashierBalanceFilter
 relationships:
-  - resource: physicalpos
-    hasMany: false
-  - resource: cashier_balance_details
-    hasMany: true
-filters: null
+  -
+    resource: cashier_balance_details
+    alias: cashier_balance_details
+    crud: 'create, read, update'
+  -
+    resource: cashier_balance_current_accounts
+    alias: cashier_balance_current_accounts
+    crud: 'create, read, update'
+  -
+    resource: physicalpos
+    alias: physicalpos
+    crud: 'create, read, update'
+
 ---
-**Included**
-- [cashier_balances_details](https://dev.multinexo.com/docs/resources/cashier-balances-details/)

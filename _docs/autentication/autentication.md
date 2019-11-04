@@ -3,39 +3,52 @@ title: Autenticación
 permalink: /docs/autentication/
 section: Autenticación
 ---
-Multinexo utiliza JWT (Javascript Web Token) para identificar y autorizar a los usuarios cuando utilizan los servicios ofrecidos por la
-API. Cada vez que tu aplicación haga una petición a una ruta o servicio deberá presentarse con un Token.
 
-Con este token podrás comunicarte todas la veces que sea necesario mientras la sesión se mantenga abierta. Al cerrar sesión, quedará
-obsoleto y deberás iniciar nuevamente para recibir uno nuevo.
+Multinexo sigue la especificación Oauth 2.0 para identificar y autorizar a los usuarios cuando utilizan los servicios ofrecidos por la
+API.Si no conoces la especificación puedes visitar la <a href="https://tools.ietf.org/html/rfc6749" target="\_blank">RFC</a> para más información.
 
-# Cómo generar el token
+Para utilizar la API, tu aplicación deberá ser capaz de enviar el usuario, contraseña, Client ID y Client Secret a Multinexo para solicitar un Access Token y un Refresh Token. El Access Token servirá para solicitar recursos a la API, mientras que el Refresh Token servirá para solicitar un nuevo Access Token cuando éste quede obsoleto.
 
-Cuando inicias sesión en Multinexo, tus datos privados (nombre de usuario y contraseña) son enviados a la API por única vez. Una vez
-verificados, el servidor responde con un JWT que podrás utilizar para hacer las peticiones a la API hasta el cierre de la sesión.
+A continuación tienes una representación del flujo de autenticación para identificarte en Multinexo, solicitar un recurso y renovar el Access Token:
 
-![JWT]({{ '/img/autentication/Diagrama-JWT-Multinexo.png' | prepend: site.baseurl }}){: .width-100}
+![JWT]({{ '/img/autentication/oauth2-diagram.svg' | prepend: site.baseurl }}){: .width-100}
 
-## Punto de entrada para la generación del token
+## Cómo generar el token
 
-Para solicitar un token de acceso debes hacer una petición POST al punto de entrada que se indica a continuación con el nombre de usuario
-y la contraseña:
+Cuando inicias sesión en Multinexo, tus datos privados (nombre de usuario, contraseña, Client ID y Client Secret) son enviados a la API por única vez. Una vez
+verificados, el servidor responde con un Access Token, un Refresh Token y el tiempo de expiración del Access Token. Podrás utilizar este Access Token para hacer las peticiones a la API durante este tiempo, una vez que expire, deberás renovarlo utilizando el Refresh Token como se muestra en el diagrama ilustrado anteriormente.
 
-- Punto de entrada: `https://api.multinexo.com/v1/authenticate`
+## Rutas
 
-- Datos:
+### Registro:
 
-  `email: correo electrónico del usuario`
+- `POST` https://api.multinexo.com/v1/users (no requiere token)
 
-  `password: contraseña`
+En los datos del request deberás enviar un JSON con una instancia del recurso User (siguiendo la especificación JSONAPI). El servidor responderá con el recurso creado.
 
-- Headers: `'Content-Type': 'application/x-www-form-urlencoded'`
+### Token
 
-# Cómo utilizar el token
+- `POST` https://api.multinexo.com/auth/v1/token
 
-Después de recibir el token, debes guardarlo e incluirlo en el encabezado de cada petición a la API con el siguiente formato:
+En los datos del request deberás enviar:
 
-  `Authorization: Bearer { user_token }`
+```
+grant_type: password
+scope: openid profile email voucher
+username: Tu nombre de usuario
+password: Tu contraseña
+client_id: Tu Client ID
+client_secret: Tu Client Secret
+```
 
-El servidor verificará la validez del mismo y, en caso de ser correcto, responderá acorde a la solicitud. Si el token enviado ha quedado
-obsoleto o es incorrecto, se cerrará la sesión y se solicitarán nuevamente los datos de inicio.
+A lo que el servidor responderá con:
+
+```
+access_token: El Access Token
+expires_in: 900
+first_name: Nombre de usuario
+last_name: Apellido del usuario
+refresh_token: El Refresh Token
+token_type: "Bearer"
+uid: ID del usuario
+```

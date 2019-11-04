@@ -1,24 +1,25 @@
 ---
 resource: pricelist_reports
-singular: pricelist_report
 permalink: /docs/resources/pricelist_reports/
+singular: resource
 section: Products
 partOf: company
 attributes:
-  - name: name
+  -
+    name: name
+    crud: 'create, read, update'
+    required: true
+  -
+    name: pdf_url
     crud: read
-    valuetype: string
-    observation: required
-  - name: pdf_url
-    crud: read
-    valuetype: string
 relationships:
-  - resource: entities
-    hasMany: true
-  - resource: pricelists
-    hasMany: true
-filters: null
-entry_points:
-  methods:
-    patch: false
+  -
+    resource: entities
+    alias: entities
+    crud: 'create, read, update'
+  -
+    resource: pricelists
+    alias: pricelists
+    crud: 'create, read, update'
+
 ---

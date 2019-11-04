@@ -1,32 +1,16 @@
 ---
 resource: preferences
-singular: preference
 permalink: /docs/resources/preferences/
+singular: resource
 section: Users
 partOf: user
 attributes:
-  - name: key
+  -
+    name: key
     crud: read
-    valuetype: int
-  - name: value
-    valuetype: string
-relationships: null
-filters: null
-entry_points:
-  name: me
-  methods:
-    delete: false
-    post: false
-    put: false
-    get: false
+  -
+    name: value
+    crud: 'create, read, update'
+relationships: {  }
+
 ---
-
-#### Special entry points
-
-`GET`{: .get} [...]v1/users/me/preferences
-
-`GET`{: .get} [...]v1/users/me/preferences/{key}
-
-`PATCH`{: .patch} [...]v1/users/me/preferences/{key}
-
---------------------------------------------------------------------------------

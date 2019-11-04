@@ -1,91 +1,127 @@
 ---
 resource: documents
-singular: document
 permalink: /docs/resources/documents/
+singular: resource
 section: Documents
+partOf: company
 attributes:
-  - name: section
-    crud: create, read
-    valuetype: sales | purchases
-  - name: receipt_type
-    crud: create, read
-    valuetype: invoice | credit | debit | order_sell | order_buy | quotation | zeta
-  - name: receipt_volume
+  -
+    name: cae
+    crud: 'create, read, update'
+  -
+    name: cae_expiration_date
+    crud: 'create, read, update'
+  -
+    name: net
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: total
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: emission_date
+    crud: 'create, read, update'
+    filter: EmissionDateFilter
+  -
+    name: observation
+    crud: 'create, read, update'
+  -
+    name: discount_percent
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: discount_amount
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: pdf_url
+    crud: 'create, read, update'
+  -
+    name: canceled
+    crud: 'create, read, update'
+  -
+    name: fiscal_observation
+    crud: 'create, read, update'
+  -
+    name: show_amounts
+    crud: 'create, read, update'
+    required: true
+    value_type: boolean
+  -
+    name: section
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [sales, purchases]'
+  -
+    name: receipt_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [invoice, credit, debit, order_sell, order_buy, no_fiscal, quotation, zeta]'
+  -
+    name: status
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [draft, failed, queued, confirmed]'
+  -
+    name: letter
     crud: read
-    valuetype: number
-  - name: receipt_number
-    crud: read
-    valuetype: number
-  - name: total_commission
-    crud: read
-    valuetype: decimal
-  - name: total_cost
-    crud: read
-    valuetype: decimal
-  - name: total_net_price
-    crud: read
-    valuetype: decimal
-  - name: total_final_price
-    crud: read
-    valuetype: decimal
-  - name: discount_percent
-    crud: read
-    valuetype: decimal
-  - name: discount_amount
-    crud: read
-    valuetype: decimal
-  - name: emission_date
-    crud: read
-    valuetype: datetimew3c
-  - name: cae
-    crud: read
-  - name: cae_expiration_date
-    crud: read
-    valuetype: datetimew3c
-  - name: observation
-    crud: read
-  - name: show_amounts
-    valuetype: true | false
-  - name: canceled
-    valuetype: true | false
-  - name: fiscal_observation
-  - name: status
-    valuetype: draft | failed | queued | confirmed
-  - name: created_at
-    crud: read
-    valuetype: datetimew3c
-  - name: updated_at
-    crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
+    filter: LetterFilter
+  -
+    name: receipt_volume
+    crud: 'create, read, update'
+    filter: StringFilter
+    rules:
+      - nullable
+      - 'digits_between:0,4'
+    value_type: integer
+  -
+    name: receipt_number
+    crud: 'create, read, update'
+    filter: StringFilter
+    rules:
+      - nullable
+      - 'digits_between:0,8'
+    value_type: integer
 relationships:
-  - resource: entities
-    hasMany: false
-    alias: entity
-  - resource: currencies
+  -
+    resource: details
+    alias: details
+    crud: 'create, read, update'
+  -
+    resource: currency
     alias: currency
-    hasMany: false
-  - resource: receipts
-    hasMany: false
-    alias: receipt
-  - resource: physicalpos
-    hasMany: false
-  - resource: fiscalpos
-    hasMany: false
-  - resource: closure_receipts
-    hasMany: false
+    crud: 'create, read, update'
+  -
+    resource: entity
+    alias: entity
+    crud: 'create, read, update'
+  -
+    resource: physicalpos
+    alias: physicalpos
+    crud: 'create, read, update'
+  -
+    resource: closureReceipt
     alias: closureReceipt
-  - resource: cashier_entries
-    hasMany: true
-  - resource: documents
-    hasMany: true
-  - resource: details
-    hasMany: true
-entry_points:
-  methods:
-    delete: false
-    post: false
-    patch: false
+    crud: 'create, read, update'
+  -
+    resource: cashier_entries
+    alias: cashier_entries
+    crud: 'create, read, update'
+  -
+    resource: receipt
+    alias: receipt
+    crud: 'create, read, update'
+  -
+    resource: documents
+    alias: documents
+    crud: 'create, read, update'
+  -
+    resource: seller
+    alias: seller
+    crud: 'create, read, update'
+
 ---

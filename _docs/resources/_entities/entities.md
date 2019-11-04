@@ -1,76 +1,142 @@
 ---
 resource: entities
-singular: entity
 permalink: /docs/resources/entities/
+singular: resource
 section: Entities
 partOf: company
 attributes:
-  - name: name
-  - name: identification_number
-  - name: contact_name
-  - name: street_name
-  - name: street_number
-  - name: location
-  - name: province
-  - name: additional_info
-  - name: email
-  - name: phone
-  - name: observation
-  - name: has_account
-  - name: entity_type
-    valuetype: client | supplier | employee | creditor | subdist | prevent
-  - name: balance
+  -
+    name: name
+    crud: 'create, read, update'
+    filter: StringFilter
+    sortable: 'true'
+    required: true
+    value_type: string
+    rules:
+      - 'max:96'
+  -
+    name: contact_name
+    crud: 'create, read, update'
+    value_type: string
+    rules:
+      - 'max:96'
+  -
+    name: street_name
+    crud: 'create, read, update'
+    value_type: string
+    rules:
+      - 'max:96'
+  -
+    name: street_number
+    crud: 'create, read, update'
+    value_type: numeric
+  -
+    name: location
+    crud: 'create, read, update'
+  -
+    name: province
+    crud: 'create, read, update'
+  -
+    name: additional_info
+    crud: 'create, read, update'
+  -
+    name: email
+    crud: 'create, read, update'
+    rules:
+      - email
+  -
+    name: phone
+    crud: 'create, read, update'
+    rules:
+      - 'max:96'
+  -
+    name: entity_type
+    crud: 'create, read, update'
+    filter: EnumFilter
+    required: true
+    value_type: 'in [client, supplier, employee, creditor, subdist, prevent]'
+  -
+    name: observations
+    crud: 'create, read, update'
+  -
+    name: balance
     crud: read
-  - name: pdf_url
+  -
+    name: balance_at
     crud: read
-  - name: pricelist_id 'only for orders-edit'
+  -
+    name: identification_number
+    crud: 'create, read, update'
+    filter: StringFilter
+    rules:
+      - 'max:15'
+  -
+    name: latitude
+    crud: 'create, read, update'
+  -
+    name: longitude
+    crud: 'create, read, update'
+  -
+    name: has_account
+    crud: 'create, read, update'
+  -
+    name: deleted
     crud: read
-  - name: latitude
-  - name: longitude
-  - name: balance_at
+    filter: DeletedFilter
+  -
+    name: pareto_class
     crud: read
-    valuetype: datetimew3c
-  - name: abc_class
-    valuetype: A | B | C | ''
+    filter: EnumFilter
+    sortable: 'true'
+  -
+    name: pareto_percent
     crud: read
-  - name: updated_at
+    filter: NumberFilter
+    sortable: 'true'
+  -
+    name: pdf_url
     crud: read
-    valuetype: datetimew3c
-  - name: deleted_at
-    crud: read
-    valuetype: datetimew3c
+  -
+    name: identification_id
+    crud: 'create, read, update'
+    value_type: integer
+  -
+    name: responsibility_id
+    crud: 'create, read, update'
+    required: true
+    value_type: integer
 relationships:
-  - resource: transactions
-    hasMany: true
-  - resource: users
-    hasMany: false
-    alias: user
-  - resource: authors
-    hasMany: false
-    alias: author
-  - resource: sellers
-    hasMany: false
-    alias: seller
-  - resource: responsibilities
-    hasMany: false
+  -
+    resource: transactions
+    alias: transactions
+    crud: 'create, read, update'
+  -
+    resource: documents
+    alias: documents
+    crud: 'create, read, update'
+  -
+    resource: responsibility
     alias: responsibility
-  - resource: pricelists
-    hasMany: false
+    crud: 'create, read, update'
+  -
+    resource: pricelist
     alias: pricelist
-filters:
-  - attribute: name
-    type: like
-    multivalue: false
-  - attribute: identification_number
-    type: like
-    multivalue: false
-  - attribute: entity_type
-    type: equals
-    multivalue: true
-  - attribute: trashed
-    multivalue: false
-    values: null | onlyTrashed | withTrashed
-  - attribute: abc_class
-    type: equals
-    multivalue: true
+    crud: 'create, read, update'
+  -
+    resource: author
+    alias: author
+    crud: 'create, read, update'
+  -
+    resource: identification
+    alias: identification
+    crud: 'create, read, update'
+  -
+    resource: products
+    alias: products
+    crud: 'create, read, update'
+  -
+    resource: seller
+    alias: seller
+    crud: 'create, read, update'
+
 ---

@@ -1,45 +1,56 @@
 ---
 resource: pricelist_products
-singular: pricelist_product
 permalink: /docs/resources/pricelist_products/
+singular: resource
 section: Products
+partOf: company
 attributes:
-  - name: client_value
-    valuetype: float
-  - name: client_value_type
+  -
+    name: pricelist_id
+    crud: 'create, read, update'
+    required: true
+    value_type: integer
+  -
+    name: fortype
+    crud: 'create, read, update'
+  -
+    name: client_value_number
+    crud: 'create, read, update'
+  -
+    name: client_value_type
+    crud: 'create, read, update'
+  -
+    name: client_price
     crud: read
-    valuetype: auto | percent | amount
-  - name: subdist_value
-    valuetype: float
-  - name: subdist_value_type
+  -
+    name: client_net_price
     crud: read
-    valuetype: auto | percent | amount
-  - name: prevent_value
-    valuetype: float
-  - name: prevent_value_type
+  -
+    name: subdist_value_number
+    crud: 'create, read, update'
+  -
+    name: subdist_value_type
+    crud: 'create, read, update'
+  -
+    name: subdist_price
     crud: read
-    valuetype: auto | percent
-  - name: client_net_price
+  -
+    name: prevent_value_number
+    crud: 'create, read, update'
+  -
+    name: prevent_value_type
+    crud: 'create, read, update'
+  -
+    name: prevent_price
     crud: read
-    valuetype: float
-  - name: client_price
-    crud: read
-    valuetype: float
-  - name: prevent_price
-    crud: read
-    valuetype: float
-  - name: subdist_price
-    crud: read
-    valuetype: float
-  - name: fortype
-    valuetype: products | futurePrices
 relationships:
-  - resource: products
+  -
+    resource: product
     alias: product
-  - resource: pricelists
+    crud: 'create, read, update'
+  -
+    resource: pricelist
     alias: pricelist
-filters: null
-entry_points:
-  methods:
-    delete: false
+    crud: 'create, read, update'
+
 ---
