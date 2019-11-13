@@ -16,12 +16,12 @@ workflows:
   build:
     jobs:
       - build:
-        filters:
-          branches:
-            ignore: master
+          filters:
+            branches:
+              ignore: master
   deploy:
     jobs:
       - deploy-to-ghpages:
-        filters:
-          branches:
-            only: master
+          filters:
+            branches:
+              only: master
