@@ -1,9 +1,9 @@
 ---
 version: 0.0.23
-title: Emission date filter
+title: Date filter
 permalink: /docs/0.0.23/EmissionDateFilter/
 section: Filtros
-description: El filtro EmissionDate permite filtrar según la fecha de emisión.
+description: El filtro Date permite filtrar por fechas.
 filter_type: date
 default_modifier: eq
 filter_modifiers:
