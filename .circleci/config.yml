@@ -10,7 +10,7 @@ workflows:
   version: 2
   deploy:
     jobs:
-      - deploy-to-gnpages:
+      - deploy-to-ghpages:
           filters:
             branches:
               only: master
