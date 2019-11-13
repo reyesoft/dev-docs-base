@@ -74,7 +74,7 @@
     {% assign filtered_attributes = page.attributes | where_exp: 'item', 'item.filter' %}
     {% assign filtered_attribute = filtered_attributes | first %}
     {% if filtered_attribute %}
-        <h4>Filters example</h4>
+        <h4>Filter example</h4>
         <section>
           {{ url }}{{ page.resource }}?filter[{{ filtered_attribute.name }}]={%if (filtered_attribute.value_type == "string") %}string{% elsif (filtered_attribute.value_type == "datetimew3c") %}{{ page.date | date_to_xmlschema }}{% elsif (filtered_attribute.value_type == "boolean") %}{{ true | false }}{% elsif (filtered_attribute.value_type == "number") %}{% assign min = 100 %}{% assign max = 999 %}{% assign diff = max | minus: min %}{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}{{randomNumber}}{% else %}someValue{% endif %}
         </section>
