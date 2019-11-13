@@ -29,10 +29,10 @@ workflows:
       - build:
           filters:
             branches:
-              ignore: master
+              ignore: v2.0
   deploy:
     jobs:
       - deploy-to-ghpages:
           filters:
             branches:
-              only: master
+              only: v2.0
