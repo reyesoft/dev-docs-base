@@ -26,7 +26,7 @@ bundle exec jgd -r BRANCH_NAME
 
 ## Documented resources structure
 
-Documented resources must define the following fields in the Front Matter:
+Documented resources must define the following fields in the YAML Front Matter:
 
 ``` yaml
 version: API version
