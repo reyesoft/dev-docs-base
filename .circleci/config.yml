@@ -1,5 +1,10 @@
 version: 2
 jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5.1
+    steps:
+      - run: bundle install && bundle exec jekyll build
   deploy-to-ghpages:
     docker:
       - image: circleci/ruby:2.5.1
@@ -8,6 +13,12 @@ jobs:
       - run: bundle install && bundle exec jgd
 workflows:
   version: 2
+  build:
+    jobs:
+      - build:
+        filters:
+          branches:
+            ignore: master
   deploy:
     jobs:
       - deploy-to-ghpages:
