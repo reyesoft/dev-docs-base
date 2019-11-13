@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  deploy-to-ghpages:
+    docker:
+      - image: circleci/ruby:2.5.1
+    steps:
+      - checkout
+      - run: bundle install && bundle exec jgd
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy-to-gnpages:
+          filters:
+            branches:
+              only: master
