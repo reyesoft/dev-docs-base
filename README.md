@@ -28,16 +28,17 @@ bundle exec jgd -r BRANCH_NAME
 
 Documented resources must define the following fields in the Front Matter:
 
-
-version: *API version*
-resource: *resource type*
-permalink: /docs/*{API version}*/resources/*{resource type}*/
-section: *Parent section name*
-partOf: *parent resource*
+``` yaml
+version: API version
+resource: resource type
+permalink: /docs/{API version}/resources/{resource type}/
+section: Parent section name
+partOf: parent resource
 attributes:
   -
-    name: *attribute name*
-    crud: *attribute crud*
-    filter: *supported filter (optional)*
-    required: *if the atribute is required (optional, defaults to false)*
-    value_type: *supported content type (optional, defaults to string)*
+    name: attribute name
+    crud: attribute crud
+    filter: supported filter (optional)
+    required: if the atribute is required (optional, defaults to false)
+    value_type: supported content type (optional, defaults to string)
+```
