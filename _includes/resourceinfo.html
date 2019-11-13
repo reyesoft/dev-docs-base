@@ -25,6 +25,11 @@
             {% if attribute.valuetype %}
               <span class="code">{{ attribute.valuetype }}</span>
             {% endif %}
+            {% if attribute.filter %}
+              <a href="{{ attribute.filter | prepend: "/" | prepend: site.version | prepend: "/docs/" | prepend: site.baseurl }}">
+                <span class="code">{{ attribute.filter }}</span>
+              </a>
+            {% endif %}
             {% if attribute.observation %}
               <span class="code" style="color: #fa3a00; word-wrap: word-break">{{ attribute.observation }}</span>
             {% endif %}
