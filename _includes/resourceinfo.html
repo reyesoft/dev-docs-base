@@ -1,4 +1,4 @@
-{% assign url = 'http://api.multinexo.com/v1/' %}
+{% assign url = site.apiurl %}
 {% if page.partOf == 'company' %}
   {% assign url = url | append: 'companies/{company_id}/' %}
 {% elsif page.partOf == 'user' %}

@@ -3,9 +3,9 @@ layout: default
 ---
 <div class="header-container layout-row layout-align-center-center">
   <div class="layout-column layout-align-center-start flex-70">
-    <h1 class="mdl-typography--display-3">Conéctate con Multinexo</h1>
+    <h1 class="mdl-typography--display-3">Conéctate con {{ site.api_name }}</h1>
     <p class="mdl-typography--headline">
-      Multinexo ha sido concebido desde su inicio para que sus funcionalidades
+      {{ site.api_name }} ha sido concebido desde su inicio para que sus funcionalidades
       sean extendidas según tus necesidades.
     </p>
     <p>
@@ -17,14 +17,14 @@ layout: default
 <div class="front-dev layout-row layout-align-center-center">
   <div class="layout-row flex-70 layout-align-center-center">
     <div class="layot-column">
-      <h2 class="mdl-typography--display-2">Multinexo para Desarrolladores</h2>
+      <h2 class="mdl-typography--display-2">{{ site.api_name }} para Desarrolladores</h2>
         <!-- <blockquote> -->
         <p class="mdl-typography--headline">
           Esta sección está destinada a los desarrolladores que deseen interactactuar
-          con la API de Multinexo.
+          con la API de {{ site.api_name }}.
         </p>
         <p class="mdl-typography--headline">
-          Multinexo utiliza, principalmente, la
+          {{ site.api_name }} utiliza, principalmente, la
           <a href="http://jsonapi.org/">especificación JSON API</a> con
           algunas extensiones de la misma.
         </p>
@@ -42,14 +42,14 @@ layout: default
           <h1 class="mdl-typography--display-3"><i class="icon icon-autenticacion" aria-hidden="true"></i></h1>
           <h3 class="mdl-typography--display-1">Autenticación</h3>
           <p>
-            La seguridad en los accesos a Multinexo está basada en JWT.
+            La seguridad en los accesos a {{ site.api_name }} está basada en JWT.
           </p>
       </div>
       <div class="layout-column layout-align-start-center mdl-cell--4-col">
           <h1 class="mdl-typography--display-3"><i class="icon icon-recursos  " aria-hidden="true"></i></h1>
           <h3 class="mdl-typography--display-1">Recursos</h3>
           <p>
-            La API de Multinexo está pensada como una colección de recursos que pueden
+            La API de {{ site.api_name }} está pensada como una colección de recursos que pueden
             ser creados, editados o eliminados, cada uno accesible con un formato
             uniforme y basado en la
             <a href="http://jsonapi.org/">especificación de JSON API</a>.

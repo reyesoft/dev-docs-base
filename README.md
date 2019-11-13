@@ -1,4 +1,4 @@
-# Multinexo API documentation
+# Dev Docs Base documentation
 
 ## Installation
 
@@ -23,6 +23,23 @@ If you want to publish from other branch:
 bundle exec jgd -r BRANCH_NAME
 ```
 
+## Quickstart
+
+Copy or rename *\_config.copy.yml* file to *\_config.yml* and fill the required fields:
+
+- title
+- version
+- email
+- description
+- baseurl
+- url
+- appurl
+- apiurl
+- api_name
+- git_address
+- git_edit_address
+- logo_url
+- styleguide_img_url
 
 ## Documented resources structure
 
