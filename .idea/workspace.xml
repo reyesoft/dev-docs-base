@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82956d21-6e08-4a08-99fd-abf85099cc34" name="Default Changelist" comment="" />
+    <list default="true" id="82956d21-6e08-4a08-99fd-abf85099cc34" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/site/.gitignore" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +18,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/site" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -39,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574683043571</updated>
       <workItem from="1574683044878" duration="1171000" />
-      <workItem from="1574684927414" duration="2331000" />
+      <workItem from="1574684927414" duration="3469000" />
     </task>
     <servers />
   </component>
