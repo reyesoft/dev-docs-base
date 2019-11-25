@@ -10,6 +10,7 @@ apiurl: ""
 api_name: ""
 git_address: ""
 git_edit_address: ""
+styleguide: false
 
 # images
 logo_url: ""
