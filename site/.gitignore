@@ -2,6 +2,6 @@ _site
 .sass-cache
 .jekyll-metadata
 node_modules/
-.idea/workspace.xml
+../.idea/workspace.xml
 .idea/vcs.xml
 .idea/markdown-navigator.xml

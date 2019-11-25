@@ -39,6 +39,7 @@ Copy or rename *\_config.copy.yml* file to *\_config.yml* and fill the required 
 - git_address
 - git_edit_address
 - logo_url
+- tip_image
 - styleguide_img_url
 
 ## Documented resources structure
