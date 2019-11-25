@@ -13,6 +13,7 @@ git_edit_address: ""
 
 # images
 logo_url: ""
+tip_image: ""
 styleguide_img_url: ""
 
 # Build settings
