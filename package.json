@@ -1,6 +1,6 @@
 {
   "name": "@reyesoft/dev-docs-base",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "eslintConfig": {
     "extends": "google",
