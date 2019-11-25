@@ -42,6 +42,8 @@ Copy or rename *\_config.copy.yml* file to *\_config.yml* and fill the required 
 - tip_image
 - styleguide_img_url
 
+You can add an image with the name `bg.jpg` in the `img` folder to be used as header background.
+
 ## Documented resources structure
 
 Documented resources must define the following fields in the YAML Front Matter:
