@@ -5,7 +5,7 @@
         </div>
         <nav class="mdl-navigation mdl-layout--large-screen-only links">
           <a href="/">Home</a>
-          <a href="{{ "/docs/" | append: site.version | append: "/resources/products/" | prepend: site.baseurl }}">API</a>
+          <a href="{{ "/docs/" | append: site.version | append: "/resources/" | prepend: site.baseurl }}">API</a>
           {% if site.show_styleguide %}
             <a href="{{ "/styleguide/intro" | prepend: site.baseurl }}">Guía de estilo</a>
           {% endif %}
@@ -32,7 +32,7 @@
 <div class="mdl-layout__drawer mobile_drawer">
   <nav class="mdl-navigation">
     <a class="mdl-navigation__link" href="{{ site.baseurl }}">Home</a>
-    <a class="mdl-navigation__link" href="{{ "/docs/" | append: site.version | append: "/resources/products/" | prepend: site.baseurl }}">API</a>
+    <a class="mdl-navigation__link" href="{{ "/docs/" | append: site.version | append: "/resources/" | prepend: site.baseurl }}">API</a>
     {% if site.show_styleguide %}
       <a class="mdl-navigation__link" href="{{ "/styleguide/intro" | prepend: site.baseurl }}">Guía de estilo</a>
     {% endif %}
